@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Connexion</h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+
+<!-- WELCOME SECTION -->
+  <div class="container">
+  {{ form_start(form) }}
+    {{ form_widget(form) }}
+  {{ form_end(form) }}
+  </div><!-- /.container -->
+{% endblock%}

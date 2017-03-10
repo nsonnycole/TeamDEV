@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Les projets</h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+
+<!-- WELCOME SECTION -->
+  <div class="container">
+    <div class="row mt">
+      <div class="col-lg-8">
+        <h2>Un moyen facile de montez en compétences!</h2>
+        <p>découvrez les projets créer par les autres membres, participer y, ou créer votre propre projet.</p>
+      </div>
+      <div class="col-lg-4">
+        <p class="pull-right"><br><button type="button" class="btn btn-green">créer vous aussi votre projet</button></p>
+      </div>
+    </div><!-- /row -->
+  </div><!-- /.container -->
+
+
+  <div id="container">
+    <div id="searchbar">
+			<form method="post" role="search">
+				<div class="row">
+    				<div class="col-xs-8 col-xs-offset-2">
+					    <div class="input-group">
+			                <div class="input-group-btn search-panel">
+			                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			                    	<span id="search_concept">Filtrez par</span> <span class="caret"></span>
+			                    </button>
+			                    <ul class="dropdown-menu" role="menu">
+			                      <li><a href="#Title">Nom</a></li>
+			                      <li><a href="#Author">Statut</a></li>
+			                      <li><a href="#SubjectAreas">Date de début</a></li>
+								  <li class="divider"></li>
+			  			  		  <li><a href="#all">Tout afficher</a></li>
+							  	</ul>
+			                </div>
+			                <input type="hidden" name="search_filter" value="all" id="search_filter">
+			                <input type="text" class="form-control" id="searchbox" name="search_text" placeholder="Rerchercher..">
+			                <span class="input-group-btn">
+			                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+			                </span>
+			            </div>
+    				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+  <div class="container">
+  <div class="row mt">
+  {% for projet in projets %}
+      <div class="col-lg-4 projet">
+        <h3><a href="{{url ('showProjet')}}">{{projet.nomProjet}}</a></h3>
+        <p>{{projet.description}}</p>
+        <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}} | statut : {{projet.statut}}
+        <br>Auteur : <a href="#">Naomie</a></p>
+        <p><a href="#"><i class="fa fa-link"></i> En savoir plus</a></p>
+      </div>
+  {% endfor %}
+  </div><!-- container -->
+</div>
+{% endblock %}
