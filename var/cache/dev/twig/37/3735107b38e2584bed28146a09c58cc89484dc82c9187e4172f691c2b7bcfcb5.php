@@ -21,29 +21,29 @@ class __TwigTemplate_0fb1600badc79ecca6d3affd40951f27a3ed6a06fd036bb0901118ccd4b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5020b054c48edf2cd901268770aab082609629a68b67495e0c3b21c3e83da7d7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5020b054c48edf2cd901268770aab082609629a68b67495e0c3b21c3e83da7d7->enter($__internal_5020b054c48edf2cd901268770aab082609629a68b67495e0c3b21c3e83da7d7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/login.html.twig"));
+        $__internal_c32bc1c96b1d4d7aa4962e59a7727469365d167317737311f08db406c60dfbcb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c32bc1c96b1d4d7aa4962e59a7727469365d167317737311f08db406c60dfbcb->enter($__internal_c32bc1c96b1d4d7aa4962e59a7727469365d167317737311f08db406c60dfbcb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/login.html.twig"));
 
-        $__internal_76a9b55aaa8cb812cddd9d512ca83777f7dc015589bbc61b1521007453339075 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_76a9b55aaa8cb812cddd9d512ca83777f7dc015589bbc61b1521007453339075->enter($__internal_76a9b55aaa8cb812cddd9d512ca83777f7dc015589bbc61b1521007453339075_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/login.html.twig"));
+        $__internal_3dfbcafae45418f602e994454a892ce2dfb700e79f1044c61e1fc724c49fab6f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3dfbcafae45418f602e994454a892ce2dfb700e79f1044c61e1fc724c49fab6f->enter($__internal_3dfbcafae45418f602e994454a892ce2dfb700e79f1044c61e1fc724c49fab6f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5020b054c48edf2cd901268770aab082609629a68b67495e0c3b21c3e83da7d7->leave($__internal_5020b054c48edf2cd901268770aab082609629a68b67495e0c3b21c3e83da7d7_prof);
+        $__internal_c32bc1c96b1d4d7aa4962e59a7727469365d167317737311f08db406c60dfbcb->leave($__internal_c32bc1c96b1d4d7aa4962e59a7727469365d167317737311f08db406c60dfbcb_prof);
 
         
-        $__internal_76a9b55aaa8cb812cddd9d512ca83777f7dc015589bbc61b1521007453339075->leave($__internal_76a9b55aaa8cb812cddd9d512ca83777f7dc015589bbc61b1521007453339075_prof);
+        $__internal_3dfbcafae45418f602e994454a892ce2dfb700e79f1044c61e1fc724c49fab6f->leave($__internal_3dfbcafae45418f602e994454a892ce2dfb700e79f1044c61e1fc724c49fab6f_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f96e52b9c4b2433ab19914bba1682904f1d63e6272ce917ab870c6471cca3840 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f96e52b9c4b2433ab19914bba1682904f1d63e6272ce917ab870c6471cca3840->enter($__internal_f96e52b9c4b2433ab19914bba1682904f1d63e6272ce917ab870c6471cca3840_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2f19045ecbf5b4111ff3047956145e4702a6ec3b6a983a386492038be0f48f31 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2f19045ecbf5b4111ff3047956145e4702a6ec3b6a983a386492038be0f48f31->enter($__internal_2f19045ecbf5b4111ff3047956145e4702a6ec3b6a983a386492038be0f48f31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_671e560895643e0ba368beba48d109f0bef35194ecd006a38b49bc9f78a6dc7d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_671e560895643e0ba368beba48d109f0bef35194ecd006a38b49bc9f78a6dc7d->enter($__internal_671e560895643e0ba368beba48d109f0bef35194ecd006a38b49bc9f78a6dc7d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_39b98ce71eff370ff24e1bee2e4a695b6dcef01a929c02e1d7ebf834ea654b71 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_39b98ce71eff370ff24e1bee2e4a695b6dcef01a929c02e1d7ebf834ea654b71->enter($__internal_39b98ce71eff370ff24e1bee2e4a695b6dcef01a929c02e1d7ebf834ea654b71_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<!-- MAIN IMAGE SECTION -->
@@ -58,26 +58,58 @@ class __TwigTemplate_0fb1600badc79ecca6d3affd40951f27a3ed6a06fd036bb0901118ccd4b
 </div><!-- /portrwrap -->
 
 <!-- WELCOME SECTION -->
-  <div class=\"container\">
-  ";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
-        echo "
-    ";
-        // line 18
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
-        echo "
-  ";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
-        echo "
-  </div><!-- /.container -->
+<div class=\"container\">
+      <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
+          <div class=\"panel panel-info\" >
+
+                <div style=\"float:right; font-size: 80%; position: relative; top:-10px\"><a href=\"#\">Mot de passe oublier ?</a></div>
+                  <div style=\"padding-top:30px\" class=\"panel-body\" >
+
+                      <div style=\"display:none\" id=\"login-alert\" class=\"alert alert-danger col-sm-12\"></div>
+
+                      <form id=\"loginform\" class=\"form-horizontal\" role=\"form\">
+
+                          <div style=\"margin-bottom: 25px\" class=\"input-group\">
+                                      <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
+                                      <input id=\"login-username\" type=\"text\" class=\"form-control\" name=\"username\" value=\"\" placeholder=\"Nom\">
+                                  </div>
+
+                          <div style=\"margin-bottom: 25px\" class=\"input-group\">
+                                      <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-lock\"></i></span>
+                                      <input id=\"login-password\" type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Mot de passe\">
+                                  </div>
+
+
+                                  <div class=\"col-sm-12 controls\">
+                                    <a id=\"btn-login\" style=\"float:right\"href=\"#\" class=\"btn btn-success\">Connexion  </a>
+                                    <!--<a id=\"btn-fblogin\" href=\"#\" class=\"btn btn-primary\">Login with Facebook</a>-->
+
+                                  </div>
+                              </div>
+                              <div class=\"form-group\">
+                                  <div class=\"col-md-12 control\">
+                                      <div style=\"border-top: 1px solid#888; padding-top:15px; font-size:85%\" >
+                                          Pas encore de compte?
+                                      <a href=\"#\">
+                                        S'inscrire!
+                                      </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                          </div>
+
+            </div>
+
+    </div>
+
+  </div>
 ";
         
-        $__internal_671e560895643e0ba368beba48d109f0bef35194ecd006a38b49bc9f78a6dc7d->leave($__internal_671e560895643e0ba368beba48d109f0bef35194ecd006a38b49bc9f78a6dc7d_prof);
+        $__internal_39b98ce71eff370ff24e1bee2e4a695b6dcef01a929c02e1d7ebf834ea654b71->leave($__internal_39b98ce71eff370ff24e1bee2e4a695b6dcef01a929c02e1d7ebf834ea654b71_prof);
 
         
-        $__internal_f96e52b9c4b2433ab19914bba1682904f1d63e6272ce917ab870c6471cca3840->leave($__internal_f96e52b9c4b2433ab19914bba1682904f1d63e6272ce917ab870c6471cca3840_prof);
+        $__internal_2f19045ecbf5b4111ff3047956145e4702a6ec3b6a983a386492038be0f48f31->leave($__internal_2f19045ecbf5b4111ff3047956145e4702a6ec3b6a983a386492038be0f48f31_prof);
 
     }
 
@@ -93,7 +125,7 @@ class __TwigTemplate_0fb1600badc79ecca6d3affd40951f27a3ed6a06fd036bb0901118ccd4b
 
     public function getDebugInfo()
     {
-        return array (  72 => 19,  68 => 18,  64 => 17,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -121,11 +153,52 @@ class __TwigTemplate_0fb1600badc79ecca6d3affd40951f27a3ed6a06fd036bb0901118ccd4b
 </div><!-- /portrwrap -->
 
 <!-- WELCOME SECTION -->
-  <div class=\"container\">
-  {{ form_start(form) }}
-    {{ form_widget(form) }}
-  {{ form_end(form) }}
-  </div><!-- /.container -->
+<div class=\"container\">
+      <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
+          <div class=\"panel panel-info\" >
+
+                <div style=\"float:right; font-size: 80%; position: relative; top:-10px\"><a href=\"#\">Mot de passe oublier ?</a></div>
+                  <div style=\"padding-top:30px\" class=\"panel-body\" >
+
+                      <div style=\"display:none\" id=\"login-alert\" class=\"alert alert-danger col-sm-12\"></div>
+
+                      <form id=\"loginform\" class=\"form-horizontal\" role=\"form\">
+
+                          <div style=\"margin-bottom: 25px\" class=\"input-group\">
+                                      <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
+                                      <input id=\"login-username\" type=\"text\" class=\"form-control\" name=\"username\" value=\"\" placeholder=\"Nom\">
+                                  </div>
+
+                          <div style=\"margin-bottom: 25px\" class=\"input-group\">
+                                      <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-lock\"></i></span>
+                                      <input id=\"login-password\" type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Mot de passe\">
+                                  </div>
+
+
+                                  <div class=\"col-sm-12 controls\">
+                                    <a id=\"btn-login\" style=\"float:right\"href=\"#\" class=\"btn btn-success\">Connexion  </a>
+                                    <!--<a id=\"btn-fblogin\" href=\"#\" class=\"btn btn-primary\">Login with Facebook</a>-->
+
+                                  </div>
+                              </div>
+                              <div class=\"form-group\">
+                                  <div class=\"col-md-12 control\">
+                                      <div style=\"border-top: 1px solid#888; padding-top:15px; font-size:85%\" >
+                                          Pas encore de compte?
+                                      <a href=\"#\">
+                                        S'inscrire!
+                                      </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                          </div>
+
+            </div>
+
+    </div>
+
+  </div>
 {% endblock%}
 ", "default/login.html.twig", "/Users/sonny-cole/Documents/Projets/Projet_2/TeamDEV/app/Resources/views/default/login.html.twig");
     }

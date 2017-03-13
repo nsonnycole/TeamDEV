@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Inscription</h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+
+<!-- WELCOME SECTION -->
+<div class="container">
+      <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info" >
+
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Se connecter</a></div>
+                  <div style="padding-top:30px" class="panel-body" >
+
+                      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                      <form id="loginform" class="form-horizontal" role="form">
+                                  <div class="col-sm-12 controls">
+                                    <a id="btn-login" style="float:right"href="#" class="btn btn-success">S'inscrire </a>
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12 control">
+                                      <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                          Pas encore de compte?
+                                      <a href="#">
+                                        S'inscrire!
+                                      </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                          </div>
+
+            </div>
+
+    </div>
+
+  </div>
+{% endblock%}

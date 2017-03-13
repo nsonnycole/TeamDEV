@@ -119,6 +119,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
+        // signup
+        if ($pathinfo === '/signup') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::signupAction',  '_route' => 'signup',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             // login
             if ($pathinfo === '/login') {
@@ -132,9 +137,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // projets
-        if ($pathinfo === '/projets') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::projetsAction',  '_route' => 'projets',);
+        if (0 === strpos($pathinfo, '/pro')) {
+            // profil
+            if ($pathinfo === '/profil') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::profilAction',  '_route' => 'profil',);
+            }
+
+            // projets
+            if ($pathinfo === '/projets') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::projetsAction',  '_route' => 'projets',);
+            }
+
         }
 
         // showProjet

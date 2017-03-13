@@ -21,29 +21,29 @@ class __TwigTemplate_7c9444175999336a1544a71e06087376fb65f50fa57cb0922e0da8f85ad
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5cd269bbdd60019c03a6c4806a26d46c72d57949776fbe13bd8a6ae490bf63b0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5cd269bbdd60019c03a6c4806a26d46c72d57949776fbe13bd8a6ae490bf63b0->enter($__internal_5cd269bbdd60019c03a6c4806a26d46c72d57949776fbe13bd8a6ae490bf63b0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/projets.html.twig"));
+        $__internal_d7e47c82f1e6f7d5ff3d61d3053f09d624df2914ceafbc20075a2f49a3ce4c6d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d7e47c82f1e6f7d5ff3d61d3053f09d624df2914ceafbc20075a2f49a3ce4c6d->enter($__internal_d7e47c82f1e6f7d5ff3d61d3053f09d624df2914ceafbc20075a2f49a3ce4c6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/projets.html.twig"));
 
-        $__internal_35bb20196b6f98f742cabfb7bd06df4a42f9cc9fa0bb366ab7ad33b34ff51e63 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_35bb20196b6f98f742cabfb7bd06df4a42f9cc9fa0bb366ab7ad33b34ff51e63->enter($__internal_35bb20196b6f98f742cabfb7bd06df4a42f9cc9fa0bb366ab7ad33b34ff51e63_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/projets.html.twig"));
+        $__internal_f9f56cae4ebebf6fd324f6a5c59cdcb7568b0a3a494a80a2c2d1a9668c275702 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f9f56cae4ebebf6fd324f6a5c59cdcb7568b0a3a494a80a2c2d1a9668c275702->enter($__internal_f9f56cae4ebebf6fd324f6a5c59cdcb7568b0a3a494a80a2c2d1a9668c275702_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/projets.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5cd269bbdd60019c03a6c4806a26d46c72d57949776fbe13bd8a6ae490bf63b0->leave($__internal_5cd269bbdd60019c03a6c4806a26d46c72d57949776fbe13bd8a6ae490bf63b0_prof);
+        $__internal_d7e47c82f1e6f7d5ff3d61d3053f09d624df2914ceafbc20075a2f49a3ce4c6d->leave($__internal_d7e47c82f1e6f7d5ff3d61d3053f09d624df2914ceafbc20075a2f49a3ce4c6d_prof);
 
         
-        $__internal_35bb20196b6f98f742cabfb7bd06df4a42f9cc9fa0bb366ab7ad33b34ff51e63->leave($__internal_35bb20196b6f98f742cabfb7bd06df4a42f9cc9fa0bb366ab7ad33b34ff51e63_prof);
+        $__internal_f9f56cae4ebebf6fd324f6a5c59cdcb7568b0a3a494a80a2c2d1a9668c275702->leave($__internal_f9f56cae4ebebf6fd324f6a5c59cdcb7568b0a3a494a80a2c2d1a9668c275702_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_8291f3d5b92c5c08ccb6eb661f80267da9827793a6c956650da6f2e082e53cab = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8291f3d5b92c5c08ccb6eb661f80267da9827793a6c956650da6f2e082e53cab->enter($__internal_8291f3d5b92c5c08ccb6eb661f80267da9827793a6c956650da6f2e082e53cab_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_59d2b698843c2b8833f8f930f420d6bac6e68f69609e01b47cd46049f710c4c9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_59d2b698843c2b8833f8f930f420d6bac6e68f69609e01b47cd46049f710c4c9->enter($__internal_59d2b698843c2b8833f8f930f420d6bac6e68f69609e01b47cd46049f710c4c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_c17feb2d73768cd32e2988643c1e7d802c14b72022146eca1888c6b6e7e9a684 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c17feb2d73768cd32e2988643c1e7d802c14b72022146eca1888c6b6e7e9a684->enter($__internal_c17feb2d73768cd32e2988643c1e7d802c14b72022146eca1888c6b6e7e9a684_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_bd4dbaf02f0f9761b575e711b332aeb593c99fbb8164a62372209ca5c9320b37 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bd4dbaf02f0f9761b575e711b332aeb593c99fbb8164a62372209ca5c9320b37->enter($__internal_bd4dbaf02f0f9761b575e711b332aeb593c99fbb8164a62372209ca5c9320b37_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<!-- MAIN IMAGE SECTION -->
@@ -136,14 +136,27 @@ class __TwigTemplate_7c9444175999336a1544a71e06087376fb65f50fa57cb0922e0da8f85ad
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['projet'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 69
-        echo "  </div><!-- container -->
+        echo "  </div><!-- row -->
+</div>
+<br><br>
+<div class=\"container\">
+<div class=\"paginate\" align=\"center\"><!-- remove width id you don't need it-->
+    <ul class=\"pagination\">
+      <li><a href=\"#\"rel=\"prev\" class=\"page-prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a></li>
+      <li class=\"active \"><span>1</span></li>
+      <li><a href=\"#\" class=\" \">2</a></li>
+      <li><a href=\"#\" class=\" \">3</a></li>
+      <li><a href=\"#\" rel=\"next\" class=\"page-next\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a></li>
+    </ul>
+    <div class=\"clearfix\"></div>
+  </div>
 </div>
 ";
         
-        $__internal_c17feb2d73768cd32e2988643c1e7d802c14b72022146eca1888c6b6e7e9a684->leave($__internal_c17feb2d73768cd32e2988643c1e7d802c14b72022146eca1888c6b6e7e9a684_prof);
+        $__internal_bd4dbaf02f0f9761b575e711b332aeb593c99fbb8164a62372209ca5c9320b37->leave($__internal_bd4dbaf02f0f9761b575e711b332aeb593c99fbb8164a62372209ca5c9320b37_prof);
 
         
-        $__internal_8291f3d5b92c5c08ccb6eb661f80267da9827793a6c956650da6f2e082e53cab->leave($__internal_8291f3d5b92c5c08ccb6eb661f80267da9827793a6c956650da6f2e082e53cab_prof);
+        $__internal_59d2b698843c2b8833f8f930f420d6bac6e68f69609e01b47cd46049f710c4c9->leave($__internal_59d2b698843c2b8833f8f930f420d6bac6e68f69609e01b47cd46049f710c4c9_prof);
 
     }
 
@@ -240,7 +253,20 @@ class __TwigTemplate_7c9444175999336a1544a71e06087376fb65f50fa57cb0922e0da8f85ad
         <p><a href=\"#\"><i class=\"fa fa-link\"></i> En savoir plus</a></p>
       </div>
   {% endfor %}
-  </div><!-- container -->
+  </div><!-- row -->
+</div>
+<br><br>
+<div class=\"container\">
+<div class=\"paginate\" align=\"center\"><!-- remove width id you don't need it-->
+    <ul class=\"pagination\">
+      <li><a href=\"#\"rel=\"prev\" class=\"page-prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a></li>
+      <li class=\"active \"><span>1</span></li>
+      <li><a href=\"#\" class=\" \">2</a></li>
+      <li><a href=\"#\" class=\" \">3</a></li>
+      <li><a href=\"#\" rel=\"next\" class=\"page-next\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a></li>
+    </ul>
+    <div class=\"clearfix\"></div>
+  </div>
 </div>
 {% endblock %}
 ", "projets/projets.html.twig", "/Users/sonny-cole/Documents/Projets/Projet_2/TeamDEV/app/Resources/views/projets/projets.html.twig");

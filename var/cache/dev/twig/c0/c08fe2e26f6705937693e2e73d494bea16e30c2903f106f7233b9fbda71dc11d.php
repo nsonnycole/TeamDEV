@@ -21,29 +21,29 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_77318b2543b86c98cbb2805cd0390d82b60dcdb7a2ba5926ff3a5e4815fabe61 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_77318b2543b86c98cbb2805cd0390d82b60dcdb7a2ba5926ff3a5e4815fabe61->enter($__internal_77318b2543b86c98cbb2805cd0390d82b60dcdb7a2ba5926ff3a5e4815fabe61_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
+        $__internal_87485cf03fb3291cc17a97fd51d26b86c2fd8e22f5b4e189a30703fc6243bd6a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_87485cf03fb3291cc17a97fd51d26b86c2fd8e22f5b4e189a30703fc6243bd6a->enter($__internal_87485cf03fb3291cc17a97fd51d26b86c2fd8e22f5b4e189a30703fc6243bd6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
 
-        $__internal_2d63f195b59bb71c239ded34743ab91c96778c90e1b27044f625347ac67dde5b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2d63f195b59bb71c239ded34743ab91c96778c90e1b27044f625347ac67dde5b->enter($__internal_2d63f195b59bb71c239ded34743ab91c96778c90e1b27044f625347ac67dde5b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
+        $__internal_23c901e5826ac9c150a8635d0a7dbaba20dec4676778cc53b376da1587af590f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_23c901e5826ac9c150a8635d0a7dbaba20dec4676778cc53b376da1587af590f->enter($__internal_23c901e5826ac9c150a8635d0a7dbaba20dec4676778cc53b376da1587af590f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_77318b2543b86c98cbb2805cd0390d82b60dcdb7a2ba5926ff3a5e4815fabe61->leave($__internal_77318b2543b86c98cbb2805cd0390d82b60dcdb7a2ba5926ff3a5e4815fabe61_prof);
+        $__internal_87485cf03fb3291cc17a97fd51d26b86c2fd8e22f5b4e189a30703fc6243bd6a->leave($__internal_87485cf03fb3291cc17a97fd51d26b86c2fd8e22f5b4e189a30703fc6243bd6a_prof);
 
         
-        $__internal_2d63f195b59bb71c239ded34743ab91c96778c90e1b27044f625347ac67dde5b->leave($__internal_2d63f195b59bb71c239ded34743ab91c96778c90e1b27044f625347ac67dde5b_prof);
+        $__internal_23c901e5826ac9c150a8635d0a7dbaba20dec4676778cc53b376da1587af590f->leave($__internal_23c901e5826ac9c150a8635d0a7dbaba20dec4676778cc53b376da1587af590f_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_05d94f41dff2172f34d938520511b993a51c17f0e904eff6a9591b3b5a38e0f1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_05d94f41dff2172f34d938520511b993a51c17f0e904eff6a9591b3b5a38e0f1->enter($__internal_05d94f41dff2172f34d938520511b993a51c17f0e904eff6a9591b3b5a38e0f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_610cf7a90b666a48918b420afa09d008ce72ae109cf1e3cafe11da228f64abf5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_610cf7a90b666a48918b420afa09d008ce72ae109cf1e3cafe11da228f64abf5->enter($__internal_610cf7a90b666a48918b420afa09d008ce72ae109cf1e3cafe11da228f64abf5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_c09d8826f9c4b558b74c7487efd4cb3bb299594038f274fd9050c24032356d51 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c09d8826f9c4b558b74c7487efd4cb3bb299594038f274fd9050c24032356d51->enter($__internal_c09d8826f9c4b558b74c7487efd4cb3bb299594038f274fd9050c24032356d51_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_31d4d80af8a468a0ac1a36339fb03b6ed83007191daefd173296c5138fed48af = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_31d4d80af8a468a0ac1a36339fb03b6ed83007191daefd173296c5138fed48af->enter($__internal_31d4d80af8a468a0ac1a36339fb03b6ed83007191daefd173296c5138fed48af_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<!-- MAIN IMAGE SECTION -->
@@ -72,7 +72,7 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
     <div class=\"col-lg-4 col-lg-offset-1 desc\">
       <h3>Infos supplémentaires</h3>
       <br>
-      <h5><b>Auteurs:</b> REBECCA ZEARING</h5>
+      <h5><b>Auteur:</b> REBECCA ZEARING</h5>
       <h5><b>Nombre de places:</b> 5 </h5>
       <h5><b>Nombre de participants:</b> 0 / 5</h5>
       <h5><b>Description:</b></h5>
@@ -87,10 +87,10 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 
 ";
         
-        $__internal_c09d8826f9c4b558b74c7487efd4cb3bb299594038f274fd9050c24032356d51->leave($__internal_c09d8826f9c4b558b74c7487efd4cb3bb299594038f274fd9050c24032356d51_prof);
+        $__internal_31d4d80af8a468a0ac1a36339fb03b6ed83007191daefd173296c5138fed48af->leave($__internal_31d4d80af8a468a0ac1a36339fb03b6ed83007191daefd173296c5138fed48af_prof);
 
         
-        $__internal_05d94f41dff2172f34d938520511b993a51c17f0e904eff6a9591b3b5a38e0f1->leave($__internal_05d94f41dff2172f34d938520511b993a51c17f0e904eff6a9591b3b5a38e0f1_prof);
+        $__internal_610cf7a90b666a48918b420afa09d008ce72ae109cf1e3cafe11da228f64abf5->leave($__internal_610cf7a90b666a48918b420afa09d008ce72ae109cf1e3cafe11da228f64abf5_prof);
 
     }
 
@@ -148,7 +148,7 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
     <div class=\"col-lg-4 col-lg-offset-1 desc\">
       <h3>Infos supplémentaires</h3>
       <br>
-      <h5><b>Auteurs:</b> REBECCA ZEARING</h5>
+      <h5><b>Auteur:</b> REBECCA ZEARING</h5>
       <h5><b>Nombre de places:</b> 5 </h5>
       <h5><b>Nombre de participants:</b> 0 / 5</h5>
       <h5><b>Description:</b></h5>

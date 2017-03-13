@@ -384,6 +384,7 @@ hr {
 #portfolio {
     width: 100%}
 footer{
+  display: block;
     background: #1abc9c;
     margin-top: 25px;
     padding-top: 35px;
