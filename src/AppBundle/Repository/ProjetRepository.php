@@ -11,6 +11,21 @@ use AppBundle\Entity\TypeProjet;
  */
 class ProjetRepository extends EntityRepository
 {
+
+  /**
+  *
+  * Retourne la liste des projets
+  *
+  **/
+  public function getById($id)
+  {
+    $query = $this->createQueryBuilder('projet')
+    ->where('projet.id = :id')
+    ->setParameter('id', $id)
+    ->getQuery();
+    return $query -> getSingleResult();
+  }
+
   /**
 	*
 	* Retourne la liste des projets

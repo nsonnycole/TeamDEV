@@ -19,19 +19,36 @@ class ProjetType extends AbstractType
   {
     $builder
     ->add('nomProjet', TextType::class, array(
-      'label' => 'Nom du document',
+                        'label' => 'Nom du document',
     ))
     ->add('description', TextareaType::class, array(
-      'label' => 'Description',
+                      'label' => 'Description',
+    ))
       ->add('dateDebut', DateType::class, array(
-        'label' => 'Début',
+                            'label' => 'Début',
+                            'attr' => array(
+                                'class' => 'datepicker'
+                            )
+
+    ))
       ->add('dateFin', DateType::class, array(
-          'label' => 'Fin',
+                           'label' => 'Fin',
+                           'attr' => array(
+                               'class' => 'datepicker'
+                           )
+    ))
       ->add('nbPlaces', NumberType::class, array(
-          'label' => 'Place disponible',
-      ->add('idTypeProjet', TextType::class, array(
-          'label' => 'Type de projet',
-      ));
+                            'label' => 'Place disponible',
+    ))
+
+      ->add('idTypeProjet', EntityType::class, array(
+                            'class' => 'AppBundle:TypeProjet'
+                            'propreity' => 'nom'
+                            'label' => 'Type de projet',
+                            'empty_value'=> 'Selectionnez le type du projet',
+      ))
+
+      ->add('file');
       }
 
     /**

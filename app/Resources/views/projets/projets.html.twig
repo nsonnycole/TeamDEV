@@ -20,7 +20,7 @@
         <p>découvrez les projets créer par les autres membres, participer y, ou créer votre propre projet.</p>
       </div>
       <div class="col-lg-4">
-        <p class="pull-right"><br><button type="button" class="btn btn-green">créer vous aussi votre projet</button></p>
+        <p class="pull-right"><br><a href="{{path('newProjet')}}" class="btn btn-primary">créer vous aussi votre projet</a></p>
       </div>
     </div><!-- /row -->
   </div><!-- /.container -->
@@ -59,9 +59,11 @@
   <div class="row mt">
   {% for projet in projets %}
       <div class="col-lg-4 projet">
-        <h3><a href="{{url ('showProjet')}}">{{projet.nomProjet}}</a></h3>
+        <h3><a href="{{ path('showProjet', {'id': projet.id}) }}">{{projet.nomProjet}}</a></h3>
+        <img style="width: 350px;"src="{{asset("img/about-bg.jpg")}}" >
         <p>{{projet.description}}</p>
-        <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}} | statut : {{projet.statut}}
+        <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}
+        <br><b> statut : {{projet.statut}}</b>
         <br>Auteur : <a href="#">Naomie</a></p>
         <p><a href="#"><i class="fa fa-link"></i> En savoir plus</a></p>
       </div>
@@ -69,6 +71,7 @@
   </div><!-- row -->
 </div>
 <br><br>
+{#
 <div class="container">
 <div class="paginate" align="center"><!-- remove width id you don't need it-->
     <ul class="pagination">
@@ -80,5 +83,5 @@
     </ul>
     <div class="clearfix"></div>
   </div>
-</div>
+</div>#}
 {% endblock %}

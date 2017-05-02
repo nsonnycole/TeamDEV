@@ -23,22 +23,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/signup", name="signup")
+     * @Route("/profile", name="profile")
      */
-    public function signupAction(Request $request)
+    public function profileAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/signup.html.twig');
+
     }
 
-    /**
-     * @Route("/login", name="login")
-     */
-    public function loginAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/login.html.twig');
-    }
 
     /**
      * @Route("/logout", name="logout")
@@ -48,12 +39,4 @@ class DefaultController extends Controller
 
     }
 
-    /**
-     * @Route("/profil", name="profil")
-     */
-    public function profilAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/profil.html.twig');
-    }
 }

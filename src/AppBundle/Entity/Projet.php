@@ -1,6 +1,6 @@
 <?php
 namespace AppBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -86,6 +86,47 @@ class Projet
   */
   private  $idTypeProjet;
 
+  /**
+  * @ORM\Column(type="string", length=255, nullable=true)
+  */
+  public $pictureName;
+
+  /**
+  * @Assert\File(maxSize="500k")
+  */
+  public $file;
+
+  public function getWebPath()
+  {
+    return null === $this->pictureName ? null : $this->getUploadDir().'/'.$this->pictureName;
+  }
+
+  protected function getUploadRootDir()
+  {
+    // le chemin absolu du répertoire dans lequel sauvegarder les photos de profil
+    return __DIR__.'/../../../../web/'.$this->getUploadDir();
+  }
+
+  protected function getUploadDir()
+  {
+    // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+    return 'uploads/pictures';
+  }
+
+  public function uploadProfilePicture()
+  {
+    // Nous utilisons le nom de fichier original, donc il est dans la pratique
+    // nécessaire de le nettoyer pour éviter les problèmes de sécurité
+
+    // move copie le fichier présent chez le client dans le répertoire indiqué.
+    $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
+
+    // On sauvegarde le nom de fichier
+    $this->pictureName = $this->file->getClientOriginalName();
+
+    // La propriété file ne servira plus
+    $this->file = null;
+  }
 
   public function __construct()
   {
@@ -295,99 +336,123 @@ class Projet
     return $this->status;
   }
 
+  /**
+  * Set idUtilisateur
+  *
+  * @param \AppBundle\Entity\User $idUtilisateur
+  *
+  * @return Projet
+  */
+  public function setIdUtilisateur(\AppBundle\Entity\User $idUtilisateur = null)
+  {
+    $this->idUtilisateur = $idUtilisateur;
+
+    return $this;
+  }
+
+  /**
+  * Get idUtilisateur
+  *
+  * @return \AppBundle\Entity\User
+  */
+  public function getIdUtilisateur()
+  {
+    return $this->idUtilisateur;
+  }
+
+  /**
+  * Set idTypeProjet
+  *
+  * @param \AppBundle\Entity\TypeProjet $idTypeProjet
+  *
+  * @return Projet
+  */
+  public function setIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet = null)
+  {
+    $this->idTypeProjet = $idTypeProjet;
+
+    return $this;
+  }
+
+  /**
+  * Get idTypeProjet
+  *
+  * @return \AppBundle\Entity\TypeProjet
+  */
+  public function getIdTypeProjet()
+  {
+    return $this->idTypeProjet;
+  }
+
+  /**
+  * Set statut
+  *
+  * @param string $statut
+  *
+  * @return Projet
+  */
+  public function setStatut($statut)
+  {
+    $this->statut = $statut;
+
+    return $this;
+  }
+
+  /**
+  * Get statut
+  *
+  * @return string
+  */
+  public function getStatut()
+  {
+    return $this->statut;
+  }
+
+  /**
+  * Set contenu
+  *
+  * @param string $contenu
+  *
+  * @return Projet
+  */
+  public function setContenu($contenu)
+  {
+    $this->contenu = $contenu;
+
+    return $this;
+  }
+
+  /**
+  * Get contenu
+  *
+  * @return string
+  */
+  public function getContenu()
+  {
+    return $this->contenu;
+  }
+
     /**
-     * Set idUtilisateur
+     * Set pictureName
      *
-     * @param \AppBundle\Entity\User $idUtilisateur
+     * @param string $pictureName
      *
      * @return Projet
      */
-    public function setIdUtilisateur(\AppBundle\Entity\User $idUtilisateur = null)
+    public function setPictureName($pictureName)
     {
-        $this->idUtilisateur = $idUtilisateur;
+        $this->pictureName = $pictureName;
 
         return $this;
     }
 
     /**
-     * Get idUtilisateur
-     *
-     * @return \AppBundle\Entity\User
-     */
-    public function getIdUtilisateur()
-    {
-        return $this->idUtilisateur;
-    }
-
-    /**
-     * Set idTypeProjet
-     *
-     * @param \AppBundle\Entity\TypeProjet $idTypeProjet
-     *
-     * @return Projet
-     */
-    public function setIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet = null)
-    {
-        $this->idTypeProjet = $idTypeProjet;
-
-        return $this;
-    }
-
-    /**
-     * Get idTypeProjet
-     *
-     * @return \AppBundle\Entity\TypeProjet
-     */
-    public function getIdTypeProjet()
-    {
-        return $this->idTypeProjet;
-    }
-
-    /**
-     * Set statut
-     *
-     * @param string $statut
-     *
-     * @return Projet
-     */
-    public function setStatut($statut)
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    /**
-     * Get statut
+     * Get pictureName
      *
      * @return string
      */
-    public function getStatut()
+    public function getPictureName()
     {
-        return $this->statut;
-    }
-
-    /**
-     * Set contenu
-     *
-     * @param string $contenu
-     *
-     * @return Projet
-     */
-    public function setContenu($contenu)
-    {
-        $this->contenu = $contenu;
-
-        return $this;
-    }
-
-    /**
-     * Get contenu
-     *
-     * @return string
-     */
-    public function getContenu()
-    {
-        return $this->contenu;
+        return $this->pictureName;
     }
 }

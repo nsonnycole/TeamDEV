@@ -1,0 +1,52 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Inscription</h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+
+<!-- WELCOME SECTION -->
+<div class="container">
+      <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info" >
+
+
+                  <div style="padding-top:30px" class="panel-body" >
+
+                      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                      {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+                          <div class="col-sm-6">
+                          <h4>Informations personnels</h4>
+                          <hr>
+                          {{ form_row(form.nom) }}
+                          {{ form_row(form.prenom) }}
+                          {{ form_row(form.adresse) }}
+                          {{ form_row(form.dateNaiss) }}
+                          {{ form_row(form.adresse) }}
+                          </div>
+                          <div class="col-sm-6">
+                          <h4>Informations de connexion</h4>
+                          <hr>
+                          {{ form_widget(form) }}
+                          </div>
+
+                          <div class="col-sm-12">
+                          <hr>
+                              <input type="submit" class="btn btn-success pull-right"value="{{ 'registration.submit'|trans }}" />
+                          </div>
+                      {{ form_end(form) }}
+                </div>
+
+            </div>
+
+    </div>
+
+  </div>

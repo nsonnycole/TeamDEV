@@ -39,9 +39,9 @@
     			<i class="fa fa-arrow-right menu-close"></i>
     			<a href="{{path('homepage')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Accueil</a>
     			<a href="{{path('projets')}}"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Projets</a>
-    			<a href="{{path('profil')}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil</a>
+    			<a href="{{path('fos_user_profile_show')}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil</a>
           <a href="{{path('indexAdmin')}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Administration</a>
-    			<a href="{{path('login')}}"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Connexion</a>
+    			<a href="{{path('homepage')}}"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Connexion</a>
     			<a href="{{path('logout')}}"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Deconnexion</a>
     			<a href="#"><i class="fa fa-facebook"></i></a>
     			<a href="#"><i class="fa fa-twitter"></i></a>
@@ -53,7 +53,11 @@
     		<div id="menuToggle"><i class="fa fa-bars"></i></div>
     	</nav>
 
-        {% block body %}{% endblock %}
+        <section>
+        {% block body %}
+        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+        {% endblock %}
+        </section>
         <footer><p>TeamDEV Copyright 2017</p></footer>
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

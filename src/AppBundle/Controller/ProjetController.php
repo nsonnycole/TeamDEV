@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use KeiruaProd\ApplicationBundle\Form\Type\ProjetType;
 
 class ProjetController extends Controller
 {
@@ -23,16 +24,34 @@ class ProjetController extends Controller
    }
 
    /**
-    * @Route("/showProjet", name="showProjet")
+    * @Route("/projets/showProjet/{id}", name="showProjet")
     */
-   public function showProjetAction(Request $request)
+   public function showProjetAction(Request $request, $id)
    {
+      $em = $this->getDoctrine()->getManager();
+       $projet = $em->getRepository('AppBundle:Projet')->getById($id);
        // replace this example code with whatever you need
-       return $this->render('projets/afficheProjet.html.twig');
+       return $this->render('projets/afficheProjet.html.twig', array(
+         'detailProjet' => $projet,
+       ));
 
   }
 
-  
+  /**
+   * @Route("/projets/newProjet", name="newProjet")
+   */
+  public function newProjetAction(Request $request)
+  {
+      $em = $this->getDoctrine()->getManager();
+      $form = $this->createform(new ProjetType());
+      // replace this example code with whatever you need
+      return $this->render('projets/newProjet.html.twig', array(
+                        'form' => $form->createView()
+      ));
+
+ }
+
+
 
 
 

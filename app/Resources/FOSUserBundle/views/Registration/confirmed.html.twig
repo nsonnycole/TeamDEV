@@ -1,0 +1,25 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2" style="color:white">
+        <h2>Inscription réussi!</h2>
+        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+        {% if targetUrl %}
+        <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+        {% endif %}
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+<div class="container">
+<br>
+  <a id="btn-fblogin" href="{{path('homepage')}}" class="btn btn-primary col-sm-offset-6">Accueil</a>
+  {#<img style="width:600px"src="{{asset("img/happy.jpeg")}}">#}
+</div>
+{% endblock fos_user_content %}

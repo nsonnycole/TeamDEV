@@ -1,0 +1,52 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Mon profil </h2>
+        <div style="color:white">
+            <p>{{ 'profile.show.username'|trans }} : {{ user.username }}</p>
+            <p>{{ 'profile.show.email'|trans }} : {{ user.email }}</p>
+        </div>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+<br>
+
+<div class="container">
+  <div class="col-lg-12">
+    <div class="col-lg-10 col-sm-offset-1">
+      <h3 align="center">Mes actions</h3>
+      <hr>
+      <div align="center">
+      <button class="btn btn-primary " href="{{path('fos_user_profile_edit')}}" >Modifier mon profil</button>
+      <button class="btn btn-primary">Mes projets</a></button>
+      <button class="btn btn-primary">Mes participations</button>
+      </div>
+    </div>
+      <br>
+      
+    <div class="col-lg-10 col-sm-offset-1">
+      <h3 align="center">Mes informations personnelles</h3>
+      <hr>
+      <div class="col-sm-6 col-sm-offset-1">
+      <p> Nom : {{ user.nom }}</p>
+      <p> Prénom : {{ user.prenom }}</p>
+      <p> Date de naissance : {{ user.dateNaiss|date("d/m/Y") }}</p>
+      <p> Adresse : {{ user.adresse }}</p>
+      <p> Pseudo : {{ user.username }}</p>
+      <p> {{ 'profile.show.email'|trans }} : {{ user.email }}</p>
+      </div>
+
+      <div class="col-sm-5">
+      <p> Mes projets : 0</p>
+      <p> Mes participations : 0</p>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

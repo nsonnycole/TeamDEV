@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'idTypeProfil', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
         }
 
-        return ['__isInitialized__', 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'idTypeProfil', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
     }
 
     /**
@@ -193,6 +193,94 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdTypeProfil', []);
 
         return parent::getIdTypeProfil();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setNom($nom)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNom', [$nom]);
+
+        return parent::setNom($nom);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNom()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNom', []);
+
+        return parent::getNom();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPrenom($prenom)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPrenom', [$prenom]);
+
+        return parent::setPrenom($prenom);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPrenom()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrenom', []);
+
+        return parent::getPrenom();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDateNaiss($dateNaiss)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateNaiss', [$dateNaiss]);
+
+        return parent::setDateNaiss($dateNaiss);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDateNaiss()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateNaiss', []);
+
+        return parent::getDateNaiss();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setAdresse($adresse)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAdresse', [$adresse]);
+
+        return parent::setAdresse($adresse);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAdresse()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAdresse', []);
+
+        return parent::getAdresse();
     }
 
     /**

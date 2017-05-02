@@ -7,7 +7,8 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <h1>TeamDEV</h1>
-        <h2>Travaillez à plusieur  pour un meilleur résultat</h2>
+        <h2>Travaillez à plusieurs pour un meilleur résultat</h2>
+        <a class="btn btn-primary" style="padding:20px;color:white" href="{{path('fos_user_security_login')}}"><h3 style="padding:20px;color:white">CONNEXION</h3></a>
         <div class="spacer"></div>
         <i class="fa fa-angle-down"></i>
       </div>
@@ -27,20 +28,20 @@
       <p>Découvrez les dernieres propositions de projets.</p>
     </div><!-- col-lg-8-->
     <div class="col-lg-4 goright">
-      <p><a href="#"><i class="fa fa-angle-right"></i> Voir tous les projets</a></p>
+      <p><a href="{{path('projets')}}"><i class="fa fa-angle-right"></i> Voir tous les projets</a></p>
     </div>
-  </div><!-- row -->
-
-  <div class="row mt">
+    </div>
   {% for projet in projets %}
-      <div class="col-lg-4 projet">
-        <h3><a href="{{url ('showProjet')}}">{{projet.nomProjet}}</a></h3>
+      <div class="col-sm-4 ">
+        <h3><a href="{{ path('showProjet', {'id': projet.id}) }}">{{projet.nomProjet}}</a></h3>
+        <img style="width: 350px;"src="{{asset("img/about-bg.jpg")}}" >
         <p>{{projet.description}}</p>
-        <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}} | statut : {{projet.statut}}
+        <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}  <br>statut : {{projet.statut}}
         <br>Auteur : <a href="#">Naomie</a></p>
         <p><a href="#"><i class="fa fa-link"></i> En savoir plus</a></p>
       </div>
   {% endfor %}
+
   </div>
 </div><!-- container -->
 

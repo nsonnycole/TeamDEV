@@ -119,40 +119,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // signup
-        if ($pathinfo === '/signup') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::signupAction',  '_route' => 'signup',);
+        // profile
+        if ($pathinfo === '/profile') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::profileAction',  '_route' => 'profile',);
         }
 
-        if (0 === strpos($pathinfo, '/log')) {
-            // login
-            if ($pathinfo === '/login') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::loginAction',  '_route' => 'login',);
-            }
-
-            // logout
-            if ($pathinfo === '/logout') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout',);
-            }
-
+        // logout
+        if ($pathinfo === '/logout') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout',);
         }
 
-        if (0 === strpos($pathinfo, '/pro')) {
-            // profil
-            if ($pathinfo === '/profil') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::profilAction',  '_route' => 'profil',);
-            }
-
+        if (0 === strpos($pathinfo, '/projets')) {
             // projets
             if ($pathinfo === '/projets') {
                 return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::projetsAction',  '_route' => 'projets',);
             }
 
-        }
+            // showProjet
+            if (0 === strpos($pathinfo, '/projets/showProjet') && preg_match('#^/projets/showProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'showProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::showProjetAction',));
+            }
 
-        // showProjet
-        if ($pathinfo === '/showProjet') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::showProjetAction',  '_route' => 'showProjet',);
+            // newProjet
+            if ($pathinfo === '/projets/newProjet') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::newProjetAction',  '_route' => 'newProjet',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

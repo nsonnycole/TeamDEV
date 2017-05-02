@@ -211,7 +211,8 @@ hr {
 }
 #menuToggle {
     position: absolute;
-    top: 20px;
+    /*top: 20px;*/
+        top: 8px;
     left: 0;
     z-index: 11;
     display: block;
@@ -389,6 +390,7 @@ footer{
     margin-top: 25px;
     padding-top: 35px;
     padding-bottom: 35px;
+
 }
 footer h3 {
     color: #fff;
@@ -402,7 +404,7 @@ footer i {
     margin-top: 22px;
 }
 #lg {
-    background: #ebebeb;
+    /*background: #ebebeb;*/
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
