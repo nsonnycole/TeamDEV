@@ -33,11 +33,11 @@
     </div>
   {% for projet in projets %}
       <div class="col-sm-4 ">
-        <h3><a href="{{ path('showProjet', {'id': projet.id}) }}">{{projet.nomProjet}}</a></h3>
+        <h4><a href="{{ path('showProjet', {'id': projet.id}) }}">{{projet.nomProjet}}</a></h4>
         <img style="width: 350px;"src="{{asset("img/about-bg.jpg")}}" >
-        <p>{{projet.description}}</p>
+        <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
         <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}  <br>statut : {{projet.statut}}
-        <br>Auteur : <a href="#">Naomie</a></p>
+        <br>Auteur : <a href="#">{{projet.idUtilisateur.username}}</a></p>
         <p><a href="#"><i class="fa fa-link"></i> En savoir plus</a></p>
       </div>
   {% endfor %}

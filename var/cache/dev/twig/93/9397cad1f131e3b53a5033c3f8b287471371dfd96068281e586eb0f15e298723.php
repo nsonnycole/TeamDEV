@@ -15,11 +15,11 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_03882ad4777be2359f974155d8a7451b25a69c7fbe4adf056e1765ea21e13633 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_03882ad4777be2359f974155d8a7451b25a69c7fbe4adf056e1765ea21e13633->enter($__internal_03882ad4777be2359f974155d8a7451b25a69c7fbe4adf056e1765ea21e13633_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
+        $__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466->enter($__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
 
-        $__internal_5efc6cba6f4cb9d15aea0d563967c73ee38e260a8f924d15ed6ccb8c632b0cc0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5efc6cba6f4cb9d15aea0d563967c73ee38e260a8f924d15ed6ccb8c632b0cc0->enter($__internal_5efc6cba6f4cb9d15aea0d563967c73ee38e260a8f924d15ed6ccb8c632b0cc0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
+        $__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5->enter($__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
 
         // line 2
         echo "<!-- MAIN IMAGE SECTION -->
@@ -34,6 +34,17 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
 </div><!-- /portrwrap -->
 
 <!-- WELCOME SECTION -->
+<ol class=\"breadcrumb\">
+  <li class=\"breadcrumb-item\"><a href=\"";
+        // line 15
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
+        echo "\">Accueil</a></li>
+  <li class=\"breadcrumb-item\"><a href=\"";
+        // line 16
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_profile_show");
+        echo "\">Mon profil</a></li>
+  <li class=\"breadcrumb-item active\">Modification du profil</li>
+</ol>
 <div class=\"container\">
       <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
           <div class=\"panel panel-info\" >
@@ -42,21 +53,21 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
                       <div style=\"display:none\" id=\"login-alert\" class=\"alert alert-danger col-sm-12\"></div>
 
                       ";
-        // line 21
+        // line 26
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("action" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_profile_edit"), "attr" => array("class" => "fos_user_profile_edit")));
         echo "
                           ";
-        // line 22
+        // line 27
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
                           <div>
                               <input type=\"submit\" class=\"btn btn-success pull-right\"value=\"";
-        // line 24
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("profile.edit.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
                           </div>
                       ";
-        // line 26
+        // line 31
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
                 </div>
@@ -68,10 +79,10 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
   </div>
 ";
         
-        $__internal_03882ad4777be2359f974155d8a7451b25a69c7fbe4adf056e1765ea21e13633->leave($__internal_03882ad4777be2359f974155d8a7451b25a69c7fbe4adf056e1765ea21e13633_prof);
+        $__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466->leave($__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466_prof);
 
         
-        $__internal_5efc6cba6f4cb9d15aea0d563967c73ee38e260a8f924d15ed6ccb8c632b0cc0->leave($__internal_5efc6cba6f4cb9d15aea0d563967c73ee38e260a8f924d15ed6ccb8c632b0cc0_prof);
+        $__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5->leave($__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5_prof);
 
     }
 
@@ -87,7 +98,7 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
 
     public function getDebugInfo()
     {
-        return array (  60 => 26,  55 => 24,  50 => 22,  46 => 21,  25 => 2,);
+        return array (  71 => 31,  66 => 29,  61 => 27,  57 => 26,  44 => 16,  40 => 15,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -113,6 +124,11 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
 </div><!-- /portrwrap -->
 
 <!-- WELCOME SECTION -->
+<ol class=\"breadcrumb\">
+  <li class=\"breadcrumb-item\"><a href=\"{{path('homepage')}}\">Accueil</a></li>
+  <li class=\"breadcrumb-item\"><a href=\"{{path('fos_user_profile_show')}}\">Mon profil</a></li>
+  <li class=\"breadcrumb-item active\">Modification du profil</li>
+</ol>
 <div class=\"container\">
       <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
           <div class=\"panel panel-info\" >

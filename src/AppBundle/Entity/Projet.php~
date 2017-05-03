@@ -96,6 +96,11 @@ class Projet
   */
   public $file;
 
+  /**
+  * @ORM\Column(type="string", length=255, nullable=true)
+  */
+  public $url;
+
   public function getWebPath()
   {
     return null === $this->pictureName ? null : $this->getUploadDir().'/'.$this->pictureName;
@@ -431,4 +436,28 @@ class Projet
   {
     return $this->contenu;
   }
+
+    /**
+     * Set pictureName
+     *
+     * @param string $pictureName
+     *
+     * @return Projet
+     */
+    public function setPictureName($pictureName)
+    {
+        $this->pictureName = $pictureName;
+
+        return $this;
+    }
+
+    /**
+     * Get pictureName
+     *
+     * @return string
+     */
+    public function getPictureName()
+    {
+        return $this->pictureName;
+    }
 }

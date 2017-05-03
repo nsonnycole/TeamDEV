@@ -20,7 +20,7 @@
     <link href="{{ asset('css/style.css')}}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -58,15 +58,17 @@
         {% form_theme form 'bootstrap_3_layout.html.twig' %}
         {% endblock %}
         </section>
-        <footer><p>TeamDEV Copyright 2017</p></footer>
+        <footer><p  class="container">TeamDEV Copyright 2017</p></footer>
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        <!-- <script src="{{asset('js/bootstrap.min.js')}}"></script> -->
         <script src="{{asset('js/main.js')}}"></script>
-        <script src="{{asset('js/masonry.pkgd.min.js')}}"></script>
+        <!-- <script src="{{asset('js/masonry.pkgd.min.js')}}"></script>
         <script src="{{asset('js/imagesloaded.js')}}"></script>
         <script src="{{asset('js/classie.js')}}"></script>
-        <script src="{{asset('js/AnimOnScroll.js')}}"></script>
+        <script src="{{asset('js/AnimOnScroll.js')}}"></script> -->
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <!-- <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/French.json"></script> -->
         <!-- <script>
         new AnimOnScroll( document.getElementById( 'grid' ), {
           minDuration : 0.4,
@@ -74,6 +76,21 @@
           viewportFactor : 0.2
         } );
       </script> -->
+
+      <!-- <script type="text/javascript">
+      $(document).ready(function() {
+       $('.progress .progress-bar').css("width",
+                 function() {
+                     return $(this).attr("aria-valuenow") + "%";
+                 }
+         )
+     });
+   </script> -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#myTable').DataTable();
+      });
+    </script>
         {% endblock %}
     </body>
 </html>

@@ -28,3 +28,7 @@ select {
 section {
   min-height: 900px;
 }
+
+td{
+      background-color: #f2f2f2;
+}

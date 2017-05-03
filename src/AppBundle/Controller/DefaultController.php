@@ -22,13 +22,7 @@ class DefaultController extends Controller
       );
     }
 
-    /**
-     * @Route("/profile", name="profile")
-     */
-    public function profileAction(Request $request)
-    {
 
-    }
 
 
     /**

@@ -40,5 +40,24 @@ class ProjetRepository extends EntityRepository
 		return $query->getResult();
 	}
 
+  /**
+  *
+  * Retourne la liste des projets de l'utilisateur en session
+  *
+  **/
+  public function getProjetByuser($usr)
+  {
+    $query = $this->createQueryBuilder('p')
+          ->where('p.idUtilisateur = :usr')
+          ->orderBy('p.id', 'DESC')
+          ->setParameter('usr', $usr)
+          ->getQuery();
+    return $query->getResult();
+  }
+
+
+
+
+
 
 }

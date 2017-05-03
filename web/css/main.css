@@ -13,9 +13,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #333;
 }
 p {
-    line-height: 28px;
-    margin-bottom: 25px;
-    font-size: 18px;
+  line-height: 34px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  text-align: justify;
 }
 .centered {
     text-align: center;
@@ -29,10 +30,10 @@ p {
 }
 
 .projet {
-   width: 500px;
-   height: 300px;
+   /*width: 500px;
+   height: 300px;*/
    margin: 8px;
-   display: inline-block;
+   /*display: inline-block;*/
 
 }
 

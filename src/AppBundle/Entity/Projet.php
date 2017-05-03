@@ -85,7 +85,10 @@ class Projet
   * @ORM\JoinColumn(name = "idTypeProjet", onDelete = "cascade")
   */
   private  $idTypeProjet;
-
+  /**
+  * @ORM\Column(type="string", length=255, nullable=true)
+  */
+  public $url;
   /**
   * @ORM\Column(type="string", length=255, nullable=true)
   */
@@ -95,6 +98,8 @@ class Projet
   * @Assert\File(maxSize="500k")
   */
   public $file;
+
+
 
   public function getWebPath()
   {
@@ -454,5 +459,29 @@ class Projet
     public function getPictureName()
     {
         return $this->pictureName;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Projet
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

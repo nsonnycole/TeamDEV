@@ -119,14 +119,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // profile
-        if ($pathinfo === '/profile') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::profileAction',  '_route' => 'profile',);
-        }
-
         // logout
         if ($pathinfo === '/logout') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout',);
+        }
+
+        // newInsc
+        if (0 === strpos($pathinfo, '/newInsc') && preg_match('#^/newInsc/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'newInsc')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::newInscAction',));
         }
 
         if (0 === strpos($pathinfo, '/projets')) {
@@ -145,6 +145,26 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::newProjetAction',  '_route' => 'newProjet',);
             }
 
+            // editProjet
+            if (0 === strpos($pathinfo, '/projets/editProjet') && preg_match('#^/projets/editProjet(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'editProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::editProjetAction',));
+            }
+
+            // deleteProjet
+            if (0 === strpos($pathinfo, '/projets/deleteProjet') && preg_match('#^/projets/deleteProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deleteProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::deleteProjetAction',));
+            }
+
+        }
+
+        // mesProjets
+        if ($pathinfo === '/mesProjets') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesProjetAction',  '_route' => 'mesProjets',);
+        }
+
+        // profilDe
+        if (0 === strpos($pathinfo, '/profilDe') && preg_match('#^/profilDe/(?P<username>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'profilDe')), array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::profilDeAction',));
         }
 
         if (0 === strpos($pathinfo, '/log')) {

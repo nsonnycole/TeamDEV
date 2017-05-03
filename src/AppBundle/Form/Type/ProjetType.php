@@ -5,8 +5,13 @@ namespace AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 /**
 * Type de formulaire pour les projets.
 */
@@ -19,20 +24,27 @@ class ProjetType extends AbstractType
   {
     $builder
     ->add('nomProjet', TextType::class, array(
-                        'label' => 'Nom du document',
+                        'label' => 'Nom du projet',
     ))
     ->add('description', TextareaType::class, array(
                       'label' => 'Description',
     ))
+    ->add('contenu', TextareaType::class, array(
+                      'label' => 'Contenu',
+    ))
       ->add('dateDebut', DateType::class, array(
-                            'label' => 'Début',
+                            'label' => 'Début du projet',
+                            'format' => 'dd/MM/yyyy',
+                             'html5' => false,
                             'attr' => array(
                                 'class' => 'datepicker'
                             )
 
     ))
       ->add('dateFin', DateType::class, array(
-                           'label' => 'Fin',
+                           'label' => 'Fin du projet',
+                           'format' => 'dd/MM/yyyy',
+                           'html5' => false,
                            'attr' => array(
                                'class' => 'datepicker'
                            )
@@ -42,13 +54,22 @@ class ProjetType extends AbstractType
     ))
 
       ->add('idTypeProjet', EntityType::class, array(
-                            'class' => 'AppBundle:TypeProjet'
-                            'propreity' => 'nom'
+                            'class' => 'AppBundle:TypeProjet',
+                            'choice_label' => 'nom',
                             'label' => 'Type de projet',
-                            'empty_value'=> 'Selectionnez le type du projet',
+                            'empty_data'=> 'Selectionnez le type du projet',
       ))
-
-      ->add('file');
+      ->add('url', TextType::class, array(
+                              'label' => 'URL du projet',
+      ))
+      ->add('file', FileType::class, array(
+                              'label' => 'Fichier à joindre',
+      ))
+      ->add('save', SubmitType::class, array(
+                              'label' => 'Enregistrer',
+                              'attr' => array(
+                              'class' => 'btn btn-success pull-left'
+        )));
       }
 
     /**

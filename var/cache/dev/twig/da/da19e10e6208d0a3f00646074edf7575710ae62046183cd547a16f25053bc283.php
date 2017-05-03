@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Profiler:profiler.css.twig */
+/* @WebProfiler/Profiler/profiler.css.twig */
 class __TwigTemplate_2a3b1f6364c95a7a89a73ede3b39712123c7322743d77eff15be0bcdb1904f51 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,11 +15,11 @@ class __TwigTemplate_2a3b1f6364c95a7a89a73ede3b39712123c7322743d77eff15be0bcdb19
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_94bfbd18d6dd13b1cc2015894ea540324531f7ebf57fd71aefd8e30c99641377 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_94bfbd18d6dd13b1cc2015894ea540324531f7ebf57fd71aefd8e30c99641377->enter($__internal_94bfbd18d6dd13b1cc2015894ea540324531f7ebf57fd71aefd8e30c99641377_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:profiler.css.twig"));
+        $__internal_854c87a9f67dbb22b70412512b89d1dd66c85286e63d943966d6b7d539f07159 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_854c87a9f67dbb22b70412512b89d1dd66c85286e63d943966d6b7d539f07159->enter($__internal_854c87a9f67dbb22b70412512b89d1dd66c85286e63d943966d6b7d539f07159_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/profiler.css.twig"));
 
-        $__internal_a3f0907ea2aabfe0a60447e37769e1e84528a4b721ccacf869f151ee141a905e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a3f0907ea2aabfe0a60447e37769e1e84528a4b721ccacf869f151ee141a905e->enter($__internal_a3f0907ea2aabfe0a60447e37769e1e84528a4b721ccacf869f151ee141a905e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:profiler.css.twig"));
+        $__internal_c6f9869f2daf78b5dbec4c0c32f3da56bd050f3aad2642d988b8d3df93e77de7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c6f9869f2daf78b5dbec4c0c32f3da56bd050f3aad2642d988b8d3df93e77de7->enter($__internal_c6f9869f2daf78b5dbec4c0c32f3da56bd050f3aad2642d988b8d3df93e77de7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/profiler.css.twig"));
 
         // line 3
         $context["mixins"] = array("break_long_words" => "-ms-word-break: break-all; word-break: break-all; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;", "monospace_font" => "font-family: monospace; font-size: 13px; font-size-adjust: 0.5;", "sans_serif_font" => "font-family: Helvetica, Arial, sans-serif;", "subtle_border_and_shadow" => "background: #FFF; border: 1px solid #E0E0E0; box-shadow: 0px 0px 1px rgba(128, 128, 128, .2);");
@@ -1083,16 +1083,16 @@ tr.status-warning td {
 }
 ";
         
-        $__internal_94bfbd18d6dd13b1cc2015894ea540324531f7ebf57fd71aefd8e30c99641377->leave($__internal_94bfbd18d6dd13b1cc2015894ea540324531f7ebf57fd71aefd8e30c99641377_prof);
+        $__internal_854c87a9f67dbb22b70412512b89d1dd66c85286e63d943966d6b7d539f07159->leave($__internal_854c87a9f67dbb22b70412512b89d1dd66c85286e63d943966d6b7d539f07159_prof);
 
         
-        $__internal_a3f0907ea2aabfe0a60447e37769e1e84528a4b721ccacf869f151ee141a905e->leave($__internal_a3f0907ea2aabfe0a60447e37769e1e84528a4b721ccacf869f151ee141a905e_prof);
+        $__internal_c6f9869f2daf78b5dbec4c0c32f3da56bd050f3aad2642d988b8d3df93e77de7->leave($__internal_c6f9869f2daf78b5dbec4c0c32f3da56bd050f3aad2642d988b8d3df93e77de7_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Profiler:profiler.css.twig";
+        return "@WebProfiler/Profiler/profiler.css.twig";
     }
 
     public function isTraitable()
@@ -2103,6 +2103,6 @@ table.logs .metadata {
         margin-left: 2px;
     }
 }
-", "WebProfilerBundle:Profiler:profiler.css.twig", "/Users/sonny-cole/Documents/Projets/Projet_2/TeamDEV/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/profiler.css.twig");
+", "@WebProfiler/Profiler/profiler.css.twig", "/Users/sonny-cole/Documents/Projets/Projet_2/TeamDEV/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/profiler.css.twig");
     }
 }
