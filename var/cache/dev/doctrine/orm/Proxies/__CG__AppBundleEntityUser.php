@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
         }
 
-        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
     }
 
     /**
@@ -281,6 +281,28 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAdresse', []);
 
         return parent::getAdresse();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTrophee($trophee)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTrophee', [$trophee]);
+
+        return parent::setTrophee($trophee);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTrophee()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTrophee', []);
+
+        return parent::getTrophee();
     }
 
     /**

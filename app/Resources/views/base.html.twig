@@ -10,6 +10,8 @@
 
     <title>TeamDEV</title>
 
+    <link href="{{ asset('chosen/chosen.css')}}" rel="stylesheet">
+    <link href="{{ asset('chosen/chosen.min.css')}}" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
 
@@ -67,7 +69,9 @@
         <script src="{{asset('js/imagesloaded.js')}}"></script>
         <script src="{{asset('js/classie.js')}}"></script>
         <script src="{{asset('js/AnimOnScroll.js')}}"></script> -->
+        <script src="{{asset('chosen/chosen.jquery.min.js')}}"></script>
         <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
         <!-- <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/French.json"></script> -->
         <!-- <script>
         new AnimOnScroll( document.getElementById( 'grid' ), {
@@ -77,7 +81,7 @@
         } );
       </script> -->
 
-      <!-- <script type="text/javascript">
+      <script type="text/javascript">
       $(document).ready(function() {
        $('.progress .progress-bar').css("width",
                  function() {
@@ -85,12 +89,21 @@
                  }
          )
      });
-   </script> -->
+   </script>
     <script type="text/javascript">
       $(document).ready(function(){
           $('#myTable').DataTable();
       });
     </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $(".chosen-select").chosen();
+           $(".chosen-select").chosen({no_results_text: "Oops, Aucun résultat trouvée!"});
+           $(".chosen-select").chosen({width: "100%"});
+      });
+    </script>
+
         {% endblock %}
     </body>
 </html>

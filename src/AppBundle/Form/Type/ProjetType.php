@@ -52,12 +52,22 @@ class ProjetType extends AbstractType
       ->add('nbPlaces', NumberType::class, array(
                             'label' => 'Place disponible',
     ))
+    ->add('statut', EntityType::class, array(
+                            'class' => 'AppBundle:Statut',
+                            'choice_label' => 'nom',
+                            'label' => 'Statut du projet',
+                            'empty_data'=> 'Selectionnez le statut du projet',
+    ))
 
       ->add('idTypeProjet', EntityType::class, array(
                             'class' => 'AppBundle:TypeProjet',
                             'choice_label' => 'nom',
                             'label' => 'Type de projet',
                             'empty_data'=> 'Selectionnez le type du projet',
+                            'multiple' => 'true',
+                            'attr' => array(
+                                'class' => 'chosen-select'
+                            ),
       ))
       ->add('url', TextType::class, array(
                               'label' => 'URL du projet',

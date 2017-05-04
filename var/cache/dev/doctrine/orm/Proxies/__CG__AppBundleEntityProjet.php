@@ -478,28 +478,6 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setStatut($statut)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatut', [$statut]);
-
-        return parent::setStatut($statut);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getStatut()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatut', []);
-
-        return parent::getStatut();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setContenu($contenu)
     {
 
@@ -561,6 +539,28 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrl', []);
 
         return parent::getUrl();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setStatut(\AppBundle\Entity\Statut $statut = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatut', [$statut]);
+
+        return parent::setStatut($statut);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatut()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatut', []);
+
+        return parent::getStatut();
     }
 
 }

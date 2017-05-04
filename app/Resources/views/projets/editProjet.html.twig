@@ -21,6 +21,12 @@
   <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
 </ol>
 <div class="container">
+{% for flashMessage in app.session.flashbag.get('error') %}
+
+    {{ flashMessage }}
+
+{% endfor %}
+
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       {{ form_start(form) }}
       {{ form_widget(form) }}

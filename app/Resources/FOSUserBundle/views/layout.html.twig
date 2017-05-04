@@ -12,20 +12,25 @@
             {% endif %}
         </div>
 
-        {% if app.request.hasPreviousSession %}
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <div class="flash-{{ type }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-        {% endif %}
+
 
 
         <!-- WELCOME SECTION -->
         <div>
             {% block fos_user_content %}
+            {% for type, messages in app.session.flashbag.all() %}
+               {% for message in messages %}
+               {% if type == 'error' %}
+                       {{ message }}
+               {% endif %}
+               {# Or even with css class rendering:
+                 <div class="flash-{{type}}">{{message}}</div>
+                #}
+               {% endfor %}
+             {% endfor %}
             {% endblock fos_user_content %}
+
         </div>
+
+
 {% endblock  %}

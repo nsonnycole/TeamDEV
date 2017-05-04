@@ -69,7 +69,7 @@
         </a>
         <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
         <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}
-        <br><b> statut : {{projet.statut}}</b>
+        <br><b> statut : {{projet.statut.nom}}</b>
         <br>Auteur : <a href="#">{{projet.idUtilisateur.username}}</a></p>
         <p><a href="#"><i class="fa fa-link"></i> En savoir plus</a></p>
       </div>

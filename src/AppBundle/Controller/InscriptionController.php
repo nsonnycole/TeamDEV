@@ -29,15 +29,25 @@ class InscriptionController extends Controller
        $form = $this->createForm(InscriptionType::class, $inscription);
        $form->handleRequest($request);
        $usr = $this->get('security.token_storage')->getToken()->getUser();
+
+       $dejaInscrit = $em->getRepository('AppBundle:Inscription')->getUserInscrit($usr->getId());
+
+
        if($form->isSubmitted()){
-         $inscription->setIdUtilisateur($usr);
-         $inscription->setStatut("En attente");
+
+         if($dejaInscrit){
+           $session->getFlashBag()->add('warning', 'Vous êtes déja insscrit à ce projet!');
+           return $this->redirect('/projets');
+         }else{
+           $inscription->setIdUtilisateur($usr);
+         }
          $inscription->setIdProjet($projet);
+         $projet->setNbParticipants($projet->getNbParticipants()+1);
          $em->persist($inscription);
          $em->flush();
 
          $session->getFlashBag()->add('success', 'Votre demande à bien été pris en compte !');
-         return $this->redirect($_SERVER['HTTP_REFERER']);
+         return $this->redirect('/projets');
        }
 
        // replace this example code with whatever you need
@@ -46,6 +56,35 @@ class InscriptionController extends Controller
                          'projet' => $projet
 
        ));
+
+  }
+
+  /**
+   * @Route("/projets/desincProjet/{id}", name="desincProjet")
+   */
+  public function desincProjetAction(Request $request, $id)
+  {
+      $session = new Session();
+      $em = $this->getDoctrine()->getManager();
+      $usr = $this->get('security.token_storage')->getToken()->getUser();
+      $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
+      $dejaInscrit = $em->getRepository('AppBundle:Inscription')->getUserInscrit($usr->getId());
+      $projet = $inscription->getIdProjet();
+      if($dejaInscrit){
+        $em->remove($inscription);
+        $projet->setNbParticipants($projet->getNbParticipants()-1);
+        $em->flush();
+
+        $session->getFlashBag()->add('success', 'Vous ne faites plus partie de ce projet');
+        return $this->redirect('/projets');
+
+      }else{
+        $session->getFlashBag()->add('warning', 'Vous êtes pas inscrit à ce projet!');
+        return $this->redirect('/projets');
+      }
+
+
+
 
   }
 

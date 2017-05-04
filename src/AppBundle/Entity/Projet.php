@@ -63,10 +63,12 @@ class Projet
   * @ORM\Column(name = "nbParticipants", type = "integer", nullable = true)
   */
   private  $nbParticipants;
+
   /**
-  * @var String statut du projet (fermé ouvert)
+  * @var statut du projet.
   *
-  * @ORM\Column(name = "statut", type = "string", nullable = true)
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
+  * @ORM\JoinColumn(name = "statut")
   */
   private  $statut;
 
@@ -95,6 +97,7 @@ class Projet
   public $pictureName;
 
   /**
+  *
   * @Assert\File(maxSize="500k")
   */
   public $file;
@@ -389,29 +392,7 @@ class Projet
     return $this->idTypeProjet;
   }
 
-  /**
-  * Set statut
-  *
-  * @param string $statut
-  *
-  * @return Projet
-  */
-  public function setStatut($statut)
-  {
-    $this->statut = $statut;
 
-    return $this;
-  }
-
-  /**
-  * Get statut
-  *
-  * @return string
-  */
-  public function getStatut()
-  {
-    return $this->statut;
-  }
 
   /**
   * Set contenu
@@ -483,5 +464,29 @@ class Projet
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set statut
+     *
+     * @param \AppBundle\Entity\Statut $statut
+     *
+     * @return Projet
+     */
+    public function setStatut(\AppBundle\Entity\Statut $statut = null)
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return \AppBundle\Entity\Statut
+     */
+    public function getStatut()
+    {
+        return $this->statut;
     }
 }

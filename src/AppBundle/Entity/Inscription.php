@@ -16,9 +16,10 @@ class Inscription
   */
   protected $id;
   /**
-  * @var String statut de l'inscription (Accepté, refusé, en attente)
+  * @var statut du projet.
   *
-  * @ORM\Column(name = "statut", type = "string", nullable = false)
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
+  * @ORM\JoinColumn(name = "statut")
   */
   private  $statut;
   /**
@@ -126,29 +127,6 @@ class Inscription
         return $this->idProjet;
     }
 
-    /**
-     * Set statut
-     *
-     * @param string $statut
-     *
-     * @return Inscription
-     */
-    public function setStatut($statut)
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    /**
-     * Get statut
-     *
-     * @return string
-     */
-    public function getStatut()
-    {
-        return $this->statut;
-    }
 
     /**
      * Set commentaire
@@ -172,5 +150,29 @@ class Inscription
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set statut
+     *
+     * @param \AppBundle\Entity\Statut $statut
+     *
+     * @return Inscription
+     */
+    public function setStatut(\AppBundle\Entity\Statut $statut = null)
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return \AppBundle\Entity\Statut
+     */
+    public function getStatut()
+    {
+        return $this->statut;
     }
 }

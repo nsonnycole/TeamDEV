@@ -21,7 +21,9 @@
 </ol>
 
 <div class="container">
-<div class="row mt col-sm-10 col-sm-offset-1">
+<div class="row col-sm-10 col-sm-offset-1">
+<h3>Listes de mes projets</h3>
+<hr>
 <table class="table" id="myTable">
   <thead>
     <td>Nom du projet</td>
@@ -34,7 +36,7 @@
   <tr>
     <td><a href="{{ path('showProjet', {'id': projet.id}) }}">{{projet.nomProjet}}</a></td>
     <td width="30%">{{projet.description | striptags | slice(0, 40) }} [...] </td>
-    <td>{{projet.statut }}</td>
+    <td>{{projet.statut.nom }}</td>
     <td>
       <a href="{{ path('editProjet', {'id': projet.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="{{ path('deleteProjet', {'id': projet.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>

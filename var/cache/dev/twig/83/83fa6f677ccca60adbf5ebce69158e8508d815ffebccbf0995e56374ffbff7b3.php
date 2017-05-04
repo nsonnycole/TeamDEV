@@ -21,29 +21,29 @@ class __TwigTemplate_2131c216df2e1fa44d93a4022976a929227a81f29136a582063930fc2c1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_712de98c2ce24ca6287e8d7052f3a2acf6f1979755f6769c97c1606a3ee31595 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_712de98c2ce24ca6287e8d7052f3a2acf6f1979755f6769c97c1606a3ee31595->enter($__internal_712de98c2ce24ca6287e8d7052f3a2acf6f1979755f6769c97c1606a3ee31595_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_03f03b725ed84bcb6ead480094604f3bec6227bab59b5dd612a801c2094b8bb7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_03f03b725ed84bcb6ead480094604f3bec6227bab59b5dd612a801c2094b8bb7->enter($__internal_03f03b725ed84bcb6ead480094604f3bec6227bab59b5dd612a801c2094b8bb7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
-        $__internal_91d0cd856d64c243ae39a351c5d6dcb2a461bc56675c633d69ebbecacde32915 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_91d0cd856d64c243ae39a351c5d6dcb2a461bc56675c633d69ebbecacde32915->enter($__internal_91d0cd856d64c243ae39a351c5d6dcb2a461bc56675c633d69ebbecacde32915_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_588c3706371eaf90061c6ecf2405c8e648545da6e99ad21f77f1b01cfb7583c2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_588c3706371eaf90061c6ecf2405c8e648545da6e99ad21f77f1b01cfb7583c2->enter($__internal_588c3706371eaf90061c6ecf2405c8e648545da6e99ad21f77f1b01cfb7583c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_712de98c2ce24ca6287e8d7052f3a2acf6f1979755f6769c97c1606a3ee31595->leave($__internal_712de98c2ce24ca6287e8d7052f3a2acf6f1979755f6769c97c1606a3ee31595_prof);
+        $__internal_03f03b725ed84bcb6ead480094604f3bec6227bab59b5dd612a801c2094b8bb7->leave($__internal_03f03b725ed84bcb6ead480094604f3bec6227bab59b5dd612a801c2094b8bb7_prof);
 
         
-        $__internal_91d0cd856d64c243ae39a351c5d6dcb2a461bc56675c633d69ebbecacde32915->leave($__internal_91d0cd856d64c243ae39a351c5d6dcb2a461bc56675c633d69ebbecacde32915_prof);
+        $__internal_588c3706371eaf90061c6ecf2405c8e648545da6e99ad21f77f1b01cfb7583c2->leave($__internal_588c3706371eaf90061c6ecf2405c8e648545da6e99ad21f77f1b01cfb7583c2_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_0be002a7a55ccd7a0b95248fee82790443beaf543f33afbf784beaf631e95558 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0be002a7a55ccd7a0b95248fee82790443beaf543f33afbf784beaf631e95558->enter($__internal_0be002a7a55ccd7a0b95248fee82790443beaf543f33afbf784beaf631e95558_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a932f25fd2f16ab62088beb5e36ae88fe515c1befc4c86290e19ed32957d97dd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a932f25fd2f16ab62088beb5e36ae88fe515c1befc4c86290e19ed32957d97dd->enter($__internal_a932f25fd2f16ab62088beb5e36ae88fe515c1befc4c86290e19ed32957d97dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_8f753567a7f1e4d38b96e4d3ee69b94d9cc0ca998aadb7b120b296fdba64be7f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8f753567a7f1e4d38b96e4d3ee69b94d9cc0ca998aadb7b120b296fdba64be7f->enter($__internal_8f753567a7f1e4d38b96e4d3ee69b94d9cc0ca998aadb7b120b296fdba64be7f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_54cd86e9a4719157af93235895c3bc8dd2148e6aafda936f19707dad2510f2a3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_54cd86e9a4719157af93235895c3bc8dd2148e6aafda936f19707dad2510f2a3->enter($__internal_54cd86e9a4719157af93235895c3bc8dd2148e6aafda936f19707dad2510f2a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<!-- MAIN IMAGE SECTION -->
@@ -89,16 +89,16 @@ class __TwigTemplate_2131c216df2e1fa44d93a4022976a929227a81f29136a582063930fc2c1
         foreach ($context['_seq'] as $context["_key"] => $context["projet"]) {
             // line 35
             echo "      <div class=\"col-sm-4 \">
-        <h4><a href=\"";
+        <a href=\"";
             // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showProjet", array("id" => $this->getAttribute($context["projet"], "id", array()))), "html", null, true);
-            echo "\">";
+            echo "\"><h4>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["projet"], "nomProjet", array()), "html", null, true);
-            echo "</a></h4>
+            echo "</h4>
         <img style=\"width: 350px;\"src=\"";
             // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/about-bg.jpg"), "html", null, true);
-            echo "\" >
+            echo "\" ></a>
         <p>";
             // line 38
             echo twig_escape_filter($this->env, twig_slice($this->env, strip_tags($this->getAttribute($context["projet"], "description", array())), 0, 40), "html", null, true);
@@ -109,7 +109,7 @@ class __TwigTemplate_2131c216df2e1fa44d93a4022976a929227a81f29136a582063930fc2c1
             echo "  |  Places : ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["projet"], "nbPlaces", array()), "html", null, true);
             echo "  <br>statut : ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["projet"], "statut", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["projet"], "statut", array()), "nom", array()), "html", null, true);
             echo "
         <br>Auteur : <a href=\"#\">";
             // line 40
@@ -129,10 +129,10 @@ class __TwigTemplate_2131c216df2e1fa44d93a4022976a929227a81f29136a582063930fc2c1
 
 ";
         
-        $__internal_8f753567a7f1e4d38b96e4d3ee69b94d9cc0ca998aadb7b120b296fdba64be7f->leave($__internal_8f753567a7f1e4d38b96e4d3ee69b94d9cc0ca998aadb7b120b296fdba64be7f_prof);
+        $__internal_54cd86e9a4719157af93235895c3bc8dd2148e6aafda936f19707dad2510f2a3->leave($__internal_54cd86e9a4719157af93235895c3bc8dd2148e6aafda936f19707dad2510f2a3_prof);
 
         
-        $__internal_0be002a7a55ccd7a0b95248fee82790443beaf543f33afbf784beaf631e95558->leave($__internal_0be002a7a55ccd7a0b95248fee82790443beaf543f33afbf784beaf631e95558_prof);
+        $__internal_a932f25fd2f16ab62088beb5e36ae88fe515c1befc4c86290e19ed32957d97dd->leave($__internal_a932f25fd2f16ab62088beb5e36ae88fe515c1befc4c86290e19ed32957d97dd_prof);
 
     }
 
@@ -196,10 +196,10 @@ class __TwigTemplate_2131c216df2e1fa44d93a4022976a929227a81f29136a582063930fc2c1
     </div>
   {% for projet in projets %}
       <div class=\"col-sm-4 \">
-        <h4><a href=\"{{ path('showProjet', {'id': projet.id}) }}\">{{projet.nomProjet}}</a></h4>
-        <img style=\"width: 350px;\"src=\"{{asset(\"img/about-bg.jpg\")}}\" >
+        <a href=\"{{ path('showProjet', {'id': projet.id}) }}\"><h4>{{projet.nomProjet}}</h4>
+        <img style=\"width: 350px;\"src=\"{{asset(\"img/about-bg.jpg\")}}\" ></a>
         <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
-        <p class=\"infos\">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}  <br>statut : {{projet.statut}}
+        <p class=\"infos\">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}  <br>statut : {{projet.statut.nom}}
         <br>Auteur : <a href=\"#\">{{projet.idUtilisateur.username}}</a></p>
         <p><a href=\"#\"><i class=\"fa fa-link\"></i> En savoir plus</a></p>
       </div>

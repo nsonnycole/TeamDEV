@@ -36,9 +36,12 @@ class UtilisateurController extends Controller
 
     $em = $this->getDoctrine()->getManager();
     $usr = $em->getRepository('AppBundle:User')->getByUsername($username);
+    $userID = $em->getRepository('AppBundle:User')->getById($usr->getId());
+    $competences = $em->getRepository('AppBundle:Competence')->getCompetenceUser($userID);
      // replace this example code with whatever you need
      return $this->render('utilisateur/profilDe.html.twig', array(
-       'user' => $usr
+       'user' => $usr,
+       'competences' => $competences
      ));
   }
 }

@@ -110,6 +110,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\AdministrationController::indexAdminAction',  '_route' => 'indexAdmin',);
         }
 
+        // newCompetence
+        if ($pathinfo === '/newCompetence') {
+            return array (  '_controller' => 'AppBundle\\Controller\\CompetenceController::newCompetenceAction',  '_route' => 'newCompetence',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -130,6 +135,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         if (0 === strpos($pathinfo, '/projets')) {
+            // desincProjet
+            if (0 === strpos($pathinfo, '/projets/desincProjet') && preg_match('#^/projets/desincProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'desincProjet')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::desincProjetAction',));
+            }
+
             // projets
             if ($pathinfo === '/projets') {
                 return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::projetsAction',  '_route' => 'projets',);

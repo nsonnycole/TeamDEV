@@ -54,6 +54,12 @@ class User extends BaseUser
      */
     protected $dateNaiss;
 
+    /**
+     *
+     * @ORM\Column(type="integer")
+     *
+     */
+    protected $trophee;
 
 
     public function __construct()
@@ -181,5 +187,31 @@ class User extends BaseUser
     public function getAdresse()
     {
         return $this->adresse;
+    }
+
+
+
+    /**
+     * Set trophee
+     *
+     * @param integer $trophee
+     *
+     * @return User
+     */
+    public function setTrophee($trophee)
+    {
+        $this->trophee = $trophee;
+
+        return $this;
+    }
+
+    /**
+     * Get trophee
+     *
+     * @return integer
+     */
+    public function getTrophee()
+    {
+        return $this->trophee;
     }
 }

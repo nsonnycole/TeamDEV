@@ -15,11 +15,11 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5df84623b8512518079d941176c889362b17ca60654177c69aa3d78a7363e9b4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5df84623b8512518079d941176c889362b17ca60654177c69aa3d78a7363e9b4->enter($__internal_5df84623b8512518079d941176c889362b17ca60654177c69aa3d78a7363e9b4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
+        $__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4->enter($__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
 
-        $__internal_6e0212766b831578af9ee1143dccc2735a1c1de8749da2b34d47bd2df7d0605b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6e0212766b831578af9ee1143dccc2735a1c1de8749da2b34d47bd2df7d0605b->enter($__internal_6e0212766b831578af9ee1143dccc2735a1c1de8749da2b34d47bd2df7d0605b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
+        $__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2->enter($__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
 
         // line 2
         echo "<!-- MAIN IMAGE SECTION -->
@@ -53,8 +53,9 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("mesProjets");
         echo "\">Mes projets</a>
       <a class=\"btn btn-primary\" href=\"#mesParticipations\">Mes participations</a>
+      <a href=\"\" class=\"btn btn-primary\">Mes compétences</a>
       <a href=\"";
-        // line 24
+        // line 25
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("newProjet");
         echo "\" class=\"btn btn-primary\">Nouveau projet</a>
     </div>
@@ -67,28 +68,28 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
       <hr>
       <div class=\"col-sm-6 col-sm-offset-4\">
       <p> Nom : ";
-        // line 34
+        // line 35
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nom", array()), "html", null, true);
         echo "</p>
       <p> Prénom : ";
-        // line 35
+        // line 36
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "prenom", array()), "html", null, true);
         echo "</p>
       <p> Date de naissance : ";
-        // line 36
+        // line 37
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "dateNaiss", array()), "d/m/Y"), "html", null, true);
         echo "</p>
       <p> Adresse : ";
-        // line 37
+        // line 38
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "adresse", array()), "html", null, true);
         echo "</p>
 
       <p> Pseudo : ";
-        // line 39
+        // line 40
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array()), "html", null, true);
         echo "</p>
       <p> ";
-        // line 40
+        // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("profile.show.email", array(), "FOSUserBundle"), "html", null, true);
         echo " : ";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array()), "html", null, true);
@@ -97,18 +98,15 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
       </div>
 
-      </div>
-
-
-    </div>
+      
   </div>
 </div>
 ";
         
-        $__internal_5df84623b8512518079d941176c889362b17ca60654177c69aa3d78a7363e9b4->leave($__internal_5df84623b8512518079d941176c889362b17ca60654177c69aa3d78a7363e9b4_prof);
+        $__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4->leave($__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4_prof);
 
         
-        $__internal_6e0212766b831578af9ee1143dccc2735a1c1de8749da2b34d47bd2df7d0605b->leave($__internal_6e0212766b831578af9ee1143dccc2735a1c1de8749da2b34d47bd2df7d0605b_prof);
+        $__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2->leave($__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2_prof);
 
     }
 
@@ -124,7 +122,7 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
     public function getDebugInfo()
     {
-        return array (  92 => 40,  88 => 39,  83 => 37,  79 => 36,  75 => 35,  71 => 34,  58 => 24,  53 => 22,  49 => 21,  39 => 14,  25 => 2,);
+        return array (  93 => 41,  89 => 40,  84 => 38,  80 => 37,  76 => 36,  72 => 35,  59 => 25,  53 => 22,  49 => 21,  39 => 14,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -160,6 +158,7 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
       <a class=\"btn btn-primary \" href=\"{{path('fos_user_profile_edit')}}\" >Modifier mon profil</a>
       <a class=\"btn btn-primary\" href=\"{{path('mesProjets')}}\">Mes projets</a>
       <a class=\"btn btn-primary\" href=\"#mesParticipations\">Mes participations</a>
+      <a href=\"\" class=\"btn btn-primary\">Mes compétences</a>
       <a href=\"{{path('newProjet')}}\" class=\"btn btn-primary\">Nouveau projet</a>
     </div>
 
@@ -181,10 +180,7 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
       </div>
 
-      </div>
-
-
-    </div>
+      
   </div>
 </div>
 ", "@FOSUser/Profile/show_content.html.twig", "/Users/sonny-cole/Documents/Projets/Projet_2/TeamDEV/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig");

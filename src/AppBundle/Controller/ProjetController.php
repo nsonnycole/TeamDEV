@@ -33,12 +33,13 @@ class ProjetController extends Controller
    {
       $em = $this->getDoctrine()->getManager();
       $projet = $em->getRepository('AppBundle:Projet')->getById($id);
-      $participants = $em->getRepository('AppBundle:Inscription')->getparticipantProjet($id);
-    
+      $participants = $em->getRepository('AppBundle:Inscription')->getparticipantProjet($projet);
+      $participe = $em->getRepository('AppBundle:Inscription')->getProjet($id);
        // replace this example code with whatever you need
        return $this->render('projets/afficheProjet.html.twig', array(
          'detailProjet' => $projet,
-         'participants' => $participants
+         'participants' => $participants,
+         'participe' => $participe
        ));
 
   }
@@ -59,13 +60,12 @@ class ProjetController extends Controller
       $usr = $this->get('security.token_storage')->getToken()->getUser();
       if($form->isSubmitted()){
         $projet->setIdUtilisateur($usr);
-        $projet->setStatut("Ouvert");
         $projet->setNbPlaces(0);
         $em->persist($projet);
         $em->flush();
 
-        $session->getFlashBag()->add('success', 'l\'article à bien été ajoutée !');
-        return $this->redirect($_SERVER['HTTP_REFERER']);
+        $session->getFlashBag()->add('success', 'le projet à bien été ajoutée !');
+        return $this->redirect('/projets');
       }
 
       // replace this example code with whatever you need
@@ -93,7 +93,7 @@ class ProjetController extends Controller
        $em->flush();
 
        $session->getFlashBag()->add('success', 'le projet à bien été modifié !');
-       return $this->redirect($_SERVER['HTTP_REFERER']);
+       return $this->redirect('/projets');
      }
 
      // replace this example code with whatever you need
@@ -113,12 +113,12 @@ public function deleteProjetAction(Request $request, $id)
     //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
     $session = new Session();
     $em = $this->getDoctrine()->getManager();
-
+    $projet = $em->getRepository('AppBundle:Projet')->getById($id);
       $em->remove($projet);
       $em->flush();
 
       $session->getFlashBag()->add('success', 'le projet à bien été supprimé !');
-      return $this->redirect($_SERVER['HTTP_REFERER']);
+      return $this->redirect('/projets');
 
 
 }

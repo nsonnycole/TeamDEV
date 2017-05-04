@@ -16,6 +16,12 @@
   <li class="breadcrumb-item"><a href="{{path('fos_user_profile_show')}}">Mon profil</a></li>
   <li class="breadcrumb-item active">Modification du profil</li>
 </ol>
+{% for flashMessage in app.session.flashbag.get('error') %}
+
+    {{ flashMessage }}
+
+{% endfor %}
+
 <div class="container">
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
           <div class="panel panel-info" >
