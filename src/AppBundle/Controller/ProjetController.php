@@ -33,13 +33,15 @@ class ProjetController extends Controller
    {
       $em = $this->getDoctrine()->getManager();
       $projet = $em->getRepository('AppBundle:Projet')->getById($id);
+      $usr = $this->get('security.token_storage')->getToken()->getUser();
       $participants = $em->getRepository('AppBundle:Inscription')->getparticipantProjet($projet);
-      $participe = $em->getRepository('AppBundle:Inscription')->getProjet($id);
+
+
        // replace this example code with whatever you need
        return $this->render('projets/afficheProjet.html.twig', array(
          'detailProjet' => $projet,
          'participants' => $participants,
-         'participe' => $participe
+
        ));
 
   }
@@ -76,7 +78,7 @@ class ProjetController extends Controller
  }
 
  /**
-  * @Route("/projets/editProjet{id}", name="editProjet")
+  * @Route("/projets/editProjet/{id}", name="editProjet")
   */
  public function editProjetAction(Request $request, $id)
  {

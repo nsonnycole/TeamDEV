@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -35,7 +35,7 @@ class ProjetType extends AbstractType
       ->add('dateDebut', DateType::class, array(
                             'label' => 'Début du projet',
                             'format' => 'dd/MM/yyyy',
-                             'html5' => false,
+                            'widget' => 'single_text',
                             'attr' => array(
                                 'class' => 'datepicker'
                             )
@@ -44,33 +44,37 @@ class ProjetType extends AbstractType
       ->add('dateFin', DateType::class, array(
                            'label' => 'Fin du projet',
                            'format' => 'dd/MM/yyyy',
-                           'html5' => false,
+                           'widget' => 'single_text',
                            'attr' => array(
                                'class' => 'datepicker'
                            )
     ))
-      ->add('nbPlaces', NumberType::class, array(
+    ->add('nbPlaces', IntegerType::class, array(
                             'label' => 'Place disponible',
     ))
     ->add('statut', EntityType::class, array(
                             'class' => 'AppBundle:Statut',
                             'choice_label' => 'nom',
                             'label' => 'Statut du projet',
-                            'empty_data'=> 'Selectionnez le statut du projet',
+                            'placeholder'=> 'Selectionnez le statut du projet',
     ))
 
       ->add('idTypeProjet', EntityType::class, array(
                             'class' => 'AppBundle:TypeProjet',
                             'choice_label' => 'nom',
                             'label' => 'Type de projet',
-                            'empty_data'=> 'Selectionnez le type du projet',
-                            'multiple' => 'true',
+                            'placeholder'=> 'Selectionnez le type du projet',
+                            'multiple' => true,
+
                             'attr' => array(
                                 'class' => 'chosen-select'
                             ),
       ))
       ->add('url', TextType::class, array(
                               'label' => 'URL du projet',
+                              'attr' => array(
+                                  'placeholder' => 'Ex: http://www.monSite.fr'
+                              ),
       ))
       ->add('file', FileType::class, array(
                               'label' => 'Fichier à joindre',

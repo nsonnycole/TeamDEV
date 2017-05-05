@@ -38,6 +38,6 @@ class CompetenceRepository extends EntityRepository
     ->where('comp.idUtilisateur =:userID')
     ->setParameter('userID', $userID)
     ->getQuery();
-    return $query->getSingleResult();
+    return $query->getResult();
   }
 }

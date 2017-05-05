@@ -22,9 +22,47 @@ class UtilisateurController extends Controller
     $usr = $this->get('security.token_storage')->getToken()->getUser();
     $usr->getId();
     $projets = $em->getRepository('AppBundle:Projet')->getProjetByuser($usr);
+  //  $participe = $em->getRepository('AppBundle:Inscription')->getUserInscritprojet($usr, $projets);
      // replace this example code with whatever you need
      return $this->render('utilisateur/mesProjets.html.twig', array(
        'projets' => $projets,
+    //   'participe' => $participe
+     ));
+  }
+
+  /**
+   * @Route("/mesParticipations", name="mesParticipations")
+   */
+  public function mesParticipationsAction(Request $request)
+  {
+
+    $em = $this->getDoctrine()->getManager();
+    $usr = $this->get('security.token_storage')->getToken()->getUser();
+    $usr->getId();
+    $participation = $em->getRepository('AppBundle:Inscription')->getUserInscrit($usr);
+  //  $participe = $em->getRepository('AppBundle:Inscription')->getUserInscritprojet($usr, $projets);
+     // replace this example code with whatever you need
+     return $this->render('utilisateur/mesParticipations.html.twig', array(
+       'participation' => $participation,
+    //   'participe' => $participe
+     ));
+  }
+
+  /**
+   * @Route("/mesCompetences", name="mesCompetences")
+   */
+  public function mesCompetencesAction(Request $request)
+  {
+
+    $em = $this->getDoctrine()->getManager();
+    $usr = $this->get('security.token_storage')->getToken()->getUser();
+    $usr->getId();
+    $competences = $em->getRepository('AppBundle:Competence')->getCompetenceUser($usr);
+  //  $participe = $em->getRepository('AppBundle:Inscription')->getUserInscritprojet($usr, $projets);
+     // replace this example code with whatever you need
+     return $this->render('utilisateur/mesCompetences.html.twig', array(
+       'competences' => $competences,
+    //   'participe' => $participe
      ));
   }
 

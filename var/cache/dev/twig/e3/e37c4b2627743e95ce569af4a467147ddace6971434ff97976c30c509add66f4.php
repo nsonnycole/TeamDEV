@@ -15,11 +15,11 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4->enter($__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
+        $__internal_47e1426f8db1d5fe0e2c2f0bd864d30fe70f439f95feae052f1b119e22a04058 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_47e1426f8db1d5fe0e2c2f0bd864d30fe70f439f95feae052f1b119e22a04058->enter($__internal_47e1426f8db1d5fe0e2c2f0bd864d30fe70f439f95feae052f1b119e22a04058_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
 
-        $__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2->enter($__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
+        $__internal_7fa456aa599162abcfd8909c1666de8f930f4697ae4e7daec9c521bdc9d6b72d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7fa456aa599162abcfd8909c1666de8f930f4697ae4e7daec9c521bdc9d6b72d->enter($__internal_7fa456aa599162abcfd8909c1666de8f930f4697ae4e7daec9c521bdc9d6b72d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
 
         // line 2
         echo "<!-- MAIN IMAGE SECTION -->
@@ -52,8 +52,14 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
         // line 22
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("mesProjets");
         echo "\">Mes projets</a>
-      <a class=\"btn btn-primary\" href=\"#mesParticipations\">Mes participations</a>
-      <a href=\"\" class=\"btn btn-primary\">Mes compétences</a>
+      <a class=\"btn btn-primary\" href=\"";
+        // line 23
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("mesParticipations");
+        echo "\">Mes participations</a>
+      <a href=\"";
+        // line 24
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("mesCompetences");
+        echo "\" class=\"btn btn-primary\">Mes compétences</a>
       <a href=\"";
         // line 25
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("newProjet");
@@ -98,15 +104,15 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
       </div>
 
-      
+
   </div>
 </div>
 ";
         
-        $__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4->leave($__internal_c481f8f415752a7fe6de3504fb0881023a8a437a8c166881388a2ca5496ec7a4_prof);
+        $__internal_47e1426f8db1d5fe0e2c2f0bd864d30fe70f439f95feae052f1b119e22a04058->leave($__internal_47e1426f8db1d5fe0e2c2f0bd864d30fe70f439f95feae052f1b119e22a04058_prof);
 
         
-        $__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2->leave($__internal_7d04cced11ac9936504b4f9d1c2c2150d372bb7ea711e6a89c3702d51f0b59c2_prof);
+        $__internal_7fa456aa599162abcfd8909c1666de8f930f4697ae4e7daec9c521bdc9d6b72d->leave($__internal_7fa456aa599162abcfd8909c1666de8f930f4697ae4e7daec9c521bdc9d6b72d_prof);
 
     }
 
@@ -122,7 +128,7 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
     public function getDebugInfo()
     {
-        return array (  93 => 41,  89 => 40,  84 => 38,  80 => 37,  76 => 36,  72 => 35,  59 => 25,  53 => 22,  49 => 21,  39 => 14,  25 => 2,);
+        return array (  99 => 41,  95 => 40,  90 => 38,  86 => 37,  82 => 36,  78 => 35,  65 => 25,  61 => 24,  57 => 23,  53 => 22,  49 => 21,  39 => 14,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -157,8 +163,8 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
       <div align=\"center\">
       <a class=\"btn btn-primary \" href=\"{{path('fos_user_profile_edit')}}\" >Modifier mon profil</a>
       <a class=\"btn btn-primary\" href=\"{{path('mesProjets')}}\">Mes projets</a>
-      <a class=\"btn btn-primary\" href=\"#mesParticipations\">Mes participations</a>
-      <a href=\"\" class=\"btn btn-primary\">Mes compétences</a>
+      <a class=\"btn btn-primary\" href=\"{{path('mesParticipations')}}\">Mes participations</a>
+      <a href=\"{{path('mesCompetences')}}\" class=\"btn btn-primary\">Mes compétences</a>
       <a href=\"{{path('newProjet')}}\" class=\"btn btn-primary\">Nouveau projet</a>
     </div>
 
@@ -180,7 +186,7 @@ class __TwigTemplate_cae3b04d7644e36c104cf0b94ad3f26774b547c171f9952813504445bde
 
       </div>
 
-      
+
   </div>
 </div>
 ", "@FOSUser/Profile/show_content.html.twig", "/Users/sonny-cole/Documents/Projets/Projet_2/TeamDEV/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig");

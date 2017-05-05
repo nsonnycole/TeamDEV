@@ -62,21 +62,13 @@ class InscriptionRepository extends EntityRepository
   **/
   public function getUserInscritprojet($user, $projet)
   {
-    $query = $this->createQueryBuilder('ins')
-    ->where('ins.idUtilisateur =:usr')
-    ->andWhere('ins.idProjet =:projet')
-    ->setParameter('usr', $user)
-    ->setParameter('projet', $projet)
-    ->getQuery();
-    return $query->getResult();
-  }
-
-  public function getProjet($projet){
-    $query = $this->createQueryBuilder('ins')
-    ->where('ins.idProjet =:projet')
-    ->setParameter('projet', $projet)
-    ->getQuery();
-    return $query->getResult();
+    $query = $this->getEntityManager()
+            ->createQuery('
+                SELECT u FROM AppBundle:Inscription u
+                WHERE u.idUtilisateur = :user AND u.idProjet = :projet')
+                ->setParameter('user', $user)
+                ->setParameter('projet', $projet);
+    return $query -> getSingleResult();
   }
 
 

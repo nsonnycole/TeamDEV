@@ -115,6 +115,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\CompetenceController::newCompetenceAction',  '_route' => 'newCompetence',);
         }
 
+        if (0 === strpos($pathinfo, '/projets')) {
+            // editCompetence
+            if (0 === strpos($pathinfo, '/projets/editCompetence') && preg_match('#^/projets/editCompetence/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'editCompetence')), array (  '_controller' => 'AppBundle\\Controller\\CompetenceController::editCompetenceAction',));
+            }
+
+            // deleteCompetence
+            if (0 === strpos($pathinfo, '/projets/deleteCompetence') && preg_match('#^/projets/deleteCompetence/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deleteCompetence')), array (  '_controller' => 'AppBundle\\Controller\\CompetenceController::deleteCompetenceAction',));
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -134,12 +147,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'newInsc')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::newInscAction',));
         }
 
-        if (0 === strpos($pathinfo, '/projets')) {
-            // desincProjet
-            if (0 === strpos($pathinfo, '/projets/desincProjet') && preg_match('#^/projets/desincProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'desincProjet')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::desincProjetAction',));
-            }
+        // desincProjet
+        if (0 === strpos($pathinfo, '/projets/desincProjet') && preg_match('#^/projets/desincProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'desincProjet')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::desincProjetAction',));
+        }
 
+        // accepter
+        if (0 === strpos($pathinfo, '/accepter') && preg_match('#^/accepter/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'accepter')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::accepterAction',));
+        }
+
+        // refuser
+        if (0 === strpos($pathinfo, '/refuser') && preg_match('#^/refuser/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'refuser')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::refuserAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/projets')) {
             // projets
             if ($pathinfo === '/projets') {
                 return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::projetsAction',  '_route' => 'projets',);
@@ -156,7 +179,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // editProjet
-            if (0 === strpos($pathinfo, '/projets/editProjet') && preg_match('#^/projets/editProjet(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/projets/editProjet') && preg_match('#^/projets/editProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'editProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::editProjetAction',));
             }
 
@@ -167,9 +190,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // mesProjets
-        if ($pathinfo === '/mesProjets') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesProjetAction',  '_route' => 'mesProjets',);
+        if (0 === strpos($pathinfo, '/mes')) {
+            if (0 === strpos($pathinfo, '/mesP')) {
+                // mesProjets
+                if ($pathinfo === '/mesProjets') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesProjetAction',  '_route' => 'mesProjets',);
+                }
+
+                // mesParticipations
+                if ($pathinfo === '/mesParticipations') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesParticipationsAction',  '_route' => 'mesParticipations',);
+                }
+
+            }
+
+            // mesCompetences
+            if ($pathinfo === '/mesCompetences') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesCompetencesAction',  '_route' => 'mesCompetences',);
+            }
+
         }
 
         // profilDe

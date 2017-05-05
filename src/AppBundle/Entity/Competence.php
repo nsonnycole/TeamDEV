@@ -2,7 +2,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
 * @ORM\Entity(repositoryClass = "AppBundle\Repository\CompetenceRepository")
 * @ORM\Table(name="competence")
@@ -20,7 +20,7 @@ class Competence
    *
    * @ORM\Column(name = "nom", type = "string", nullable = false)
    */
-  private  $nom;
+  protected  $nom;
 
   /**
   * @var Utilisateur correspondant à cette inscription.
@@ -28,14 +28,21 @@ class Competence
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\User")
   * @ORM\JoinColumn(name = "idUtilisateur", onDelete = "cascade")
   */
-  private  $idUtilisateur;
+  protected  $idUtilisateur;
 
   /**
-   * @var String pourcentage
+   * @var integer pourcentage
    *
-   * @ORM\Column(name = "pourcentage", type = "string", nullable = false)
+   * @ORM\Column(name = "pourcentage", type = "integer", nullable = false)
+   * @Assert\Range(
+    *      min = 0,
+    *      max = 100,
+    *      minMessage = "min 0",
+    *      maxMessage = "max 100"
+    *
+    * )
    */
-  private  $pourcentage;
+  protected  $pourcentage;
 
 
     /**
@@ -72,29 +79,6 @@ class Competence
         return $this->nom;
     }
 
-    /**
-     * Set pourcentage
-     *
-     * @param string $pourcentage
-     *
-     * @return Competence
-     */
-    public function setPourcentage($pourcentage)
-    {
-        $this->pourcentage = $pourcentage;
-
-        return $this;
-    }
-
-    /**
-     * Get pourcentage
-     *
-     * @return string
-     */
-    public function getPourcentage()
-    {
-        return $this->pourcentage;
-    }
 
     /**
      * Set idUtilisateur
@@ -118,5 +102,29 @@ class Competence
     public function getIdUtilisateur()
     {
         return $this->idUtilisateur;
+    }
+
+    /**
+     * Set pourcentage
+     *
+     * @param integer $pourcentage
+     *
+     * @return Competence
+     */
+    public function setPourcentage($pourcentage)
+    {
+        $this->pourcentage = $pourcentage;
+
+        return $this;
+    }
+
+    /**
+     * Get pourcentage
+     *
+     * @return integer
+     */
+    public function getPourcentage()
+    {
+        return $this->pourcentage;
     }
 }

@@ -22,14 +22,16 @@ class CompetenceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextareaType::class, array(
+            ->add('nom', TextType::class, array(
                 'label' => 'Nom',
             ))
             ->add('pourcentage', RangeType::class, array(
                     'label' => 'Pourcentage',
                       'attr' => array(
                           'min' => 0,
-                          'max' => 100
+                          'max' => 100,
+                          'value' => 50,
+                          'onchange'=> 'range.value=value'
                       )
             ))
             ->add('save', SubmitType::class, array(

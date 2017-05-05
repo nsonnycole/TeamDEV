@@ -20,6 +20,8 @@
 
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/datepicker.css')}}" rel="stylesheet">
+
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"rel='stylesheet' type='text/css'>
@@ -70,6 +72,8 @@
         <script src="{{asset('js/classie.js')}}"></script>
         <script src="{{asset('js/AnimOnScroll.js')}}"></script> -->
         <script src="{{asset('chosen/chosen.jquery.min.js')}}"></script>
+        <script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
+
         <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
         <!-- <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/French.json"></script> -->
@@ -88,8 +92,24 @@
                      return $(this).attr("aria-valuenow") + "%";
                  }
          )
+
      });
+
+
    </script>
+
+   <script type="text/javascript">
+   $(document).ready(function() {
+
+     $( function() {
+       $('.datepicker').datepicker({
+           format: 'dd/mm/yyyy',
+           startDate: '-3d'
+       });
+      } );
+    });
+</script>
+
     <script type="text/javascript">
       $(document).ready(function(){
           $('#myTable').DataTable();
@@ -103,6 +123,23 @@
            $(".chosen-select").chosen({width: "100%"});
       });
     </script>
+
+    <script type="text/javascript">
+    $(function() {
+      $('.range').next().text('--'); // Valeur par défaut
+      $('.range').on('input', function() {
+        var $set = $(this).val();
+        $(this).next().text($set);
+      });
+    });
+    </script>
+
+    <script>
+
+       jQuery(document).ready(function(){
+           $('.chosen-select').chosen();
+       });
+</script>
 
         {% endblock %}
     </body>

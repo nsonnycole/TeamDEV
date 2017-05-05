@@ -221,28 +221,6 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function getWebPath()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getWebPath', []);
-
-        return parent::getWebPath();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function uploadProfilePicture()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'uploadProfilePicture', []);
-
-        return parent::uploadProfilePicture();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -297,6 +275,28 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
 
         return parent::getDescription();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContenu($contenu)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContenu', [$contenu]);
+
+        return parent::setContenu($contenu);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getContenu()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContenu', []);
+
+        return parent::getContenu();
     }
 
     /**
@@ -412,23 +412,67 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setStatus($status)
+    public function setUrl($url)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatus', [$status]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUrl', [$url]);
 
-        return parent::setStatus($status);
+        return parent::setUrl($url);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getStatus()
+    public function getUrl()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatus', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrl', []);
 
-        return parent::getStatus();
+        return parent::getUrl();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPictureName($pictureName)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPictureName', [$pictureName]);
+
+        return parent::setPictureName($pictureName);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPictureName()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPictureName', []);
+
+        return parent::getPictureName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setStatut(\AppBundle\Entity\Statut $statut = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatut', [$statut]);
+
+        return parent::setStatut($statut);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatut()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatut', []);
+
+        return parent::getStatut();
     }
 
     /**
@@ -473,94 +517,6 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdTypeProjet', []);
 
         return parent::getIdTypeProjet();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setContenu($contenu)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContenu', [$contenu]);
-
-        return parent::setContenu($contenu);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getContenu()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContenu', []);
-
-        return parent::getContenu();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setPictureName($pictureName)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPictureName', [$pictureName]);
-
-        return parent::setPictureName($pictureName);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPictureName()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPictureName', []);
-
-        return parent::getPictureName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setUrl($url)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUrl', [$url]);
-
-        return parent::setUrl($url);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getUrl()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrl', []);
-
-        return parent::getUrl();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setStatut(\AppBundle\Entity\Statut $statut = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatut', [$statut]);
-
-        return parent::setStatut($statut);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getStatut()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatut', []);
-
-        return parent::getStatut();
     }
 
 }

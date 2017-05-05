@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Mes participations </h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+<br>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{path('homepage')}}">Accueil</a></li>
+  <li class="breadcrumb-item"><a href="{{path('fos_user_profile_show')}}">Mon profil</a></li>
+  <li class="breadcrumb-item active">Mes participations</li>
+  <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
+
+</ol>
+
+<div class="container">
+<div class="row col-sm-10 col-sm-offset-1">
+<h3>Listes de mes particpations</h3>
+<hr>
+
+<table class="table" id="myTable">
+  <thead>
+    <td>Nom du projet</td>
+    <td>Description </td>
+    <td>Auteur </td>
+    <td>Statut </td>
+    <td>Date de début </td>
+    <td>Date de fin </td>
+    <td>Action </td>
+  </thead>
+  <tbody>
+{% for mesParticipation in participation %}
+  <tr>
+    <td><a href="{{ path('showProjet', {'id': mesParticipation.idProjet.id}) }}">{{mesParticipation.idProjet.nomProjet}}</a></td>
+    <td>{{mesParticipation.idProjet.description | striptags | slice(0, 60) }} [...] </td>
+    <td><a href="{{ path('profilDe', {'username': mesParticipation.idProjet.idUtilisateur.username}) }}">{{mesParticipation.idProjet.idUtilisateur.username}}</a></td>
+    <td>{{mesParticipation.statut.nom}}</td>
+    <td>{{mesParticipation.idProjet.dateDebut|date('d/m/Y')}} </td>
+    <td>{{mesParticipation.idProjet.dateFin|date('d/m/Y')}}</td>
+    <td><a href="" class="btn btn-danger">Se désinscrire</a>{#<a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>#}</td>
+  {#  <td>
+      <a href="{{ path('editProjet', {'id': competence.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="{{ path('deleteProjet', {'id': competence.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+    </td>#}
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div><!-- row -->
+</div>
+{% endblock %}

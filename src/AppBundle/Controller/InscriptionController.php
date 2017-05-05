@@ -42,7 +42,6 @@ class InscriptionController extends Controller
            $inscription->setIdUtilisateur($usr);
          }
          $inscription->setIdProjet($projet);
-         $projet->setNbParticipants($projet->getNbParticipants()+1);
          $em->persist($inscription);
          $em->flush();
 
@@ -69,10 +68,9 @@ class InscriptionController extends Controller
       $usr = $this->get('security.token_storage')->getToken()->getUser();
       $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
       $dejaInscrit = $em->getRepository('AppBundle:Inscription')->getUserInscrit($usr->getId());
-      $projet = $inscription->getIdProjet();
+
       if($dejaInscrit){
         $em->remove($inscription);
-        $projet->setNbParticipants($projet->getNbParticipants()-1);
         $em->flush();
 
         $session->getFlashBag()->add('success', 'Vous ne faites plus partie de ce projet');
@@ -83,10 +81,57 @@ class InscriptionController extends Controller
         return $this->redirect('/projets');
       }
 
+    }
+
+      /**
+       * @Route("/accepter/{id}", name="accepter")
+       */
+      public function accepterAction(Request $request, $id)
+      {
+        $session = new Session();
+        $em = $this->getDoctrine()->getManager();
+
+        $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
+        $projet = $inscription->getIdProjet();
+        $statut = $inscription->getStatut();
+
+          $statut->getStatut(4);
+          $em->persist($inscription);
+          $projet->setNbParticipants($projet->getNbParticipants()+1);
+          $em->flush();
+
+          $session->getFlashBag()->add('success', 'Inscription accepté');
+          return $this->redirect('/mesProjets');
+
+
+      }
+
+      /**
+       * @Route("/refuser/{id}", name="refuser")
+       */
+      public function refuserAction(Request $request, $id)
+      {
+        $session = new Session();
+        $em = $this->getDoctrine()->getManager();
+
+        $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
+        $projet = $inscription->getIdProjet();
+
+
+          $inscription->setStatut(4);
+          $em->persist($inscription);
+          $projet->setNbParticipants($projet->getNbParticipants()-1);
+          $em->flush();
+
+          $session->getFlashBag()->add('success', 'Inscription refusé');
+          return $this->redirect('/mesProjets');
+
+      }
 
 
 
-  }
+
+
 
 
 }

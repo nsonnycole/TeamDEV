@@ -21,13 +21,13 @@ class Inscription
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
   * @ORM\JoinColumn(name = "statut")
   */
-  private  $statut;
+  protected  $statut;
   /**
   * @var String
   *
   * @ORM\Column(name = "commentaire", type = "string", nullable = true)
   */
-  private  $commentaire;
+  protected  $commentaire;
 
   /**
   * @var Utilisateur correspondant à cette inscription.
@@ -35,7 +35,7 @@ class Inscription
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\User")
   * @ORM\JoinColumn(name = "idUtilisateur", onDelete = "cascade")
   */
-  private  $idUtilisateur;
+  protected  $idUtilisateur;
 
   /**
   * @var Utilisateur correspondant à cette inscription.
@@ -43,7 +43,7 @@ class Inscription
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Projet")
   * @ORM\JoinColumn(name = "idProjet", onDelete = "cascade")
   */
-  private  $idProjet;
+  protected  $idProjet;
 
   /**
   * Get id

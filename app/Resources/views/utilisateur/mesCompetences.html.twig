@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
 <!-- MAIN IMAGE SECTION -->
 <div id="portwrap">
   <div class="container">
@@ -22,24 +32,25 @@
 
 <div class="container">
 <div class="row col-sm-10 col-sm-offset-1">
-<h3>Listes de mes compétences</h3>
-<a class="pull-right" href="{{ path('newCompetence') }}" class="btn btn-primary">Nouveau</a>
+<h3>Listes de mes compétences <a class="pull-right btn btn-primary" href="{{ path('newCompetence') }}"><span class="glyphicon glyphicon-plus"></span> Nouveau</a></h3>
+
 <hr>
 
 <table class="table" id="myTable">
   <thead>
     <td>Nom</td>
     <td>Pourcentage </td>
+    <td>Action </td>
   </thead>
   <tbody>
 {% for competence in competences %}
   <tr>
     <td>{{competence.nom}}</td>
-    <td width="30%">{{competence.pourcentage}}%</td>
-  {#  <td>
-      <a href="{{ path('editProjet', {'id': competence.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-      <a href="{{ path('deleteProjet', {'id': competence.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
-    </td>#}
+    <td>{{competence.pourcentage}}%</td>
+   <td>
+      <a href="{{ path('editCompetence', {'id': competence.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="{{ path('deleteCompetence', {'id': competence.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+    </td>
   </tr>
 {% endfor %}
 </tbody>

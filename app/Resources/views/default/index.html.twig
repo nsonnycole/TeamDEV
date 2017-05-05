@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
 <!-- MAIN IMAGE SECTION -->
 <div id="headerwrap">
   <div class="container">
@@ -8,7 +18,6 @@
       <div class="col-lg-8 col-lg-offset-2">
         <h1>TeamDEV</h1>
         <h2>Travaillez à plusieurs pour un meilleur résultat</h2>
-        <a class="btn btn-primary" style="padding:20px;color:white" href="{{path('fos_user_security_login')}}"><h3 style="padding:20px;color:white">CONNEXION</h3></a>
         <div class="spacer"></div>
         <i class="fa fa-angle-down"></i>
       </div>
@@ -32,13 +41,13 @@
     </div>
     </div>
   {% for projet in projets %}
-      <div class="col-sm-4 ">
+      <div class="col-sm-4 projet">
         <a href="{{ path('showProjet', {'id': projet.id}) }}"><h4>{{projet.nomProjet}}</h4>
         <img style="width: 350px;"src="{{asset("img/about-bg.jpg")}}" ></a>
         <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
         <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}  <br>statut : {{projet.statut.nom}}
-        <br>Auteur : <a href="#">{{projet.idUtilisateur.username}}</a></p>
-        <p><a href="#"><i class="fa fa-link"></i> En savoir plus</a></p>
+        <br>Auteur : <a href="{{ path('profilDe', {'username': projet.idUtilisateur.username}) }}">{{projet.idUtilisateur.username}}</a></p>
+
       </div>
   {% endfor %}
 

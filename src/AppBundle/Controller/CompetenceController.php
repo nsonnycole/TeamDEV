@@ -30,7 +30,7 @@ class CompetenceController extends Controller
 
        $form = $this->createForm(CompetenceType::class, $competence);
        $form->handleRequest($request);
-       $usr = $this->get('security.token_storage')->getToken()->getUser();
+
 
        if($form->isSubmitted()){
          $competence->setIdUtilisateur($usr);
@@ -38,17 +38,67 @@ class CompetenceController extends Controller
          $em->flush();
 
          $session->getFlashBag()->add('success', 'Votre compétence à bien été rajoutée !');
-         return $this->redirect('/profile');
+         return $this->redirect('/mesCompetences');
        }
 
        // replace this example code with whatever you need
        return $this->render('competence/newCompetence.html.twig', array(
                          'form' => $form->createView(),
-                         
+
 
        ));
 
   }
+
+  /**
+   * @Route("/projets/editCompetence/{id}", name="editCompetence")
+   */
+  public function editCompetenceAction(Request $request, $id)
+  {
+
+      //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+      $session = new Session();
+      $em = $this->getDoctrine()->getManager();
+      $competence = $em->getRepository('AppBundle:Competence')->getById($id);
+      $form = $this->createForm(CompetenceType::class, $competence);
+      $form->handleRequest($request);
+      if($form->isSubmitted()){
+
+        $em->persist($competence);
+        $em->flush();
+
+        $session->getFlashBag()->add('success', 'la compétence à bien été modifié !');
+        return $this->redirect('/mesCompetences');
+      }
+
+      // replace this example code with whatever you need
+      return $this->render('competence/editCompetence.html.twig', array(
+                        'form' => $form->createView(),
+                        'competences' => $competence
+      ));
+
+ }
+
+
+  /**
+   * @Route("/projets/deleteCompetence/{id}", name="deleteCompetence")
+   */
+  public function deleteCompetenceAction(Request $request, $id)
+  {
+
+      //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+      $session = new Session();
+      $em = $this->getDoctrine()->getManager();
+      $competence = $em->getRepository('AppBundle:Competence')->getById($id);
+        $em->remove($competence);
+        $em->flush();
+
+        $session->getFlashBag()->add('success', 'la compétence à bien été supprimé !');
+        return $this->redirect('/mesCompetences');
+
+
+  }
+
 
 
 }

@@ -1,0 +1,114 @@
+<?php
+namespace AppBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+* @ORM\Entity(repositoryClass = "AppBundle\Repository\ProjetRepository")
+* @ORM\Table(name="projet")
+*/
+class Projet
+{
+  /**
+  * @ORM\Id
+  * @ORM\Column(type="integer")
+  * @ORM\GeneratedValue(strategy="AUTO")
+  */
+  protected $id;
+  /**
+  * @var String le nom du projet
+  *
+  * @ORM\Column(name = "nomProjet", type = "string", length = 255, nullable = false)
+  */
+  private  $nomProjet;
+  /**
+  * @var String description du projet
+  *
+  * @ORM\Column(name = "description", type = "string", length = 255, nullable = false)
+  */
+  private  $description;
+  /**
+  * @var String contenu
+  *
+  * @ORM\Column(name = "contenu", type = "string", nullable = false)
+  */
+  private  $contenu;
+  /**
+  * @var Date date de début du projet
+  *
+  * @ORM\Column(name = "dateDebut", type = "date", nullable = true)
+  * @Assert\Range(
+  *      min = "first day of January",
+  *      max = "first day of January next year"
+  * )
+  */
+  private  $dateDebut;
+  /**
+  * @var Date de fin du projet
+  *
+  * @ORM\Column(name = "dateFin", type = "date", nullable = true)
+  * @Assert\Range(
+  *      min = "first day of January",
+  *      max = "first day of January next year"
+  * )
+  */
+  private  $dateFin;
+  /**
+  * @var Int Durée projet
+  *
+  * @ORM\Column(name = "duree", type = "integer", nullable = true)
+  */
+  private  $duree;
+  /**
+  * @var Int nbPlaces
+  *
+  * @ORM\Column(name = "nbPlaces", type = "integer", nullable = true)
+  */
+  private  $nbPlaces;
+  /**
+  * @var Int nombre de participants au projet
+  *
+  * @ORM\Column(name = "nbParticipants", type = "integer", nullable = true)
+  */
+  private  $nbParticipants;
+
+  /**
+  * @var statut du projet.
+  *
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
+  * @ORM\JoinColumn(name = "statut")
+  */
+  private  $statut;
+
+  /**
+  * @var Utilisateur créateur de ce projet.
+  *
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\User")
+  * @ORM\JoinColumn(name = "idUtilisateur", onDelete = "cascade")
+  */
+  private  $idUtilisateur;
+
+  /**
+  * @var Type de ce projet.
+  *
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\TypeProjet",cascade={"persist"})
+  * @ORM\JoinColumn(name = "idTypeProjet", onDelete = "cascade")
+  */
+  private  $idTypeProjet;
+  /**
+  * @ORM\Column(type="string", length=255, nullable=true)
+  */
+  public $url;
+  /**
+  * @ORM\Column(type="string", length=255, nullable=true)
+  */
+  public $pictureName;
+
+  /**
+  *
+  * @Assert\File(maxSize="500k")
+  */
+  public $file;
+
+}

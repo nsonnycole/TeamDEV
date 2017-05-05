@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
 <!-- MAIN IMAGE SECTION -->
 <div id="portwrap">
   <div class="container">
@@ -44,13 +54,13 @@
       <div class="col-sm-6 trophee">
       <span class="pointTrophee"> {{ user.trophee }}</span>
 
-      <p>Ces projets : 0
-      <br>Ces participations : 0</p>
+      <p>Ses projets : 0
+      <br>Ses participations : 0</p>
       </div>
       </div>
       </div>
       <div class="container">
-      <h3 >Ces compétences</h3>
+      <h3 >Ses compétences</h3>
       <hr>
 
       <ul class="competence">
