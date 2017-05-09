@@ -39,8 +39,14 @@
 
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       {{ form_start(form) }}
-      {{ form_widget(form) }}
-      <a onclick="return(confirm('Attention vous êtes sur le point d'annuler votre action'));" href="{{ path('mesCompetences') }}" class="btn btn-warning pull-right"/> Annuler</a>
+      {{ form_row(form.nom) }}
+        <div class="range">
+        {{ form_widget(form.pourcentage) }}
+        <output id="range">{{competences.pourcentage}}</output>
+        </div>
+        <br>
+      {{ form_widget(form.save) }}
+      <a onclick="return(confirm('Attention vous êtes sur le point d'annuler votre action'));" href="{{path('projets')}}" class="btn btn-warning pull-right"/> Annuler</a>
       {{ form_end(form) }}
     </div>
 </div>

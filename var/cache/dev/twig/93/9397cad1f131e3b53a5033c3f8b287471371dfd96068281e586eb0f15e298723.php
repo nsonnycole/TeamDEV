@@ -15,11 +15,11 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466->enter($__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
+        $__internal_6ff76aa7986ce6abc9b56430b24adbe09c3b24963e7f698ce56830fdddac3d15 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6ff76aa7986ce6abc9b56430b24adbe09c3b24963e7f698ce56830fdddac3d15->enter($__internal_6ff76aa7986ce6abc9b56430b24adbe09c3b24963e7f698ce56830fdddac3d15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
 
-        $__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5->enter($__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
+        $__internal_42a4a0a9fe950fa3e34edd6509f4e34e4596bd5b97cf67c147b70460142384c2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_42a4a0a9fe950fa3e34edd6509f4e34e4596bd5b97cf67c147b70460142384c2->enter($__internal_42a4a0a9fe950fa3e34edd6509f4e34e4596bd5b97cf67c147b70460142384c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit_content.html.twig"));
 
         // line 2
         echo "<!-- MAIN IMAGE SECTION -->
@@ -45,6 +45,25 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
         echo "\">Mon profil</a></li>
   <li class=\"breadcrumb-item active\">Modification du profil</li>
 </ol>
+";
+        // line 19
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "error"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 20
+            echo "
+    ";
+            // line 21
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "
+
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 24
+        echo "
 <div class=\"container\">
       <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
           <div class=\"panel panel-info\" >
@@ -53,21 +72,21 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
                       <div style=\"display:none\" id=\"login-alert\" class=\"alert alert-danger col-sm-12\"></div>
 
                       ";
-        // line 26
+        // line 32
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("action" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_profile_edit"), "attr" => array("class" => "fos_user_profile_edit")));
         echo "
                           ";
-        // line 27
+        // line 33
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
                           <div>
                               <input type=\"submit\" class=\"btn btn-success pull-right\"value=\"";
-        // line 29
+        // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("profile.edit.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
                           </div>
                       ";
-        // line 31
+        // line 37
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
                 </div>
@@ -79,10 +98,10 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
   </div>
 ";
         
-        $__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466->leave($__internal_418f31a768e076429a6a6f8f7710eadf2d0f26359e9c474fa27f398fad783466_prof);
+        $__internal_6ff76aa7986ce6abc9b56430b24adbe09c3b24963e7f698ce56830fdddac3d15->leave($__internal_6ff76aa7986ce6abc9b56430b24adbe09c3b24963e7f698ce56830fdddac3d15_prof);
 
         
-        $__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5->leave($__internal_984ba30f34a86c2da292bd0067979f3c033204aa53681dc8281f775557fafbd5_prof);
+        $__internal_42a4a0a9fe950fa3e34edd6509f4e34e4596bd5b97cf67c147b70460142384c2->leave($__internal_42a4a0a9fe950fa3e34edd6509f4e34e4596bd5b97cf67c147b70460142384c2_prof);
 
     }
 
@@ -98,7 +117,7 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
 
     public function getDebugInfo()
     {
-        return array (  71 => 31,  66 => 29,  61 => 27,  57 => 26,  44 => 16,  40 => 15,  25 => 2,);
+        return array (  90 => 37,  85 => 35,  80 => 33,  76 => 32,  66 => 24,  57 => 21,  54 => 20,  50 => 19,  44 => 16,  40 => 15,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -129,6 +148,12 @@ class __TwigTemplate_513eeab8148a3eeba1fcf74f00001a787fcdf3008e417c73addf89f7617
   <li class=\"breadcrumb-item\"><a href=\"{{path('fos_user_profile_show')}}\">Mon profil</a></li>
   <li class=\"breadcrumb-item active\">Modification du profil</li>
 </ol>
+{% for flashMessage in app.session.flashbag.get('error') %}
+
+    {{ flashMessage }}
+
+{% endfor %}
+
 <div class=\"container\">
       <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
           <div class=\"panel panel-info\" >

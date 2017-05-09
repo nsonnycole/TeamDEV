@@ -18,26 +18,46 @@ class Projet
   protected $id;
   /**
   * @var String le nom du projet
-  *
+  * @Assert\NotBlank(message="Le nom du projet ne peut être vide")
+  * @Assert\Length(
+  *      min = "20",
+  *      max = "255",
+  *      minMessage = "Votre nom doit faire au moins {{ limit }} caractères",
+  *      maxMessage = "Votre nom ne peut pas être plus long que {{ limit }} caractères"
+  * )
   * @ORM\Column(name = "nomProjet", type = "string", length = 255, nullable = false)
   */
-  private  $nomProjet;
+  protected  $nomProjet;
   /**
   * @var String description du projet
   *
+  * @Assert\NotBlank(message="La description ne peut être vide")
+  * @Assert\Length(
+  *      min = "20",
+  *      max = "255",
+  *      minMessage = "Votre description doit faire au moins {{ limit }} caractères",
+  *      maxMessage = "Votre description ne peut pas être plus long que {{ limit }} caractères"
+  * )
   * @ORM\Column(name = "description", type = "string", length = 255, nullable = false)
   */
-  private  $description;
+  protected  $description;
   /**
   * @var String contenu
   *
+  * @Assert\NotBlank(message="Le contenu ne peut être vide")
+  * @Assert\Length(
+  *      min = "20",
+  *      max = "255",
+  *      minMessage = "Votre contenu doit faire au moins {{ limit }} caractères",
+  *      maxMessage = "Votre contenu ne peut pas être plus long que {{ limit }} caractères"
+  * )
   * @ORM\Column(name = "contenu", type = "string", nullable = false)
   */
-  private  $contenu;
+  protected  $contenu;
   /**
   * @var Date date de début du projet
   *
-  * @ORM\Column(name = "dateDebut", type = "date", nullable = true)
+  * @ORM\Column(name = "dateDebut", type = "date", nullable = false)
   * @Assert\Range(
   *      min = "first day of January",
   *      max = "first day of January next year"
@@ -47,31 +67,31 @@ class Projet
   /**
   * @var Date de fin du projet
   *
-  * @ORM\Column(name = "dateFin", type = "date", nullable = true)
+  * @ORM\Column(name = "dateFin", type = "date", nullable = false)
   * @Assert\Range(
   *      min = "first day of January",
   *      max = "first day of January next year"
   * )
   */
-  private  $dateFin;
+  protected  $dateFin;
   /**
   * @var Int Durée projet
   *
   * @ORM\Column(name = "duree", type = "integer", nullable = true)
   */
-  private  $duree;
+  protected  $duree;
   /**
   * @var Int nbPlaces
   *
-  * @ORM\Column(name = "nbPlaces", type = "integer", nullable = true)
+  * @ORM\Column(name = "nbPlaces", type = "integer", nullable = false)
   */
-  private  $nbPlaces;
+  protected  $nbPlaces;
   /**
   * @var Int nombre de participants au projet
   *
-  * @ORM\Column(name = "nbParticipants", type = "integer", nullable = true)
+  * @ORM\Column(name = "nbParticipants", type = "integer", nullable = false)
   */
-  private  $nbParticipants;
+  protected  $nbParticipants;
 
   /**
   * @var statut du projet.
@@ -79,7 +99,7 @@ class Projet
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
   * @ORM\JoinColumn(name = "statut")
   */
-  private  $statut;
+  protected  $statut;
 
   /**
   * @var Utilisateur créateur de ce projet.
@@ -87,21 +107,21 @@ class Projet
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\User")
   * @ORM\JoinColumn(name = "idUtilisateur", onDelete = "cascade")
   */
-  private  $idUtilisateur;
+  protected  $idUtilisateur;
 
   /**
   * @var Type de ce projet.
   *
-  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\TypeProjet",cascade={"persist"})
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\TypeProjet",cascade={"persist","remove"})
   * @ORM\JoinColumn(name = "idTypeProjet", onDelete = "cascade")
   */
-  private  $idTypeProjet;
+  protected  $idTypeProjet;
   /**
-  * @ORM\Column(type="string", length=255, nullable=true)
+  * @ORM\Column(name = "url",type="string", length=255, nullable=true)
   */
   public $url;
   /**
-  * @ORM\Column(type="string", length=255, nullable=true)
+  * @ORM\Column(name = "picture_name", type="string", length=255, nullable=true)
   */
   public $pictureName;
 

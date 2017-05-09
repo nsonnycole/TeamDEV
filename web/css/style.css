@@ -47,9 +47,9 @@ td{
 	left: 0px;
   text-transform: uppercase;
 	font-weight: 800;
-	padding: 3px 30px 2px 10px;
+	padding: 3px 100px 2px 10px;
 	color: rgb(255, 255, 255);
-	background-color: rgba(25, 25, 25, 0.2);
+	background-color: rgba(0, 150, 136, 0.21);
 }
 .progress > .progress-completed {
 	position: absolute;

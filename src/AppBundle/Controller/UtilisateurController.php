@@ -40,11 +40,12 @@ class UtilisateurController extends Controller
     $usr = $this->get('security.token_storage')->getToken()->getUser();
     $usr->getId();
     $participation = $em->getRepository('AppBundle:Inscription')->getUserInscrit($usr);
+    $participe = $usr;
   //  $participe = $em->getRepository('AppBundle:Inscription')->getUserInscritprojet($usr, $projets);
      // replace this example code with whatever you need
      return $this->render('utilisateur/mesParticipations.html.twig', array(
        'participation' => $participation,
-    //   'participe' => $participe
+       'participe' => $participe
      ));
   }
 

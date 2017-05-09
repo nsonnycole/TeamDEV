@@ -78,7 +78,7 @@ class InscriptionController extends Controller
 
       }else{
         $session->getFlashBag()->add('warning', 'Vous êtes pas inscrit à ce projet!');
-        return $this->redirect('/projets');
+        return $this->redirect('/mesParticipations');
       }
 
     }
@@ -93,9 +93,8 @@ class InscriptionController extends Controller
 
         $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
         $projet = $inscription->getIdProjet();
-        $statut = $inscription->getStatut();
 
-          $statut->getStatut(4);
+          $inscription->getStatut();
           $em->persist($inscription);
           $projet->setNbParticipants($projet->getNbParticipants()+1);
           $em->flush();

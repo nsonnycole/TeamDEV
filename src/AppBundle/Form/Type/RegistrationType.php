@@ -13,7 +13,12 @@ class RegistrationType extends AbstractType
         $builder->add('nom');
         $builder->add('prenom');
         $builder->add('dateNaiss', DateType::class, array(
-                            'label' => 'Date de naissance',));
+                            'label' => 'Date de naissance',
+                            'format' => 'dd/MM/yyyy',
+                            'widget' => 'single_text',
+                            'attr' => array(
+                                'class' => 'datepicker'
+                            )));
 
         $builder->add('adresse', TextType::class, array(
                             'label_format' => 'Adresse',

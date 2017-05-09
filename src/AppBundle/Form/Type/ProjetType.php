@@ -59,24 +59,33 @@ class ProjetType extends AbstractType
                             'placeholder'=> 'Selectionnez le statut du projet',
     ))
 
+      // ->add('idTypeProjet', EntityType::class, array(
+      //                       'class' => 'AppBundle:TypeProjet',
+      //                       'choice_label' => 'nom',
+      //                       'label' => 'Type de projet',
+      //                       'placeholder'=> 'Selectionnez le type du projet',
+      //                       'multiple' => true,
+      //                       'attr' => array(
+      //                           'class' => 'chosen-select'
+      //                       ),
+
+
       ->add('idTypeProjet', EntityType::class, array(
                             'class' => 'AppBundle:TypeProjet',
                             'choice_label' => 'nom',
                             'label' => 'Type de projet',
                             'placeholder'=> 'Selectionnez le type du projet',
-                            'multiple' => true,
 
-                            'attr' => array(
-                                'class' => 'chosen-select'
-                            ),
-      ))
+        ))
       ->add('url', TextType::class, array(
                               'label' => 'URL du projet',
+                              'required'   => false,
                               'attr' => array(
                                   'placeholder' => 'Ex: http://www.monSite.fr'
                               ),
       ))
       ->add('file', FileType::class, array(
+                              'required'   => false,
                               'label' => 'Fichier à joindre',
       ))
       ->add('save', SubmitType::class, array(

@@ -54,7 +54,7 @@
     <td>{{mesParticipation.statut.nom}}</td>
     <td>{{mesParticipation.idProjet.dateDebut|date('d/m/Y')}} </td>
     <td>{{mesParticipation.idProjet.dateFin|date('d/m/Y')}}</td>
-    <td><a href="" class="btn btn-danger">Se désinscrire</a>{#<a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>#}</td>
+    <td><a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>{#<a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>#}</td>
   {#  <td>
       <a href="{{ path('editProjet', {'id': competence.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="{{ path('deleteProjet', {'id': competence.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>

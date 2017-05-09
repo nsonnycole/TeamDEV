@@ -108,10 +108,10 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'nomProjet', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'contenu', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'dateDebut', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'dateFin', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'duree', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'nbPlaces', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'nbParticipants', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'statut', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'idUtilisateur', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'idTypeProjet', 'url', 'pictureName', 'file'];
+            return ['__isInitialized__', 'id', 'nomProjet', 'description', 'contenu', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'dateDebut', 'dateFin', 'duree', 'nbPlaces', 'nbParticipants', 'statut', 'idUtilisateur', 'idTypeProjet', 'url', 'pictureName', 'file'];
         }
 
-        return ['__isInitialized__', 'id', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'nomProjet', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'contenu', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'dateDebut', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'dateFin', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'duree', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'nbPlaces', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'nbParticipants', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'statut', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'idUtilisateur', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'idTypeProjet', 'file'];
+        return ['__isInitialized__', 'id', 'nomProjet', 'description', 'contenu', '' . "\0" . 'AppBundle\\Entity\\Projet' . "\0" . 'dateDebut', 'dateFin', 'duree', 'nbPlaces', 'nbParticipants', 'statut', 'idUtilisateur', 'idTypeProjet', 'file'];
     }
 
     /**

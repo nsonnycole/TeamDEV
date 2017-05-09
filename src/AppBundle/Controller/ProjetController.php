@@ -95,7 +95,7 @@ class ProjetController extends Controller
        $em->flush();
 
        $session->getFlashBag()->add('success', 'le projet à bien été modifié !');
-       return $this->redirect('/projets');
+       return $this->redirect('/mesProjets');
      }
 
      // replace this example code with whatever you need
@@ -120,7 +120,7 @@ public function deleteProjetAction(Request $request, $id)
       $em->flush();
 
       $session->getFlashBag()->add('success', 'le projet à bien été supprimé !');
-      return $this->redirect('/projets');
+      return $this->redirect('/mesProjets');
 
 
 }

@@ -21,29 +21,29 @@ class __TwigTemplate_8c9af76da28d82aa3687285d0455cbff67dfb1338569ae5f1386ff91504
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1b96770de42f737e838a86b2f93aeeab972b83a7f39814dcb0f789eaf3580882 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1b96770de42f737e838a86b2f93aeeab972b83a7f39814dcb0f789eaf3580882->enter($__internal_1b96770de42f737e838a86b2f93aeeab972b83a7f39814dcb0f789eaf3580882_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "competence/editCompetence.html.twig"));
+        $__internal_8af2fff7d3b141bf02702de638fd58081a139c9cec2089037f6ca0cc40c2710f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_8af2fff7d3b141bf02702de638fd58081a139c9cec2089037f6ca0cc40c2710f->enter($__internal_8af2fff7d3b141bf02702de638fd58081a139c9cec2089037f6ca0cc40c2710f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "competence/editCompetence.html.twig"));
 
-        $__internal_498006da0ec9f44d5880f635703f9e7bd9eee0461d441d24e8d3e7107d4cf807 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_498006da0ec9f44d5880f635703f9e7bd9eee0461d441d24e8d3e7107d4cf807->enter($__internal_498006da0ec9f44d5880f635703f9e7bd9eee0461d441d24e8d3e7107d4cf807_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "competence/editCompetence.html.twig"));
+        $__internal_dce66a9d1cb0a52bb71a98a40f9d1c900f08928b2e5bcd62993441f96ff02c5d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_dce66a9d1cb0a52bb71a98a40f9d1c900f08928b2e5bcd62993441f96ff02c5d->enter($__internal_dce66a9d1cb0a52bb71a98a40f9d1c900f08928b2e5bcd62993441f96ff02c5d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "competence/editCompetence.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1b96770de42f737e838a86b2f93aeeab972b83a7f39814dcb0f789eaf3580882->leave($__internal_1b96770de42f737e838a86b2f93aeeab972b83a7f39814dcb0f789eaf3580882_prof);
+        $__internal_8af2fff7d3b141bf02702de638fd58081a139c9cec2089037f6ca0cc40c2710f->leave($__internal_8af2fff7d3b141bf02702de638fd58081a139c9cec2089037f6ca0cc40c2710f_prof);
 
         
-        $__internal_498006da0ec9f44d5880f635703f9e7bd9eee0461d441d24e8d3e7107d4cf807->leave($__internal_498006da0ec9f44d5880f635703f9e7bd9eee0461d441d24e8d3e7107d4cf807_prof);
+        $__internal_dce66a9d1cb0a52bb71a98a40f9d1c900f08928b2e5bcd62993441f96ff02c5d->leave($__internal_dce66a9d1cb0a52bb71a98a40f9d1c900f08928b2e5bcd62993441f96ff02c5d_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4eefc008ef65ad7cba97366c0d27059d0a0bfc6c08149aef64cee740fe35eb52 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4eefc008ef65ad7cba97366c0d27059d0a0bfc6c08149aef64cee740fe35eb52->enter($__internal_4eefc008ef65ad7cba97366c0d27059d0a0bfc6c08149aef64cee740fe35eb52_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b632560fe12978087628ee8f72c5b3252e05f189c2b17a79785bbab65d6a6fd8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b632560fe12978087628ee8f72c5b3252e05f189c2b17a79785bbab65d6a6fd8->enter($__internal_b632560fe12978087628ee8f72c5b3252e05f189c2b17a79785bbab65d6a6fd8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_f48d895a4f34e3f3aa1e433da02efaf04f8f0a6a6cd1d3b7dcfd262c50fdc026 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f48d895a4f34e3f3aa1e433da02efaf04f8f0a6a6cd1d3b7dcfd262c50fdc026->enter($__internal_f48d895a4f34e3f3aa1e433da02efaf04f8f0a6a6cd1d3b7dcfd262c50fdc026_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7b6c9c81ca078e1501e95e7f42f2085b5421a0ec0764009fccf0eb28b6c64ffb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7b6c9c81ca078e1501e95e7f42f2085b5421a0ec0764009fccf0eb28b6c64ffb->enter($__internal_7b6c9c81ca078e1501e95e7f42f2085b5421a0ec0764009fccf0eb28b6c64ffb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<div class=\"container\" style=\"display:inline\">
@@ -136,24 +136,39 @@ class __TwigTemplate_8c9af76da28d82aa3687285d0455cbff67dfb1338569ae5f1386ff91504
         echo "
       ";
         // line 42
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nom", array()), 'row');
+        echo "
+        <div class=\"range\">
+        ";
+        // line 44
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "pourcentage", array()), 'widget');
+        echo "
+        <output id=\"range\">";
+        // line 45
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["competences"]) ? $context["competences"] : $this->getContext($context, "competences")), "pourcentage", array()), "html", null, true);
+        echo "</output>
+        </div>
+        <br>
+      ";
+        // line 48
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "save", array()), 'widget');
         echo "
       <a onclick=\"return(confirm('Attention vous êtes sur le point d'annuler votre action'));\" href=\"";
-        // line 43
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("mesCompetences");
+        // line 49
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("projets");
         echo "\" class=\"btn btn-warning pull-right\"/> Annuler</a>
       ";
-        // line 44
+        // line 50
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
     </div>
 </div>
 ";
         
-        $__internal_f48d895a4f34e3f3aa1e433da02efaf04f8f0a6a6cd1d3b7dcfd262c50fdc026->leave($__internal_f48d895a4f34e3f3aa1e433da02efaf04f8f0a6a6cd1d3b7dcfd262c50fdc026_prof);
+        $__internal_7b6c9c81ca078e1501e95e7f42f2085b5421a0ec0764009fccf0eb28b6c64ffb->leave($__internal_7b6c9c81ca078e1501e95e7f42f2085b5421a0ec0764009fccf0eb28b6c64ffb_prof);
 
         
-        $__internal_4eefc008ef65ad7cba97366c0d27059d0a0bfc6c08149aef64cee740fe35eb52->leave($__internal_4eefc008ef65ad7cba97366c0d27059d0a0bfc6c08149aef64cee740fe35eb52_prof);
+        $__internal_b632560fe12978087628ee8f72c5b3252e05f189c2b17a79785bbab65d6a6fd8->leave($__internal_b632560fe12978087628ee8f72c5b3252e05f189c2b17a79785bbab65d6a6fd8_prof);
 
     }
 
@@ -169,7 +184,7 @@ class __TwigTemplate_8c9af76da28d82aa3687285d0455cbff67dfb1338569ae5f1386ff91504
 
     public function getDebugInfo()
     {
-        return array (  147 => 44,  143 => 43,  139 => 42,  135 => 41,  131 => 39,  122 => 36,  119 => 35,  115 => 34,  109 => 31,  105 => 30,  101 => 29,  97 => 28,  93 => 27,  77 => 13,  69 => 11,  63 => 8,  59 => 7,  54 => 6,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  162 => 50,  158 => 49,  154 => 48,  148 => 45,  144 => 44,  139 => 42,  135 => 41,  131 => 39,  122 => 36,  119 => 35,  115 => 34,  109 => 31,  105 => 30,  101 => 29,  97 => 28,  93 => 27,  77 => 13,  69 => 11,  63 => 8,  59 => 7,  54 => 6,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -223,8 +238,14 @@ class __TwigTemplate_8c9af76da28d82aa3687285d0455cbff67dfb1338569ae5f1386ff91504
 
     <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
       {{ form_start(form) }}
-      {{ form_widget(form) }}
-      <a onclick=\"return(confirm('Attention vous êtes sur le point d'annuler votre action'));\" href=\"{{ path('mesCompetences') }}\" class=\"btn btn-warning pull-right\"/> Annuler</a>
+      {{ form_row(form.nom) }}
+        <div class=\"range\">
+        {{ form_widget(form.pourcentage) }}
+        <output id=\"range\">{{competences.pourcentage}}</output>
+        </div>
+        <br>
+      {{ form_widget(form.save) }}
+      <a onclick=\"return(confirm('Attention vous êtes sur le point d'annuler votre action'));\" href=\"{{path('projets')}}\" class=\"btn btn-warning pull-right\"/> Annuler</a>
       {{ form_end(form) }}
     </div>
 </div>
