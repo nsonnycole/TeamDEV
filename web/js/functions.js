@@ -1,17 +1,18 @@
 // Ajout image
 
 function showForm(id, route){
-    console.log('je passe');
+
   $.ajax({
       type: 'POST',
       url: route,
-      data: {},
-      datatype: 'json',
+      data: $(this).serialize(),
+      dataType:'json',
       beforeSend: function() {
       $('.modal-body').html("<div align='center'><i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><br><h3> Chargement</h3></div>");
       },
-      success: function(result) {
-        $('.modal-body').html(result);s
+      success: function(response, status, xhr) {
+          console.log(response);
+          $('.modal-body').html(response);
       },
 
       error: function(jqXHR, exception) {

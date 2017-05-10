@@ -84,9 +84,9 @@ class ProjetController extends Controller
   */
  public function newProjetImageAction (Request $request,$idProjet){
 
-   if (!$request->isXmlHttpRequest()) {
-        return new JsonResponse(array('message' => 'Vous ne pouvez pas accedez à ce formulaire!'), 400);
-    }
+  //  if (!$request->isXmlHttpRequest()) {
+  //       return new JsonResponse(array('message' => 'Vous ne pouvez pas accedez à ce formulaire!'), 400);
+  //   }
 
      $session = new Session();
      $em = $this->getDoctrine()->getManager();
@@ -95,7 +95,7 @@ class ProjetController extends Controller
 
      if ($request->getMethod() === 'POST') {
          $form->handleRequest($request);
-         if ($form->isValid()) {
+         if ($form->isSubmitted()) {
              $em = $this->getDoctrine()->getEntityManager();
 
              $projet->uploadProfilePicture();
@@ -108,12 +108,12 @@ class ProjetController extends Controller
 
      $response = new JsonResponse(
                array(
-           'message' => 'Error',
-           'form' => $this->renderView('projets/newProjetImage.html.twig',
-                   array(
-               'projet' => $projet,
-               'form' => $form->createView(),
-           ))), 400);
+               'message' => 'success',
+               'form' => $this->renderView('projets/newProjetImage.html.twig',
+                       array(
+                   'projet' => $projet,
+                   'form' => $form->createView(),
+               ))), 200);
 
        return $response;
 

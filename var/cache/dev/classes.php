@@ -197,7 +197,7 @@ return $this->started;
 }
 public function setOptions(array $options)
 {
-$validOptions = array_flip(array('cache_limiter','cookie_domain','cookie_httponly','cookie_lifetime','cookie_path','cookie_secure','entropy_file','entropy_length','gc_divisor','gc_maxlifetime','gc_probability','hash_bits_per_character','hash_function','name','referer_check','serialize_handler','use_cookies','use_only_cookies','use_trans_sid','upload_progress.enabled','upload_progress.cleanup','upload_progress.prefix','upload_progress.name','upload_progress.freq','upload_progress.min-freq','url_rewriter.tags',
+$validOptions = array_flip(array('cache_limiter','cookie_domain','cookie_httponly','cookie_lifetime','cookie_path','cookie_secure','entropy_file','entropy_length','gc_divisor','gc_maxlifetime','gc_probability','hash_bits_per_character','hash_function','name','referer_check','serialize_handler','use_strict_mode','use_cookies','use_only_cookies','use_trans_sid','upload_progress.enabled','upload_progress.cleanup','upload_progress.prefix','upload_progress.name','upload_progress.freq','upload_progress.min-freq','url_rewriter.tags',
 ));
 foreach ($options as $key => $value) {
 if (isset($validOptions[$key])) {
@@ -1184,25 +1184,23 @@ private function init($namespace, $directory)
 {
 if (!isset($directory[0])) {
 $directory = sys_get_temp_dir().'/symfony-cache';
+} else {
+$directory = realpath($directory) ?: $directory;
 }
 if (isset($namespace[0])) {
 if (preg_match('#[^-+_.A-Za-z0-9]#', $namespace, $match)) {
 throw new InvalidArgumentException(sprintf('Namespace contains "%s" but only characters in [-+_.A-Za-z0-9] are allowed.', $match[0]));
 }
-$directory .='/'.$namespace;
+$directory .= DIRECTORY_SEPARATOR.$namespace;
 }
-if (!file_exists($dir = $directory.'/.')) {
+if (!file_exists($directory)) {
 @mkdir($directory, 0777, true);
 }
-if (false === $dir = realpath($dir) ?: (file_exists($dir) ? $dir : false)) {
-throw new InvalidArgumentException(sprintf('Cache directory does not exist (%s)', $directory));
-}
-$dir .= DIRECTORY_SEPARATOR;
-if ('\\'=== DIRECTORY_SEPARATOR && strlen($dir) > 234) {
+$directory .= DIRECTORY_SEPARATOR;
+if ('\\'=== DIRECTORY_SEPARATOR && strlen($directory) > 234) {
 throw new InvalidArgumentException(sprintf('Cache directory too long (%s)', $directory));
 }
-$this->directory = $dir;
-$this->tmp = $this->directory.uniqid('', true);
+$this->directory = $directory;
 }
 protected function doClear($namespace)
 {
@@ -1223,17 +1221,19 @@ return $ok;
 }
 private function write($file, $data, $expiresAt = null)
 {
-if (false === @file_put_contents($this->tmp, $data)) {
-return false;
+set_error_handler(__CLASS__.'::throwError');
+try {
+if (null === $this->tmp) {
+$this->tmp = $this->directory.uniqid('', true);
 }
+file_put_contents($this->tmp, $data);
 if (null !== $expiresAt) {
-@touch($this->tmp, $expiresAt);
+touch($this->tmp, $expiresAt);
 }
-if (@rename($this->tmp, $file)) {
-return true;
+return rename($this->tmp, $file);
+} finally {
+restore_error_handler();
 }
-@unlink($this->tmp);
-return false;
 }
 private function getFile($id, $mkdir = false)
 {
@@ -1243,6 +1243,17 @@ if ($mkdir && !file_exists($dir)) {
 @mkdir($dir, 0777, true);
 }
 return $dir.substr($hash, 2, 20);
+}
+public static function throwError($type, $message, $file, $line)
+{
+throw new \ErrorException($message, 0, $type, $file, $line);
+}
+public function __destruct()
+{
+parent::__destruct();
+if (null !== $this->tmp && file_exists($this->tmp)) {
+unlink($this->tmp);
+}
 }
 }
 }
@@ -2348,7 +2359,7 @@ $dump .="\n);\n";
 $dump = str_replace("' . \"\\0\" . '","\0", $dump);
 $tmpFile = uniqid($this->file, true);
 file_put_contents($tmpFile, $dump);
-@chmod($tmpFile, 0666);
+@chmod($tmpFile, 0666 & ~umask());
 unset($serialized, $unserialized, $value, $dump);
 @rename($tmpFile, $this->file);
 $this->values = (include $this->file) ?: array();
@@ -3220,7 +3231,7 @@ return $priority;
 }
 public function hasListeners($eventName = null)
 {
-return (bool) count($this->getListeners($eventName));
+return (bool) $this->getListeners($eventName);
 }
 public function addListener($eventName, $listener, $priority = 0)
 {
@@ -5069,11 +5080,11 @@ namespace
 {
 class Twig_Environment
 {
-const VERSION ='1.32.0';
-const VERSION_ID = 13200;
+const VERSION ='1.33.2';
+const VERSION_ID = 13302;
 const MAJOR_VERSION = 1;
-const MINOR_VERSION = 32;
-const RELEASE_VERSION = 0;
+const MINOR_VERSION = 33;
+const RELEASE_VERSION = 1;
 const EXTRA_VERSION ='';
 protected $charset;
 protected $loader;
@@ -6574,7 +6585,11 @@ if (!isset($char[1])) {
 return'\\x'.strtoupper(substr('00'.bin2hex($char), -2));
 }
 $char = twig_convert_encoding($char,'UTF-16BE','UTF-8');
-return'\\u'.strtoupper(substr('0000'.bin2hex($char), -4));
+$char = strtoupper(bin2hex($char));
+if (4 >= strlen($char)) {
+return sprintf('\u%04s', $char);
+}
+return sprintf('\u%04s\u%04s', substr($char, 0, -4), substr($char, -4));
 }
 function _twig_escape_css_callback($matches)
 {
@@ -6617,7 +6632,13 @@ return sprintf('&#x%s;', $hex);
 if (function_exists('mb_get_info')) {
 function twig_length_filter(Twig_Environment $env, $thing)
 {
-return is_scalar($thing) ? mb_strlen($thing, $env->getCharset()) : count($thing);
+if (is_scalar($thing)) {
+return mb_strlen($thing, $env->getCharset());
+}
+if (is_object($thing) && method_exists($thing,'__toString') && !$thing instanceof \Countable) {
+return mb_strlen((string) $thing, $env->getCharset());
+}
+return count($thing);
 }
 function twig_upper_filter(Twig_Environment $env, $string)
 {
@@ -6651,7 +6672,13 @@ return ucfirst(strtolower($string));
 else {
 function twig_length_filter(Twig_Environment $env, $thing)
 {
-return is_scalar($thing) ? strlen($thing) : count($thing);
+if (is_scalar($thing)) {
+return strlen($thing);
+}
+if (is_object($thing) && method_exists($thing,'__toString') && !$thing instanceof \Countable) {
+return strlen((string) $thing);
+}
+return count($thing);
 }
 function twig_title_string_filter(Twig_Environment $env, $string)
 {
@@ -6673,6 +6700,9 @@ function twig_test_empty($value)
 {
 if ($value instanceof Countable) {
 return 0 == count($value);
+}
+if (is_object($value) && method_exists($value,'__toString')) {
+return''=== (string) $value;
 }
 return''=== $value || false === $value || null === $value || array() === $value;
 }
@@ -7217,11 +7247,13 @@ $lcName = substr($lcName, 2);
 } else {
 continue;
 }
+if ($name) {
 if (!isset($cache[$name])) {
 $cache[$name] = $method;
 }
 if (!isset($cache[$lcName])) {
 $cache[$lcName] = $method;
+}
 }
 }
 self::$cache[$class] = $cache;
@@ -7552,7 +7584,7 @@ $previousText .=', '.get_class($previous).'(code: '.$previous->getCode().'): '.$
 }
 $str ='[object] ('.get_class($e).'(code: '.$e->getCode().'): '.$e->getMessage().' at '.$e->getFile().':'.$e->getLine().$previousText.')';
 if ($this->includeStacktraces) {
-$str .="\n[stacktrace]\n".$e->getTraceAsString();
+$str .="\n[stacktrace]\n".$e->getTraceAsString()."\n";
 }
 return $str;
 }
@@ -7572,6 +7604,9 @@ return str_replace('\\/','/', @json_encode($data));
 protected function replaceNewlines($str)
 {
 if ($this->allowInlineLineBreaks) {
+if (0 === strpos($str,'{')) {
+return str_replace(array('\r','\n'), array("\r","\n"), $str);
+}
 return $str;
 }
 return str_replace(array("\r\n","\r","\n"),' ', $str);
@@ -9525,9 +9560,6 @@ public function onKernelController(FilterControllerEvent $event)
 {
 $request = $event->getRequest();
 $template = $request->attributes->get('_template');
-if (null === $template) {
-return;
-}
 if (!$template instanceof Template) {
 return;
 }
@@ -9541,7 +9573,7 @@ public function onKernelView(GetResponseForControllerResultEvent $event)
 {
 $request = $event->getRequest();
 $template = $request->attributes->get('_template');
-if (null === $template) {
+if (!$template instanceof Template) {
 return;
 }
 $parameters = $event->getControllerResult();
