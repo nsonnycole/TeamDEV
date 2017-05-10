@@ -42,6 +42,7 @@ class InscriptionController extends Controller
            $inscription->setIdUtilisateur($usr);
          }
          $inscription->setIdProjet($projet);
+         $inscription->setStatut("En attente");
          $em->persist($inscription);
          $em->flush();
 
@@ -94,7 +95,7 @@ class InscriptionController extends Controller
         $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
         $projet = $inscription->getIdProjet();
 
-          $inscription->getStatut();
+          $inscription->setStatut("Accepter");
           $em->persist($inscription);
           $projet->setNbParticipants($projet->getNbParticipants()+1);
           $em->flush();
@@ -117,8 +118,8 @@ class InscriptionController extends Controller
         $projet = $inscription->getIdProjet();
 
 
-          $inscription->setStatut(4);
-          $em->persist($inscription);
+          $inscription->setStatut("Refuser");
+          $em->remove($inscription);
           $projet->setNbParticipants($projet->getNbParticipants()-1);
           $em->flush();
 

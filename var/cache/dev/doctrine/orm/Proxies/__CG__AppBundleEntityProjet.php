@@ -221,6 +221,28 @@ class Projet extends \AppBundle\Entity\Projet implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
+    public function getWebPath()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getWebPath', []);
+
+        return parent::getWebPath();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function uploadProfilePicture()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'uploadProfilePicture', []);
+
+        return parent::uploadProfilePicture();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {

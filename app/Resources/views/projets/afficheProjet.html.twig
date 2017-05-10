@@ -39,17 +39,24 @@
 <!-- CLIENT INFORMATION -->
 <div id="lg">
 <div class="container">
+<p><br><a  href="{{ path('deleteProjet', {'id': detailProjet.id}) }}" class="btn btn-danger">Supprimer</a>
+<a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
   <div class="row">
-    <div class="col-lg-5 col-lg-offset-1 desc">
+    <div class="col-lg-8 desc">
       <h3 style="font-weight:bold">{{detailProjet.nomProjet}}</h3>
       <br>
         <img style="width:455px;" src="{{asset("img/about-bg.jpg")}}" >
         <br>  <br>
+        <h4><b>Description: <br>{{detailProjet.description}}</b></h4>
+
         <p>{{detailProjet.contenu}}</p>
+
+        <h5><b>Type de projet : </b><br><br>{% for typeProjet in detailProjet.idTypeProjet %} {{typeProjet.getNom}}, {% endfor %}</h5>
+        <h5><b>Technologie : </b><br><br>{% for techno in detailProjet.technologies %} {{techno.getNom}}, {% endfor %}</h5>
 
     </div>
 
-    <div class="col-lg-4 col-lg-offset-1 desc">
+    <div class="col-lg-4 desc">
       <h3 style="font-weight:bold"> Infos supplémentaires</h3>
       <br>
 
@@ -62,18 +69,11 @@
       <h5><b>Statut  :</b> {{detailProjet.statut.nom}} </h5>
       <h5><b>URL : </b><br><br><a href="{{detailProjet.url}}">{{detailProjet.url}}</a></h5>
 
-      <h5><b>Langages : </b><br><br>{{detailProjet.idTypeProjet.nom}}</h5>
-
-      <h5><b>Description: </b><br>{{detailProjet.description}}</h5>
 
       <p><br><a  class="btn btn-green"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
-      <p><br><a  href="{{ path('deleteProjet', {'id': detailProjet.id}) }}" class="btn btn-danger">Supprimer</a>
-      <a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
 
 
 
-    </div>
-    <div class="col-sm-6 col-sm-offset-1">
     <h3>Participants</h3>
     <hr>
     <table class="table" id="myTable">

@@ -21,29 +21,29 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6d58ae0977766070a734c4853366e0086b0d4c703e9b814e8b7260bcc9e78e19 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_6d58ae0977766070a734c4853366e0086b0d4c703e9b814e8b7260bcc9e78e19->enter($__internal_6d58ae0977766070a734c4853366e0086b0d4c703e9b814e8b7260bcc9e78e19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
+        $__internal_a86362a05c9d577c0901a80743715e9a196770c5abdf2cb108d95a9ef62627da = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a86362a05c9d577c0901a80743715e9a196770c5abdf2cb108d95a9ef62627da->enter($__internal_a86362a05c9d577c0901a80743715e9a196770c5abdf2cb108d95a9ef62627da_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
 
-        $__internal_384e09ddd0f1f457d9f060788be9476defc336a2b5ec214ab5ce3c87d18b4b45 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_384e09ddd0f1f457d9f060788be9476defc336a2b5ec214ab5ce3c87d18b4b45->enter($__internal_384e09ddd0f1f457d9f060788be9476defc336a2b5ec214ab5ce3c87d18b4b45_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
+        $__internal_5a338ac4ce57c76455c15025acffb85392cff33d971ee6dc75e9a3ea2f60fb2b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5a338ac4ce57c76455c15025acffb85392cff33d971ee6dc75e9a3ea2f60fb2b->enter($__internal_5a338ac4ce57c76455c15025acffb85392cff33d971ee6dc75e9a3ea2f60fb2b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_6d58ae0977766070a734c4853366e0086b0d4c703e9b814e8b7260bcc9e78e19->leave($__internal_6d58ae0977766070a734c4853366e0086b0d4c703e9b814e8b7260bcc9e78e19_prof);
+        $__internal_a86362a05c9d577c0901a80743715e9a196770c5abdf2cb108d95a9ef62627da->leave($__internal_a86362a05c9d577c0901a80743715e9a196770c5abdf2cb108d95a9ef62627da_prof);
 
         
-        $__internal_384e09ddd0f1f457d9f060788be9476defc336a2b5ec214ab5ce3c87d18b4b45->leave($__internal_384e09ddd0f1f457d9f060788be9476defc336a2b5ec214ab5ce3c87d18b4b45_prof);
+        $__internal_5a338ac4ce57c76455c15025acffb85392cff33d971ee6dc75e9a3ea2f60fb2b->leave($__internal_5a338ac4ce57c76455c15025acffb85392cff33d971ee6dc75e9a3ea2f60fb2b_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_ab9099dc0daa48d5dc88eebe072ba15ba7dea5de1e761e278612cbd9ab7f358d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ab9099dc0daa48d5dc88eebe072ba15ba7dea5de1e761e278612cbd9ab7f358d->enter($__internal_ab9099dc0daa48d5dc88eebe072ba15ba7dea5de1e761e278612cbd9ab7f358d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0cb00790325195e3fe04f40e2967db5e9ee058efc5cf18fc85914b7cd8bb0cd0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0cb00790325195e3fe04f40e2967db5e9ee058efc5cf18fc85914b7cd8bb0cd0->enter($__internal_0cb00790325195e3fe04f40e2967db5e9ee058efc5cf18fc85914b7cd8bb0cd0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_b2888e20a11cbe543fb6ac6f90b05d2aef34a1aed4e074f817d12aacf349b543 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b2888e20a11cbe543fb6ac6f90b05d2aef34a1aed4e074f817d12aacf349b543->enter($__internal_b2888e20a11cbe543fb6ac6f90b05d2aef34a1aed4e074f817d12aacf349b543_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8612ca0d8cb62f7c403625cfb64bbe71ac8e50c781a7c7b03c2449add0dbd15e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8612ca0d8cb62f7c403625cfb64bbe71ac8e50c781a7c7b03c2449add0dbd15e->enter($__internal_8612ca0d8cb62f7c403625cfb64bbe71ac8e50c781a7c7b03c2449add0dbd15e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<div class=\"container\" style=\"display:inline\">
@@ -131,93 +131,114 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 <!-- CLIENT INFORMATION -->
 <div id=\"lg\">
 <div class=\"container\">
+<p><br><a  href=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("deleteProjet", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
+        echo "\" class=\"btn btn-danger\">Supprimer</a>
+<a href=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("editProjet", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
+        echo "\" class=\"btn btn-warning\">Modifier</a></p>
   <div class=\"row\">
-    <div class=\"col-lg-5 col-lg-offset-1 desc\">
+    <div class=\"col-lg-8 desc\">
       <h3 style=\"font-weight:bold\">";
-        // line 44
+        // line 46
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "nomProjet", array()), "html", null, true);
         echo "</h3>
       <br>
         <img style=\"width:455px;\" src=\"";
-        // line 46
+        // line 48
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/about-bg.jpg"), "html", null, true);
         echo "\" >
         <br>  <br>
+        <h4><b>Description: <br>";
+        // line 50
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "description", array()), "html", null, true);
+        echo "</b></h4>
+
         <p>";
-        // line 48
+        // line 52
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "contenu", array()), "html", null, true);
         echo "</p>
 
+        <h5><b>Type de projet : </b><br><br>";
+        // line 54
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "idTypeProjet", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["typeProjet"]) {
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["typeProjet"], "getNom", array()), "html", null, true);
+            echo ", ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['typeProjet'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        echo "</h5>
+        <h5><b>Technologie : </b><br><br>";
+        // line 55
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "technologies", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["techno"]) {
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["techno"], "getNom", array()), "html", null, true);
+            echo ", ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['techno'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        echo "</h5>
+
     </div>
 
-    <div class=\"col-lg-4 col-lg-offset-1 desc\">
+    <div class=\"col-lg-4 desc\">
       <h3 style=\"font-weight:bold\"> Infos supplémentaires</h3>
       <br>
 
       <h5><b>Auteur :</b> ";
-        // line 56
+        // line 63
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "idUtilisateur", array()), "username", array()), "html", null, true);
         echo "</h5>
       <h5><b>Date de début  :</b> ";
-        // line 57
+        // line 64
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "dateDebut", array()), "d/m/Y"), "html", null, true);
         echo " </h5>
       <h5><b>Date de fin  :</b> ";
-        // line 58
+        // line 65
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "dateFin", array()), "d/m/Y"), "html", null, true);
         echo " </h5>
       <h5><b>Durée  :</b> ";
-        // line 59
+        // line 66
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "duree", array()), "html", null, true);
         echo " </h5>
       <h5><b>Auteur :</b> ";
-        // line 60
+        // line 67
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "idUtilisateur", array()), "username", array()), "html", null, true);
         echo "</h5>
       <h5><b>Nombre de participants :</b> ";
-        // line 61
+        // line 68
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "nbParticipants", array()), "html", null, true);
         echo " / ";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "nbPlaces", array()), "html", null, true);
         echo " </h5>
       <h5><b>Statut  :</b> ";
-        // line 62
+        // line 69
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "statut", array()), "nom", array()), "html", null, true);
         echo " </h5>
       <h5><b>URL : </b><br><br><a href=\"";
-        // line 63
+        // line 70
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "url", array()), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "url", array()), "html", null, true);
         echo "</a></h5>
 
-      <h5><b>Langages : </b><br><br>";
-        // line 65
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "idTypeProjet", array()), "nom", array()), "html", null, true);
-        echo "</h5>
-
-      <h5><b>Description: </b><br>";
-        // line 67
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "description", array()), "html", null, true);
-        echo "</h5>
 
       <p><br><a  class=\"btn btn-green\"href=\"";
-        // line 69
+        // line 73
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("newInsc", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
         echo "\" lass=\"btn btn-green pull-left\">Participer !</a></p>
-      <p><br><a  href=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("deleteProjet", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
-        echo "\" class=\"btn btn-danger\">Supprimer</a>
-      <a href=\"";
-        // line 71
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("editProjet", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
-        echo "\" class=\"btn btn-warning\">Modifier</a></p>
 
 
 
-    </div>
-    <div class=\"col-sm-6 col-sm-offset-1\">
     <h3>Participants</h3>
     <hr>
     <table class=\"table\" id=\"myTable\">
@@ -267,10 +288,10 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 
 ";
         
-        $__internal_b2888e20a11cbe543fb6ac6f90b05d2aef34a1aed4e074f817d12aacf349b543->leave($__internal_b2888e20a11cbe543fb6ac6f90b05d2aef34a1aed4e074f817d12aacf349b543_prof);
+        $__internal_8612ca0d8cb62f7c403625cfb64bbe71ac8e50c781a7c7b03c2449add0dbd15e->leave($__internal_8612ca0d8cb62f7c403625cfb64bbe71ac8e50c781a7c7b03c2449add0dbd15e_prof);
 
         
-        $__internal_ab9099dc0daa48d5dc88eebe072ba15ba7dea5de1e761e278612cbd9ab7f358d->leave($__internal_ab9099dc0daa48d5dc88eebe072ba15ba7dea5de1e761e278612cbd9ab7f358d_prof);
+        $__internal_0cb00790325195e3fe04f40e2967db5e9ee058efc5cf18fc85914b7cd8bb0cd0->leave($__internal_0cb00790325195e3fe04f40e2967db5e9ee058efc5cf18fc85914b7cd8bb0cd0_prof);
 
     }
 
@@ -286,7 +307,7 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 
     public function getDebugInfo()
     {
-        return array (  259 => 94,  249 => 90,  245 => 89,  238 => 87,  235 => 86,  231 => 85,  214 => 71,  210 => 70,  206 => 69,  201 => 67,  196 => 65,  189 => 63,  185 => 62,  179 => 61,  175 => 60,  171 => 59,  167 => 58,  163 => 57,  159 => 56,  148 => 48,  143 => 46,  138 => 44,  130 => 38,  121 => 35,  118 => 34,  114 => 33,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  85 => 19,  77 => 13,  69 => 11,  63 => 8,  59 => 7,  54 => 6,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  280 => 94,  270 => 90,  266 => 89,  259 => 87,  256 => 86,  252 => 85,  237 => 73,  229 => 70,  225 => 69,  219 => 68,  215 => 67,  211 => 66,  207 => 65,  203 => 64,  199 => 63,  179 => 55,  166 => 54,  161 => 52,  156 => 50,  151 => 48,  146 => 46,  140 => 43,  136 => 42,  130 => 38,  121 => 35,  118 => 34,  114 => 33,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  85 => 19,  77 => 13,  69 => 11,  63 => 8,  59 => 7,  54 => 6,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -340,17 +361,24 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
 <!-- CLIENT INFORMATION -->
 <div id=\"lg\">
 <div class=\"container\">
+<p><br><a  href=\"{{ path('deleteProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-danger\">Supprimer</a>
+<a href=\"{{ path('editProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-warning\">Modifier</a></p>
   <div class=\"row\">
-    <div class=\"col-lg-5 col-lg-offset-1 desc\">
+    <div class=\"col-lg-8 desc\">
       <h3 style=\"font-weight:bold\">{{detailProjet.nomProjet}}</h3>
       <br>
         <img style=\"width:455px;\" src=\"{{asset(\"img/about-bg.jpg\")}}\" >
         <br>  <br>
+        <h4><b>Description: <br>{{detailProjet.description}}</b></h4>
+
         <p>{{detailProjet.contenu}}</p>
+
+        <h5><b>Type de projet : </b><br><br>{% for typeProjet in detailProjet.idTypeProjet %} {{typeProjet.getNom}}, {% endfor %}</h5>
+        <h5><b>Technologie : </b><br><br>{% for techno in detailProjet.technologies %} {{techno.getNom}}, {% endfor %}</h5>
 
     </div>
 
-    <div class=\"col-lg-4 col-lg-offset-1 desc\">
+    <div class=\"col-lg-4 desc\">
       <h3 style=\"font-weight:bold\"> Infos supplémentaires</h3>
       <br>
 
@@ -363,18 +391,11 @@ class __TwigTemplate_955959bcd6abafb815fa2af6c1d9e39ec621f48278030b25f7a011ac0e5
       <h5><b>Statut  :</b> {{detailProjet.statut.nom}} </h5>
       <h5><b>URL : </b><br><br><a href=\"{{detailProjet.url}}\">{{detailProjet.url}}</a></h5>
 
-      <h5><b>Langages : </b><br><br>{{detailProjet.idTypeProjet.nom}}</h5>
-
-      <h5><b>Description: </b><br>{{detailProjet.description}}</h5>
 
       <p><br><a  class=\"btn btn-green\"href=\"{{ path('newInsc', {'id': detailProjet.id}) }}\" lass=\"btn btn-green pull-left\">Participer !</a></p>
-      <p><br><a  href=\"{{ path('deleteProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-danger\">Supprimer</a>
-      <a href=\"{{ path('editProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-warning\">Modifier</a></p>
 
 
 
-    </div>
-    <div class=\"col-sm-6 col-sm-offset-1\">
     <h3>Participants</h3>
     <hr>
     <table class=\"table\" id=\"myTable\">

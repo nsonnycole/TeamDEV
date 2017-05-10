@@ -30,11 +30,72 @@
   <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
 </ol>
 <div class="container">
-    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-      {{ form_start(form) }}
-      {{ form_widget(form) }}
-      <a onclick="return(confirm('Attention vous êtes sur le point d'annuler votre action'));" href="{{path('projets')}}" class="btn btn-warning pull-right"/> Annuler</a>
-      {{ form_end(form) }}
-    </div>
+<!-- Button trigger modal -->
+
+
+<div class="container">
+<br/>
+<div class="panel panel-default">
+
+			<div class="panel-heading">Nouveau projet
+      <button  type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModal">
+        Ajouter/Modifier un fichier
+      </button>
+      </div>
+			<div class="panel-body">
+					<div class="panel panel-default">
+						<div class="panel-body">
+            {{ form_start(form) }}
+            <div class="col-md-6">
+              {{ form_row(form.nomProjet) }}
+              {{ form_row(form.description) }}
+              {{ form_row(form.contenu) }}
+              {{ form_row(form.url) }}
+
+            </div>
+            <div class="col-md-6">
+              {{ form_row(form.dateDebut) }}
+              {{ form_row(form.dateFin) }}
+              {{ form_row(form.nbPlaces) }}
+              {{ form_row(form.statut) }}
+              {{ form_row(form.idTypeProjet) }}
+              {{ form_row(form.technologies) }}
+
+            </div>
+            <hr>
+              {{ form_row(form.save) }}
+              <a onclick="return(confirm('Attention vous êtes sur le point d'annuler votre action'));" href="{{path('projets')}}" class="btn btn-warning pull-right"/>
+             Annuler </a>
+            {{ form_end(form) }}
+						</div>
+					</div>
+
+				<div class="clearfix"></div>
+            </div>
+</div>
+</div>
+
+<div class="container">
+	<div class="row">
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+
+                  </div>
+                  <div class="modal-footer">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+	</div>
 </div>
 {% endblock %}

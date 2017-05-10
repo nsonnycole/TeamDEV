@@ -16,10 +16,9 @@ class Inscription
   */
   protected $id;
   /**
-  * @var statut du projet.
+  * @var String
   *
-  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
-  * @ORM\JoinColumn(name = "statut")
+  * @ORM\Column(name = "statut", type = "string", nullable = true)
   */
   protected  $statut;
   /**
@@ -152,14 +151,15 @@ class Inscription
         return $this->commentaire;
     }
 
+
     /**
      * Set statut
      *
-     * @param \AppBundle\Entity\Statut $statut
+     * @param string $statut
      *
      * @return Inscription
      */
-    public function setStatut(\AppBundle\Entity\Statut $statut = null)
+    public function setStatut($statut)
     {
         $this->statut = $statut;
 
@@ -169,7 +169,7 @@ class Inscription
     /**
      * Get statut
      *
-     * @return \AppBundle\Entity\Statut
+     * @return string
      */
     public function getStatut()
     {

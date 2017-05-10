@@ -112,7 +112,7 @@ class Projet
   /**
   * @var Type de ce projet.
   *
-  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\TypeProjet",cascade={"persist","remove"})
+  * @ORM\ManyToMany(targetEntity = "AppBundle\Entity\TypeProjet",cascade={"persist","remove"})
   * @ORM\JoinColumn(name = "idTypeProjet", onDelete = "cascade")
   */
   protected  $idTypeProjet;
@@ -121,336 +121,399 @@ class Projet
   */
   public $url;
   /**
-  * @ORM\Column(name = "picture_name", type="string", length=255, nullable=true)
+  * @ORM\Column(type="string", length=255, nullable=true)
   */
   public $pictureName;
 
   /**
-  *
-  * @Assert\File(maxSize="500k")
+  * @Assert\File(maxSize="1024k")
   */
   public $file;
 
+  public function getWebPath()
+  {
+    return null === $this->pictureName ? null : $this->getUploadDir().'/'.$this->pictureName;
+  }
+
+  protected function getUploadRootDir()
+  {
+    // le chemin absolu du répertoire dans lequel sauvegarder les photos
+    return __DIR__.'/../../../../web/'.$this->getUploadDir();
+  }
+
+  protected function getUploadDir()
+  {
+    // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+    return 'uploads/pictures';
+  }
+
+  public function uploadProfilePicture()
+  {
+    // Nous utilisons le nom de fichier original, donc il est dans la pratique
+    // nécessaire de le nettoyer pour éviter les problèmes de sécurité
+
+    // move copie le fichier présent chez le client dans le répertoire indiqué.
+    $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
+
+    // On sauvegarde le nom de fichier
+    $this->pictureName = $this->file->getClientOriginalName();
+
+    // La propriété file ne servira plus
+    $this->file = null;
+  }
+
+  /**
+  * @var technologies du projet.
+  *
+  * @ORM\ManyToMany(targetEntity = "AppBundle\Entity\Technologie", cascade={"persist"})
+  * @ORM\JoinColumn(name = "technologies",onDelete = "cascade")
+  */
+  protected  $technologies;
+
+
+  /**
+  * Get id
+  *
+  * @return integer
+  */
+  public function getId()
+  {
+    return $this->id;
+  }
+
+  /**
+  * Set nomProjet
+  *
+  * @param string $nomProjet
+  *
+  * @return Projet
+  */
+  public function setNomProjet($nomProjet)
+  {
+    $this->nomProjet = $nomProjet;
+
+    return $this;
+  }
+
+  /**
+  * Get nomProjet
+  *
+  * @return string
+  */
+  public function getNomProjet()
+  {
+    return $this->nomProjet;
+  }
+
+  /**
+  * Set description
+  *
+  * @param string $description
+  *
+  * @return Projet
+  */
+  public function setDescription($description)
+  {
+    $this->description = $description;
+
+    return $this;
+  }
+
+  /**
+  * Get description
+  *
+  * @return string
+  */
+  public function getDescription()
+  {
+    return $this->description;
+  }
+
+  /**
+  * Set contenu
+  *
+  * @param string $contenu
+  *
+  * @return Projet
+  */
+  public function setContenu($contenu)
+  {
+    $this->contenu = $contenu;
+
+    return $this;
+  }
+
+  /**
+  * Get contenu
+  *
+  * @return string
+  */
+  public function getContenu()
+  {
+    return $this->contenu;
+  }
+
+  /**
+  * Set dateDebut
+  *
+  * @param \DateTime $dateDebut
+  *
+  * @return Projet
+  */
+  public function setDateDebut($dateDebut)
+  {
+    $this->dateDebut = $dateDebut;
+
+    return $this;
+  }
+
+  /**
+  * Get dateDebut
+  *
+  * @return \DateTime
+  */
+  public function getDateDebut()
+  {
+    return $this->dateDebut;
+  }
+
+  /**
+  * Set dateFin
+  *
+  * @param \DateTime $dateFin
+  *
+  * @return Projet
+  */
+  public function setDateFin($dateFin)
+  {
+    $this->dateFin = $dateFin;
+
+    return $this;
+  }
+
+  /**
+  * Get dateFin
+  *
+  * @return \DateTime
+  */
+  public function getDateFin()
+  {
+    return $this->dateFin;
+  }
+
+  /**
+  * Set duree
+  *
+  * @param integer $duree
+  *
+  * @return Projet
+  */
+  public function setDuree($duree)
+  {
+    $this->duree = $duree;
+
+    return $this;
+  }
+
+  /**
+  * Get duree
+  *
+  * @return integer
+  */
+  public function getDuree()
+  {
+    return $this->duree;
+  }
+
+  /**
+  * Set nbPlaces
+  *
+  * @param integer $nbPlaces
+  *
+  * @return Projet
+  */
+  public function setNbPlaces($nbPlaces)
+  {
+    $this->nbPlaces = $nbPlaces;
+
+    return $this;
+  }
+
+  /**
+  * Get nbPlaces
+  *
+  * @return integer
+  */
+  public function getNbPlaces()
+  {
+    return $this->nbPlaces;
+  }
+
+  /**
+  * Set nbParticipants
+  *
+  * @param integer $nbParticipants
+  *
+  * @return Projet
+  */
+  public function setNbParticipants($nbParticipants)
+  {
+    $this->nbParticipants = $nbParticipants;
+
+    return $this;
+  }
+
+  /**
+  * Get nbParticipants
+  *
+  * @return integer
+  */
+  public function getNbParticipants()
+  {
+    return $this->nbParticipants;
+  }
+
+  /**
+  * Set url
+  *
+  * @param string $url
+  *
+  * @return Projet
+  */
+  public function setUrl($url)
+  {
+    $this->url = $url;
+
+    return $this;
+  }
+
+  /**
+  * Get url
+  *
+  * @return string
+  */
+  public function getUrl()
+  {
+    return $this->url;
+  }
+
+  /**
+  * Set pictureName
+  *
+  * @param string $pictureName
+  *
+  * @return Projet
+  */
+  public function setPictureName($pictureName)
+  {
+    $this->pictureName = $pictureName;
+
+    return $this;
+  }
+
+  /**
+  * Get pictureName
+  *
+  * @return string
+  */
+  public function getPictureName()
+  {
+    return $this->pictureName;
+  }
+
+  /**
+  * Set statut
+  *
+  * @param \AppBundle\Entity\Statut $statut
+  *
+  * @return Projet
+  */
+  public function setStatut(\AppBundle\Entity\Statut $statut = null)
+  {
+    $this->statut = $statut;
+
+    return $this;
+  }
+
+  /**
+  * Get statut
+  *
+  * @return \AppBundle\Entity\Statut
+  */
+  public function getStatut()
+  {
+    return $this->statut;
+  }
+
+  /**
+  * Set idUtilisateur
+  *
+  * @param \AppBundle\Entity\User $idUtilisateur
+  *
+  * @return Projet
+  */
+  public function setIdUtilisateur(\AppBundle\Entity\User $idUtilisateur = null)
+  {
+    $this->idUtilisateur = $idUtilisateur;
+
+    return $this;
+  }
+
+  /**
+  * Get idUtilisateur
+  *
+  * @return \AppBundle\Entity\User
+  */
+  public function getIdUtilisateur()
+  {
+    return $this->idUtilisateur;
+  }
+
+  /**
+  * Set idTypeProjet
+  *
+  * @param \AppBundle\Entity\TypeProjet $idTypeProjet
+  *
+  * @return Projet
+  */
+  public function setIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet = null)
+  {
+    $this->idTypeProjet = $idTypeProjet;
+
+    return $this;
+  }
+
+  /**
+  * Get idTypeProjet
+  *
+  * @return \AppBundle\Entity\TypeProjet
+  */
+  public function getIdTypeProjet()
+  {
+    return $this->idTypeProjet;
+  }
 
     /**
-     * Get id
+     * Set technologies
      *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set nomProjet
-     *
-     * @param string $nomProjet
+     * @param \AppBundle\Entity\Technologie $technologies
      *
      * @return Projet
      */
-    public function setNomProjet($nomProjet)
+    public function setTechnologies(\AppBundle\Entity\Technologie $technologies = null)
     {
-        $this->nomProjet = $nomProjet;
+        $this->technologies = $technologies;
 
         return $this;
     }
 
     /**
-     * Get nomProjet
+     * Get technologies
      *
-     * @return string
+     * @return \AppBundle\Entity\Technologie
      */
-    public function getNomProjet()
+    public function getTechnologies()
     {
-        return $this->nomProjet;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Projet
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set contenu
-     *
-     * @param string $contenu
-     *
-     * @return Projet
-     */
-    public function setContenu($contenu)
-    {
-        $this->contenu = $contenu;
-
-        return $this;
-    }
-
-    /**
-     * Get contenu
-     *
-     * @return string
-     */
-    public function getContenu()
-    {
-        return $this->contenu;
-    }
-
-    /**
-     * Set dateDebut
-     *
-     * @param \DateTime $dateDebut
-     *
-     * @return Projet
-     */
-    public function setDateDebut($dateDebut)
-    {
-        $this->dateDebut = $dateDebut;
-
-        return $this;
-    }
-
-    /**
-     * Get dateDebut
-     *
-     * @return \DateTime
-     */
-    public function getDateDebut()
-    {
-        return $this->dateDebut;
-    }
-
-    /**
-     * Set dateFin
-     *
-     * @param \DateTime $dateFin
-     *
-     * @return Projet
-     */
-    public function setDateFin($dateFin)
-    {
-        $this->dateFin = $dateFin;
-
-        return $this;
-    }
-
-    /**
-     * Get dateFin
-     *
-     * @return \DateTime
-     */
-    public function getDateFin()
-    {
-        return $this->dateFin;
-    }
-
-    /**
-     * Set duree
-     *
-     * @param integer $duree
-     *
-     * @return Projet
-     */
-    public function setDuree($duree)
-    {
-        $this->duree = $duree;
-
-        return $this;
-    }
-
-    /**
-     * Get duree
-     *
-     * @return integer
-     */
-    public function getDuree()
-    {
-        return $this->duree;
-    }
-
-    /**
-     * Set nbPlaces
-     *
-     * @param integer $nbPlaces
-     *
-     * @return Projet
-     */
-    public function setNbPlaces($nbPlaces)
-    {
-        $this->nbPlaces = $nbPlaces;
-
-        return $this;
-    }
-
-    /**
-     * Get nbPlaces
-     *
-     * @return integer
-     */
-    public function getNbPlaces()
-    {
-        return $this->nbPlaces;
-    }
-
-    /**
-     * Set nbParticipants
-     *
-     * @param integer $nbParticipants
-     *
-     * @return Projet
-     */
-    public function setNbParticipants($nbParticipants)
-    {
-        $this->nbParticipants = $nbParticipants;
-
-        return $this;
-    }
-
-    /**
-     * Get nbParticipants
-     *
-     * @return integer
-     */
-    public function getNbParticipants()
-    {
-        return $this->nbParticipants;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return Projet
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Set pictureName
-     *
-     * @param string $pictureName
-     *
-     * @return Projet
-     */
-    public function setPictureName($pictureName)
-    {
-        $this->pictureName = $pictureName;
-
-        return $this;
-    }
-
-    /**
-     * Get pictureName
-     *
-     * @return string
-     */
-    public function getPictureName()
-    {
-        return $this->pictureName;
-    }
-
-    /**
-     * Set statut
-     *
-     * @param \AppBundle\Entity\Statut $statut
-     *
-     * @return Projet
-     */
-    public function setStatut(\AppBundle\Entity\Statut $statut = null)
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    /**
-     * Get statut
-     *
-     * @return \AppBundle\Entity\Statut
-     */
-    public function getStatut()
-    {
-        return $this->statut;
-    }
-
-    /**
-     * Set idUtilisateur
-     *
-     * @param \AppBundle\Entity\User $idUtilisateur
-     *
-     * @return Projet
-     */
-    public function setIdUtilisateur(\AppBundle\Entity\User $idUtilisateur = null)
-    {
-        $this->idUtilisateur = $idUtilisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get idUtilisateur
-     *
-     * @return \AppBundle\Entity\User
-     */
-    public function getIdUtilisateur()
-    {
-        return $this->idUtilisateur;
-    }
-
-    /**
-     * Set idTypeProjet
-     *
-     * @param \AppBundle\Entity\TypeProjet $idTypeProjet
-     *
-     * @return Projet
-     */
-    public function setIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet = null)
-    {
-        $this->idTypeProjet = $idTypeProjet;
-
-        return $this;
-    }
-
-    /**
-     * Get idTypeProjet
-     *
-     * @return \AppBundle\Entity\TypeProjet
-     */
-    public function getIdTypeProjet()
-    {
-        return $this->idTypeProjet;
+        return $this->technologies;
     }
 }

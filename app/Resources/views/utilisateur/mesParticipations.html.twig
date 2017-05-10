@@ -51,7 +51,7 @@
     <td><a href="{{ path('showProjet', {'id': mesParticipation.idProjet.id}) }}">{{mesParticipation.idProjet.nomProjet}}</a></td>
     <td>{{mesParticipation.idProjet.description | striptags | slice(0, 60) }} [...] </td>
     <td><a href="{{ path('profilDe', {'username': mesParticipation.idProjet.idUtilisateur.username}) }}">{{mesParticipation.idProjet.idUtilisateur.username}}</a></td>
-    <td>{{mesParticipation.statut.nom}}</td>
+    <td>{{mesParticipation.statut}}</td>
     <td>{{mesParticipation.idProjet.dateDebut|date('d/m/Y')}} </td>
     <td>{{mesParticipation.idProjet.dateFin|date('d/m/Y')}}</td>
     <td><a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>{#<a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>#}</td>

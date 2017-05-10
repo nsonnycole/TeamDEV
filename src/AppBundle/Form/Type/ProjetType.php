@@ -59,24 +59,18 @@ class ProjetType extends AbstractType
                             'placeholder'=> 'Selectionnez le statut du projet',
     ))
 
-      // ->add('idTypeProjet', EntityType::class, array(
-      //                       'class' => 'AppBundle:TypeProjet',
-      //                       'choice_label' => 'nom',
-      //                       'label' => 'Type de projet',
-      //                       'placeholder'=> 'Selectionnez le type du projet',
-      //                       'multiple' => true,
-      //                       'attr' => array(
-      //                           'class' => 'chosen-select'
-      //                       ),
-
-
       ->add('idTypeProjet', EntityType::class, array(
                             'class' => 'AppBundle:TypeProjet',
                             'choice_label' => 'nom',
                             'label' => 'Type de projet',
                             'placeholder'=> 'Selectionnez le type du projet',
+                            'multiple' => true,
+                            'attr' => array(
+                                'class' => 'chosen-select'
+                            ),
 
-        ))
+    ))
+
       ->add('url', TextType::class, array(
                               'label' => 'URL du projet',
                               'required'   => false,
@@ -84,10 +78,19 @@ class ProjetType extends AbstractType
                                   'placeholder' => 'Ex: http://www.monSite.fr'
                               ),
       ))
-      ->add('file', FileType::class, array(
-                              'required'   => false,
-                              'label' => 'Fichier à joindre',
-      ))
+
+      ->add('technologies', EntityType::class, array(
+                            'class' => 'AppBundle:Technologie',
+                            'choice_label' => 'nom',
+                            'label' => 'Technologies',
+                            'placeholder'=> 'Selectionnez les technologies',
+                            'multiple' => true,
+                            'attr' => array(
+                                'class' => 'chosen-select'
+                            ),
+
+    ))
+
       ->add('save', SubmitType::class, array(
                               'label' => 'Enregistrer',
                               'attr' => array(

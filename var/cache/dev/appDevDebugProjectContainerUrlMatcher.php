@@ -173,9 +173,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'showProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::showProjetAction',));
             }
 
-            // newProjet
-            if ($pathinfo === '/projets/newProjet') {
-                return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::newProjetAction',  '_route' => 'newProjet',);
+            if (0 === strpos($pathinfo, '/projets/newProjet')) {
+                // newProjet
+                if ($pathinfo === '/projets/newProjet') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ProjetController::newProjetAction',  '_route' => 'newProjet',);
+                }
+
+                // newProjetImage
+                if (0 === strpos($pathinfo, '/projets/newProjetImage') && preg_match('#^/projets/newProjetImage/(?P<idProjet>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'newProjetImage')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::newProjetImageAction',));
+                }
+
             }
 
             // editProjet

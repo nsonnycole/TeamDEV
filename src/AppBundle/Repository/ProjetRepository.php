@@ -55,7 +55,21 @@ class ProjetRepository extends EntityRepository
     return $query->getResult();
   }
 
+  /**
+  *
+  * Retourne la liste des technologies pour ce projet
+  *
+  **/
 
+  public function getProjetTechno($id)
+  {
+    $query = $this->createQueryBuilder('p')
+          ->where('p.id = :id')
+          ->orderBy('p.id', 'DESC')
+          ->setParameter('id', $id)
+          ->getQuery();
+    return $query->getResult();
+  }
 
 
 

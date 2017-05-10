@@ -7,8 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Projet;
 use AppBundle\Form\Type\ProjetType;
+use AppBundle\Form\Type\ProjetImageType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ProjetController extends Controller
 {
@@ -76,6 +78,48 @@ class ProjetController extends Controller
       ));
 
  }
+
+ /**
+  * @Route("/projets/newProjetImage/{idProjet}", name="newProjetImage")
+  */
+ public function newProjetImageAction (Request $request,$idProjet){
+
+   if (!$request->isXmlHttpRequest()) {
+        return new JsonResponse(array('message' => 'Vous ne pouvez pas accedez à ce formulaire!'), 400);
+    }
+
+     $session = new Session();
+     $em = $this->getDoctrine()->getManager();
+     $projet = $em->getRepository('AppBundle:Projet')->getById($idProjet);
+     $form = $this->createForm(ProjetImageType::class, $projet);
+
+     if ($request->getMethod() === 'POST') {
+         $form->handleRequest($request);
+         if ($form->isValid()) {
+             $em = $this->getDoctrine()->getEntityManager();
+
+             $projet->uploadProfilePicture();
+             $em->persist($projet);
+             $em->flush();
+
+                return new JsonResponse(array('message' => 'Success!'), 200);
+         }
+     }
+
+     $response = new JsonResponse(
+               array(
+           'message' => 'Error',
+           'form' => $this->renderView('projets/newProjetImage.html.twig',
+                   array(
+               'projet' => $projet,
+               'form' => $form->createView(),
+           ))), 400);
+
+       return $response;
+
+
+ }
+
 
  /**
   * @Route("/projets/editProjet/{id}", name="editProjet")
