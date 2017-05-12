@@ -76,10 +76,12 @@ class MessageController extends Controller
         $session->getFlashBag()->add('success', 'Votre réponse à été envoyée !');
         return $this->redirect('/mesMessages');
       }
-        return $this->redirect('messages/showMessage.html.twig',array(
-          'form' => $form->createView(),
-          'message' => $message,
-        ));
+      return $this->render('messages/showMessage.html.twig', array(
+                        'form' => $form->createView(),
+                        'message' => $message
+
+
+      ));
 
 
   }
