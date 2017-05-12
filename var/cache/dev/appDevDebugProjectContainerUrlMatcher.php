@@ -162,6 +162,24 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'refuser')), array (  '_controller' => 'AppBundle\\Controller\\InscriptionController::refuserAction',));
         }
 
+        // newMessage
+        if (0 === strpos($pathinfo, '/newMessage') && preg_match('#^/newMessage/(?P<IdDestinataire>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'newMessage')), array (  '_controller' => 'AppBundle\\Controller\\MessageController::newMessageAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/messages')) {
+            // showMessage
+            if (0 === strpos($pathinfo, '/messages/showMessage') && preg_match('#^/messages/showMessage/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'showMessage')), array (  '_controller' => 'AppBundle\\Controller\\MessageController::showMessageAction',));
+            }
+
+            // deleteMessage
+            if (0 === strpos($pathinfo, '/messages/deleteMessage') && preg_match('#^/messages/deleteMessage/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deleteMessage')), array (  '_controller' => 'AppBundle\\Controller\\MessageController::deleteMessageAction',));
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/projets')) {
             // projets
             if ($pathinfo === '/projets') {
@@ -217,11 +235,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesCompetencesAction',  '_route' => 'mesCompetences',);
             }
 
+            // mesMessages
+            if ($pathinfo === '/mesMessages') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesMessagesAction',  '_route' => 'mesMessages',);
+            }
+
         }
 
-        // profilDe
-        if (0 === strpos($pathinfo, '/profilDe') && preg_match('#^/profilDe/(?P<username>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'profilDe')), array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::profilDeAction',));
+        if (0 === strpos($pathinfo, '/p')) {
+            if (0 === strpos($pathinfo, '/pro')) {
+                // profilDe
+                if (0 === strpos($pathinfo, '/profilDe') && preg_match('#^/profilDe/(?P<username>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'profilDe')), array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::profilDeAction',));
+                }
+
+                // projetDe
+                if (0 === strpos($pathinfo, '/projetDe') && preg_match('#^/projetDe/(?P<username>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'projetDe')), array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::projetDeAction',));
+                }
+
+            }
+
+            // participationDe
+            if (0 === strpos($pathinfo, '/participationDe') && preg_match('#^/participationDe/(?P<username>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'participationDe')), array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::participationDeAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

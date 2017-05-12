@@ -72,7 +72,21 @@ class InscriptionRepository extends EntityRepository
   }
 
 
+  public function getNbParticipationUser($usr){
+    $query = $this->createQueryBuilder('p')
+            ->select('count(p.id)')
+            ->where('p.idUtilisateur = :usr')
+            ->setParameter('usr', $usr)
+            ->getQuery();
+  return $query->getSingleScalarResult();
+  }
 
-
+  public function getParticipationUser($usr){
+    $query = $this->createQueryBuilder('p')
+            ->where('p.idUtilisateur = :usr')
+            ->setParameter('usr', $usr)
+            ->getQuery();
+  return $query->getResult();
+  }
 
 }

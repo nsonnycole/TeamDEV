@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
 <div class="container">
 {% if projet.pictureName %}
   <img src="{{ asset(projet.getWebPath()) }}" />
@@ -16,4 +17,7 @@
 
   </form>
 </div>
+{% else %}
+{{ render(controller('AppBundle:Default:index')) }}
+{% endif %}
 {% endblock %}

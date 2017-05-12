@@ -9,6 +9,7 @@ use AppBundle\Entity\Inscription;
 use AppBundle\Form\Type\InscriptionType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class InscriptionController extends Controller
 {
@@ -34,13 +35,18 @@ class InscriptionController extends Controller
 
 
        if($form->isSubmitted()){
+         if($projet->getNbPlaces() >= $projet->getNbParticipants()){
+           if($dejaInscrit ){
+             $session->getFlashBag()->add('warning', 'Vous êtes déja insscrit à ce projet!');
+             return $this->redirect('/projets');
+           }else{
+             $inscription->setIdUtilisateur($usr);
+           }
+        } else {
+          $session->getFlashBag()->add('danger', 'Désolé plus de places pour ce projet!');
+          return $this->redirect('/projets');
+        }
 
-         if($dejaInscrit){
-           $session->getFlashBag()->add('warning', 'Vous êtes déja insscrit à ce projet!');
-           return $this->redirect('/projets');
-         }else{
-           $inscription->setIdUtilisateur($usr);
-         }
          $inscription->setIdProjet($projet);
          $inscription->setStatut("En attente");
          $em->persist($inscription);

@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% if app.user and app.user.username != projet.idUtilisateur.username %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -38,4 +39,7 @@
       {{ form_end(form) }}
     </div>
 </div>
+{% else %}
+  {{ render(controller('AppBundle:Default:index')) }}
+{% endif %}
 {% endblock %}

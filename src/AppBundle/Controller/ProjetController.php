@@ -11,6 +11,7 @@ use AppBundle\Form\Type\ProjetImageType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class ProjetController extends Controller
 {
@@ -127,7 +128,7 @@ class ProjetController extends Controller
  public function editProjetAction(Request $request, $id)
  {
 
-     //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+    //  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
      $session = new Session();
      $em = $this->getDoctrine()->getManager();
      $projet = $em->getRepository('AppBundle:Projet')->getById($id);

@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -43,4 +44,7 @@
       {{ form_end(form) }}
     </div>
 </div>
+{% else %}
+{{ render(path('fos_user_security_login')) }}
+{% endif %}
 {% endblock %}

@@ -89,7 +89,7 @@ class Projet
   /**
   * @var Int nombre de participants au projet
   *
-  * @ORM\Column(name = "nbParticipants", type = "integer", nullable = false)
+  * @ORM\Column(name = "nbParticipants", type = "integer", nullable = true)
   */
   protected  $nbParticipants;
 
@@ -572,4 +572,6 @@ class Projet
     {
         $this->technologies->removeElement($technology);
     }
+
+
 }

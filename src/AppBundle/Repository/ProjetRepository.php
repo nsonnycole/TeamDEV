@@ -71,6 +71,15 @@ class ProjetRepository extends EntityRepository
     return $query->getResult();
   }
 
+  public function getNbProjetUser($usr){
+    $query = $this->createQueryBuilder('p')
+            ->select('count(p.id)')
+            ->where('p.idUtilisateur = :usr')
+            ->setParameter('usr', $usr)
+            ->getQuery();
+  return $query->getSingleScalarResult();
+  }
+
 
 
 

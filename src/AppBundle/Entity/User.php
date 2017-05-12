@@ -62,6 +62,14 @@ class User extends BaseUser
     protected $trophee;
 
 
+    /**
+    * @var messages.
+    *
+    * @ORM\ManyToMany(targetEntity = "AppBundle\Entity\Message",cascade={"persist","remove"})
+    * @ORM\JoinColumn(name = "messages", onDelete = "cascade")
+    */
+    protected  $messages;
+    
     public function __construct()
     {
         parent::__construct();
@@ -213,5 +221,39 @@ class User extends BaseUser
     public function getTrophee()
     {
         return $this->trophee;
+    }
+
+    /**
+     * Add message
+     *
+     * @param \AppBundle\Entity\Message $message
+     *
+     * @return User
+     */
+    public function addMessage(\AppBundle\Entity\Message $message)
+    {
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \AppBundle\Entity\Message $message
+     */
+    public function removeMessage(\AppBundle\Entity\Message $message)
+    {
+        $this->messages->removeElement($message);
+    }
+
+    /**
+     * Get messages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
     }
 }

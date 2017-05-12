@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -39,8 +40,10 @@
 <!-- CLIENT INFORMATION -->
 <div id="lg">
 <div class="container">
+{% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
 <p><br><a  href="{{ path('deleteProjet', {'id': detailProjet.id}) }}" class="btn btn-danger">Supprimer</a>
 <a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
+{% endif %}
   <div class="row">
     <div class="col-lg-8 desc">
       <h3 style="font-weight:bold">{{detailProjet.nomProjet}}</h3>
@@ -60,7 +63,7 @@
       <h3 style="font-weight:bold"> Infos supplémentaires</h3>
       <br>
 
-      <h5><b>Auteur :</b> {{detailProjet.idUtilisateur.username}}</h5>
+      <h5><b>Auteur :</b> <a href="{{ path('profilDe', {'username': detailProjet.idUtilisateur.username}) }}">{{detailProjet.idUtilisateur.username}}</a></h5>
       <h5><b>Date de début  :</b> {{detailProjet.dateDebut|date('d/m/Y')}} </h5>
       <h5><b>Date de fin  :</b> {{detailProjet.dateFin|date('d/m/Y')}} </h5>
       <h5><b>Durée  :</b> {{detailProjet.duree}} </h5>
@@ -69,9 +72,9 @@
       <h5><b>Statut  :</b> {{detailProjet.statut.nom}} </h5>
       <h5><b>URL : </b><br><br><a href="{{detailProjet.url}}">{{detailProjet.url}}</a></h5>
 
-
+      {% if app.user and app.user.username != detailProjet.idUtilisateur.username %}
       <p><br><a  class="btn btn-green"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
-
+      {% endif %}
 
 
     <h3>Participants</h3>
@@ -79,16 +82,28 @@
     <table class="table" id="myTable">
       <thead>
         <td>Nom </td>
+        <td>Statut </td>
+        {% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
         <td>Action </td>
+        {% endif %}
       </thead>
       <tbody>
     {% for participant in participants %}
       <tr>
         <td><a href="{{ path('profilDe', {'username': participant.idUtilisateur.username}) }}">{{participant.idUtilisateur.username}}</a></td>
-        <td>
-        <a class="btn btn-success" href="{{ path('accepter', {'id': participant.id}) }}"><span class="glyphicon glyphicon-ok"></span></a>
-        <a class="btn btn-danger" href="{{ path('refuser', {'id': participant.id})  }}"><span class="glyphicon glyphicon-remove"></span></a>
-        </td>
+        <td>{{participant.statut}}</td>
+        {% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
+          {% if participant.statut == "Accepter"%}
+          <td>
+          <a class="btn btn-danger" href="{{ path('refuser', {'id': participant.id})  }}"><span class="glyphicon glyphicon-remove"></span></a>
+          </td>
+          {% else %}
+          <td>
+          <a class="btn btn-success" href="{{ path('accepter', {'id': participant.id}) }}"><span class="glyphicon glyphicon-ok"></span></a>
+          <a class="btn btn-danger" href="{{ path('refuser', {'id': participant.id})  }}"><span class="glyphicon glyphicon-remove"></span></a>
+          </td>
+          {% endif %}
+        {% endif %}
       </tr>
     {% endfor %}
     </tbody>
@@ -99,5 +114,7 @@
 </div><!-- container -->
 
 </div><!-- dg -->
-
+{% else %}
+{{ render(path('fos_user_security_login')) }}
+{% endif %}
 {% endblock%}

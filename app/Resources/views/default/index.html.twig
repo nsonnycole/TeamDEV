@@ -28,6 +28,7 @@
 <!-- WELCOME SECTION -->
 
 <!-- BLOG POSTS -->
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
@@ -40,6 +41,7 @@
       <p><a href="{{path('projets')}}"><i class="fa fa-angle-right"></i> Voir tous les projets</a></p>
     </div>
     </div>
+
   {% for projet in projets %}
       <div class="col-sm-4 projet">
         <a href="{{ path('showProjet', {'id': projet.id}) }}"><h4>{{projet.nomProjet}}</h4>
@@ -53,5 +55,8 @@
 
   </div>
 </div><!-- container -->
-
+  {% else %}
+  <h3 align="center">Connectez vous pour accedez aux projets <br><br>
+    <a class="btn btn-primary"href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></h3>
+  {% endif %}
 {% endblock %}

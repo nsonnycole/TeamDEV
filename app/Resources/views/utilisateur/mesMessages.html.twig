@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Mes messages </h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+<br>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{path('homepage')}}">Accueil</a></li>
+  <li class="breadcrumb-item"><a href="{{path('fos_user_profile_show')}}">Mon profil</a></li>
+  <li class="breadcrumb-item active">Mes messages</li>
+  <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
+
+</ol>
+
+<div class="container">
+<div class="row col-sm-10 col-sm-offset-1">
+<h3>Listes de mes messages</h3>
+<hr>
+<table class="table" id="myTable">
+  <thead>
+    <td>Nom du projet</td>
+    <td>Message </td>
+    <td>Expéditeur </td>
+    <td>Statut </td>
+    <td>Action</td>
+  </thead>
+  <tbody>
+{% for message in messages %}
+  <tr>
+    <td><a href="{{ path('showMessage', {'id': message.id}) }}">{{message.objet}}</a></td>
+    <td width="30%">{{message.message | striptags | slice(0, 40) }} [...] </td>
+    <td>{{message.statut }}</td>
+    <td><a href="{{ path('profilDe', {'username': message.expediteur.username}) }}">{{ message.expediteur.username }}</a></td>
+    <td>
+      <a href="{{ path('showMessage', {'id': message.id}) }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span></a>
+      <a href="{{ path('deleteMessage', {'id': message.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+    </td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div><!-- row -->
+</div>
+{% else %}
+{{ render(path('fos_user_security_login')) }}
+{% endif %}
+{% endblock %}

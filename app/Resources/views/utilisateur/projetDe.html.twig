@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Les projets de {{ user.username}}</h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+<br>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{path('homepage')}}">Accueil</a></li>
+  <li class="breadcrumb-item"><a href="{{ path('profilDe', {'username': user.username}) }}">Profil de {{user.username}}</a></li>
+  <li class="breadcrumb-item active">Projet de {{user.username}}</li>
+  <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
+</ol>
+<!-- WELCOME SECTION -->
+
+
+<div class="container">
+{% if projets == null %}
+<h3>Oups! {{user.username}} n'a pas encore créer de projets ...</h3>
+{% endif %}
+  <div class="row mt">
+
+  {% for projet in projets %}
+      <div class="col-lg-4 projet">
+        <a href="{{ path('showProjet', {'id': projet.id}) }}">
+        <h4>{{projet.nomProjet}}</h4>
+        <img style="width: 350px;"src="{{asset("img/about-bg.jpg")}}" >
+        </a>
+        <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
+        <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}
+        <br><b> statut : {{projet.statut.nom}}</b>
+        <br>Auteur : <a href="{{ path('profilDe', {'username': projet.idUtilisateur.username}) }}">{{projet.idUtilisateur.username}}</a></p>
+
+      </div>
+  {% endfor %}
+  </div><!-- row -->
+</div>
+<br><br>
+{#
+<div class="container">
+<div class="paginate" align="center"><!-- remove width id you don't need it-->
+    <ul class="pagination">
+      <li><a href="#"rel="prev" class="page-prev"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+      <li class="active "><span>1</span></li>
+      <li><a href="#" class=" ">2</a></li>
+      <li><a href="#" class=" ">3</a></li>
+      <li><a href="#" rel="next" class="page-next"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+</div>#}
+{% else %}
+{{ render(path('fos_user_security_login')) }}
+{% endif %}
+{% endblock %}

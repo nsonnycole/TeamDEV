@@ -1,5 +1,8 @@
 {% trans_default_domain 'FOSUserBundle' %}
 <!-- MAIN IMAGE SECTION -->
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<h3 align="center"> Vous êtes déja connecté </h3>
+{% else %}
 <div id="portwrap">
   <div class="container">
     <div class="row">
@@ -53,3 +56,4 @@
     </div>
 
   </div>
+{% endif %}

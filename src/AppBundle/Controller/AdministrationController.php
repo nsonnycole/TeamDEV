@@ -13,6 +13,7 @@ class AdministrationController extends Controller
      */
     public function indexAdminAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Cet accès est bloqué!');
         // replace this example code with whatever you need
         return $this->render('administration/indexAdmin.html.twig');
     }
