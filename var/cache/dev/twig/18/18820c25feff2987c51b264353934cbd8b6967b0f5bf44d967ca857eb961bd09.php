@@ -21,29 +21,29 @@ class __TwigTemplate_aa504fc2fc44075f76c6df56649b8881343eb519857c4664367240797e9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d7836afc153a6ec44e6db1c1f50e06e367379883f0c2fddba751d03c647d0e03 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d7836afc153a6ec44e6db1c1f50e06e367379883f0c2fddba751d03c647d0e03->enter($__internal_d7836afc153a6ec44e6db1c1f50e06e367379883f0c2fddba751d03c647d0e03_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "utilisateur/profilDe.html.twig"));
+        $__internal_5cb59b9517b8f821e6b960a862cfb1ed910d1a71f7fbb0ca94816006d555b33d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5cb59b9517b8f821e6b960a862cfb1ed910d1a71f7fbb0ca94816006d555b33d->enter($__internal_5cb59b9517b8f821e6b960a862cfb1ed910d1a71f7fbb0ca94816006d555b33d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "utilisateur/profilDe.html.twig"));
 
-        $__internal_4f99e09c69e70ecdf723f802567bbc62e78b8cb3732ae0a19bb4d27d4dfa0c86 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4f99e09c69e70ecdf723f802567bbc62e78b8cb3732ae0a19bb4d27d4dfa0c86->enter($__internal_4f99e09c69e70ecdf723f802567bbc62e78b8cb3732ae0a19bb4d27d4dfa0c86_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "utilisateur/profilDe.html.twig"));
+        $__internal_f6a97a1d529b6d2be525ab691e4a8d26bd6b2061c4cf57c6ccd2d0feed68328f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f6a97a1d529b6d2be525ab691e4a8d26bd6b2061c4cf57c6ccd2d0feed68328f->enter($__internal_f6a97a1d529b6d2be525ab691e4a8d26bd6b2061c4cf57c6ccd2d0feed68328f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "utilisateur/profilDe.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d7836afc153a6ec44e6db1c1f50e06e367379883f0c2fddba751d03c647d0e03->leave($__internal_d7836afc153a6ec44e6db1c1f50e06e367379883f0c2fddba751d03c647d0e03_prof);
+        $__internal_5cb59b9517b8f821e6b960a862cfb1ed910d1a71f7fbb0ca94816006d555b33d->leave($__internal_5cb59b9517b8f821e6b960a862cfb1ed910d1a71f7fbb0ca94816006d555b33d_prof);
 
         
-        $__internal_4f99e09c69e70ecdf723f802567bbc62e78b8cb3732ae0a19bb4d27d4dfa0c86->leave($__internal_4f99e09c69e70ecdf723f802567bbc62e78b8cb3732ae0a19bb4d27d4dfa0c86_prof);
+        $__internal_f6a97a1d529b6d2be525ab691e4a8d26bd6b2061c4cf57c6ccd2d0feed68328f->leave($__internal_f6a97a1d529b6d2be525ab691e4a8d26bd6b2061c4cf57c6ccd2d0feed68328f_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f781185086263a5acceca3c6c6a95d32aa6d946cee94eb5544970f70d6fab5f5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f781185086263a5acceca3c6c6a95d32aa6d946cee94eb5544970f70d6fab5f5->enter($__internal_f781185086263a5acceca3c6c6a95d32aa6d946cee94eb5544970f70d6fab5f5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0a49e9f0ae37411a67928e6640624234ec78687c7d5dc28c7bfcbd0eb2ef7156 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0a49e9f0ae37411a67928e6640624234ec78687c7d5dc28c7bfcbd0eb2ef7156->enter($__internal_0a49e9f0ae37411a67928e6640624234ec78687c7d5dc28c7bfcbd0eb2ef7156_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_bd0e67a3bc725bb1d701dcb54ac4367b00b946ffc457c67ceafdf4fc6cbacbde = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bd0e67a3bc725bb1d701dcb54ac4367b00b946ffc457c67ceafdf4fc6cbacbde->enter($__internal_bd0e67a3bc725bb1d701dcb54ac4367b00b946ffc457c67ceafdf4fc6cbacbde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_896829f195aab180762b2f2f72567c591a29028363c84f6209ef5e4580689ad6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_896829f195aab180762b2f2f72567c591a29028363c84f6209ef5e4580689ad6->enter($__internal_896829f195aab180762b2f2f72567c591a29028363c84f6209ef5e4580689ad6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
@@ -170,7 +170,10 @@ class __TwigTemplate_aa504fc2fc44075f76c6df56649b8881343eb519857c4664367240797e9
             echo " </a></p>
       </div>
       </div>
-        <a class=\"btn btn-primary\"  href=\"\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-envelope\"></span> Envoyez un message</a>
+        <a class=\"btn btn-primary\"  id=\"newMessage\" href=\"\" data-id=\"";
+            // line 62
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "id", array()), "html", null, true);
+            echo "\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-envelope\"></span> Envoyez un message</a>
       </div>
 
 
@@ -242,18 +245,19 @@ class __TwigTemplate_aa504fc2fc44075f76c6df56649b8881343eb519857c4664367240797e9
             </div>
 \t    </div>
 </div>
+
 ";
         } else {
-            // line 114
+            // line 115
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment($this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login"));
             echo "
 ";
         }
         
-        $__internal_bd0e67a3bc725bb1d701dcb54ac4367b00b946ffc457c67ceafdf4fc6cbacbde->leave($__internal_bd0e67a3bc725bb1d701dcb54ac4367b00b946ffc457c67ceafdf4fc6cbacbde_prof);
+        $__internal_896829f195aab180762b2f2f72567c591a29028363c84f6209ef5e4580689ad6->leave($__internal_896829f195aab180762b2f2f72567c591a29028363c84f6209ef5e4580689ad6_prof);
 
         
-        $__internal_f781185086263a5acceca3c6c6a95d32aa6d946cee94eb5544970f70d6fab5f5->leave($__internal_f781185086263a5acceca3c6c6a95d32aa6d946cee94eb5544970f70d6fab5f5_prof);
+        $__internal_0a49e9f0ae37411a67928e6640624234ec78687c7d5dc28c7bfcbd0eb2ef7156->leave($__internal_0a49e9f0ae37411a67928e6640624234ec78687c7d5dc28c7bfcbd0eb2ef7156_prof);
 
     }
 
@@ -269,7 +273,7 @@ class __TwigTemplate_aa504fc2fc44075f76c6df56649b8881343eb519857c4664367240797e9
 
     public function getDebugInfo()
     {
-        return array (  248 => 114,  217 => 85,  207 => 81,  203 => 80,  195 => 77,  189 => 73,  185 => 72,  167 => 59,  161 => 58,  156 => 56,  139 => 42,  135 => 41,  130 => 39,  126 => 38,  122 => 37,  118 => 36,  112 => 33,  105 => 29,  101 => 28,  97 => 27,  87 => 20,  79 => 14,  71 => 12,  65 => 9,  61 => 8,  56 => 7,  54 => 6,  51 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  252 => 115,  220 => 85,  210 => 81,  206 => 80,  198 => 77,  192 => 73,  188 => 72,  175 => 62,  167 => 59,  161 => 58,  156 => 56,  139 => 42,  135 => 41,  130 => 39,  126 => 38,  122 => 37,  118 => 36,  112 => 33,  105 => 29,  101 => 28,  97 => 27,  87 => 20,  79 => 14,  71 => 12,  65 => 9,  61 => 8,  56 => 7,  54 => 6,  51 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -343,7 +347,7 @@ class __TwigTemplate_aa504fc2fc44075f76c6df56649b8881343eb519857c4664367240797e9
       <br>Ses participations : <a href=\"{{ path('participationDe', {'username': user.username}) }}\">{{ nbParticipations}} </a></p>
       </div>
       </div>
-        <a class=\"btn btn-primary\"  href=\"\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-envelope\"></span> Envoyez un message</a>
+        <a class=\"btn btn-primary\"  id=\"newMessage\" href=\"\" data-id=\"{{ user.id }}\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-envelope\"></span> Envoyez un message</a>
       </div>
 
 
@@ -394,6 +398,7 @@ class __TwigTemplate_aa504fc2fc44075f76c6df56649b8881343eb519857c4664367240797e9
             </div>
 \t    </div>
 </div>
+
 {% else %}
 {{ render(path('fos_user_security_login')) }}
 {% endif %}

@@ -1,55 +1,48 @@
-// Ajout image
+$(document).ready(function(){
+   $( "#newMessage" ).click(function() {
 
-function showForm(id, route){
-
-  $.ajax({
-      type: 'POST',
-      url: route,
-      data: $(this).serialize(),
-      dataType:'json',
-      beforeSend: function() {
-      $('.modal-body').html("<div align='center'><i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><br><h3> Chargement</h3></div>");
-      },
-      success: function(response, status, xhr) {
-          console.log(response);
-          $('.modal-body').html(response);
-      },
-
-      error: function(jqXHR, exception) {
-
-      },
-  });
-
-}
-
-function initAjaxForm()
-{
-    $('body').on('submit', '.ajaxForm', function (e) {
-
-        e.preventDefault();
-
+        $("#myModalLabel").text("Nouveau message");
         $.ajax({
-            type: $(this).attr('method'),
-            url: $(this).attr('action'),
-            data: $(this).serialize()
-        })
-        .done(function (data) {
-            if (typeof data.message !== 'undefined') {
-                alert(data.message);
+            type: "GET",
+            url: Routing.generate( 'newMessage',1),
+            beforeSend: function(xhr){
+                $("#form-body").html("<div class='chargement' align='center'><i class='fa fa-refresh fa-spin fa-3x fa-fw'></i><br>Chargement en cours...</div>");
+            },
+            success: function(form) {
+                $("#form-body").html(form);
+            },
+            error: function(response) {
             }
-        })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-            if (typeof jqXHR.responseJSON !== 'undefined') {
-                if (jqXHR.responseJSON.hasOwnProperty('form')) {
-                    $('#form_body').html(jqXHR.responseJSON.form);
-                }
-
-                $('.form_error').html(jqXHR.responseJSON.message);
-
-            } else {
-                alert(errorThrown);
-            }
-
         });
     });
-}
+    $( "#message_save" ).click(function(event) {
+        event.preventDefault(event);
+        msgCreateSave();
+    });
+
+    });
+
+
+    function msgCreateSave(){
+        $.ajax({
+            type: "POST",
+            url: Routing.generate( 'newMessage',1),
+            data: $("#form_person_email").serialize(),
+            beforeSend: function(xhr){
+                $("#message_save").text("En cours...");
+                $("#message_save").attr('disabled', '');
+            },
+            success: function(response) {
+             $('#myModal').modal('hide');
+
+            },
+            error: function(response) {
+                $("#form-error").show();
+                $("#form-error").html(response.responseText);
+            },
+            complete: function(xhr){
+                $("#message_save").html("Créer");
+                $("#message_save").removeAttr('disabled');
+            }
+        });
+    }

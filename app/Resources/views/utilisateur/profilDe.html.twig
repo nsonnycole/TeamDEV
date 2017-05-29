@@ -59,7 +59,7 @@
       <br>Ses participations : <a href="{{ path('participationDe', {'username': user.username}) }}">{{ nbParticipations}} </a></p>
       </div>
       </div>
-        <a class="btn btn-primary"  href="" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-envelope"></span> Envoyez un message</a>
+        <a class="btn btn-primary"  id="newMessage" href="" data-id="{{ user.id }}" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-envelope"></span> Envoyez un message</a>
       </div>
 
 
@@ -111,11 +111,6 @@
 	    </div>
 </div>
 
-<script type="text/javascript">
-     $(document).ready(function(){
-     
-     });
-</script>
 {% else %}
 {{ render(path('fos_user_security_login')) }}
 {% endif %}
