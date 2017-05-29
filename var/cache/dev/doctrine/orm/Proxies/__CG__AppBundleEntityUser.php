@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'messages', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
         }
 
-        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'messages', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
     }
 
     /**
@@ -303,6 +303,39 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTrophee', []);
 
         return parent::getTrophee();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addMessage(\AppBundle\Entity\Message $message)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addMessage', [$message]);
+
+        return parent::addMessage($message);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeMessage(\AppBundle\Entity\Message $message)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeMessage', [$message]);
+
+        return parent::removeMessage($message);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMessages()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMessages', []);
+
+        return parent::getMessages();
     }
 
     /**

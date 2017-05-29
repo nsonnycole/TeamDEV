@@ -15,23 +15,23 @@ class __TwigTemplate_a330ab31441321916b6de97b8f695b9cc094d18195152f344ded47b9e93
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9deabcb312a46c8d8caa8231a99f8360174a6be478625c03ca64f0999f69172a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_9deabcb312a46c8d8caa8231a99f8360174a6be478625c03ca64f0999f69172a->enter($__internal_9deabcb312a46c8d8caa8231a99f8360174a6be478625c03ca64f0999f69172a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Doctrine/Collector/icon.svg"));
+        $__internal_68820dbe6d114ef9bd2e7972a5711458efe291e02381aa5c0b3e4c8b0931a1f1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_68820dbe6d114ef9bd2e7972a5711458efe291e02381aa5c0b3e4c8b0931a1f1->enter($__internal_68820dbe6d114ef9bd2e7972a5711458efe291e02381aa5c0b3e4c8b0931a1f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Doctrine/Collector/icon.svg"));
 
-        $__internal_05ccc0962f482f104161091d0cd55c41f621482c4679db0538bd4b632b316f08 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_05ccc0962f482f104161091d0cd55c41f621482c4679db0538bd4b632b316f08->enter($__internal_05ccc0962f482f104161091d0cd55c41f621482c4679db0538bd4b632b316f08_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Doctrine/Collector/icon.svg"));
+        $__internal_f05335d1586144d39889f2c6d81c40e727c887874a94f7064bea09a2f3a78ffb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f05335d1586144d39889f2c6d81c40e727c887874a94f7064bea09a2f3a78ffb->enter($__internal_f05335d1586144d39889f2c6d81c40e727c887874a94f7064bea09a2f3a78ffb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Doctrine/Collector/icon.svg"));
 
         // line 1
-        echo "<svg version=\"1.1\"xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
+        echo "<svg version=\"1.1\"xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
     <path fill=\"#AAAAAA\" d=\"M5,8h14c1.7,0,3-1.3,3-3s-1.3-3-3-3H5C3.3,2,2,3.3,2,5S3.3,8,5,8z M18,3.6c0.8,0,1.5,0.7,1.5,1.5S18.8,6.6,18,6.6s-1.5-0.7-1.5-1.5S17.2,3.6,18,3.6z M19,9H5c-1.7,0-3,1.3-3,3s1.3,3,3,3h14c1.7,0,3-1.3,3-3S20.7,9,19,9z M18,13.6
     c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S18.8,13.6,18,13.6z M19,16H5c-1.7,0-3,1.3-3,3s1.3,3,3,3h14c1.7,0,3-1.3,3-3S20.7,16,19,16z M18,20.6c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S18.8,20.6,18,20.6z\"/>
 </svg>
 ";
         
-        $__internal_9deabcb312a46c8d8caa8231a99f8360174a6be478625c03ca64f0999f69172a->leave($__internal_9deabcb312a46c8d8caa8231a99f8360174a6be478625c03ca64f0999f69172a_prof);
+        $__internal_68820dbe6d114ef9bd2e7972a5711458efe291e02381aa5c0b3e4c8b0931a1f1->leave($__internal_68820dbe6d114ef9bd2e7972a5711458efe291e02381aa5c0b3e4c8b0931a1f1_prof);
 
         
-        $__internal_05ccc0962f482f104161091d0cd55c41f621482c4679db0538bd4b632b316f08->leave($__internal_05ccc0962f482f104161091d0cd55c41f621482c4679db0538bd4b632b316f08_prof);
+        $__internal_f05335d1586144d39889f2c6d81c40e727c887874a94f7064bea09a2f3a78ffb->leave($__internal_f05335d1586144d39889f2c6d81c40e727c887874a94f7064bea09a2f3a78ffb_prof);
 
     }
 
@@ -55,7 +55,7 @@ class __TwigTemplate_a330ab31441321916b6de97b8f695b9cc094d18195152f344ded47b9e93
 
     public function getSourceContext()
     {
-        return new Twig_Source("<svg version=\"1.1\"xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
+        return new Twig_Source("<svg version=\"1.1\"xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
     <path fill=\"#AAAAAA\" d=\"M5,8h14c1.7,0,3-1.3,3-3s-1.3-3-3-3H5C3.3,2,2,3.3,2,5S3.3,8,5,8z M18,3.6c0.8,0,1.5,0.7,1.5,1.5S18.8,6.6,18,6.6s-1.5-0.7-1.5-1.5S17.2,3.6,18,3.6z M19,9H5c-1.7,0-3,1.3-3,3s1.3,3,3,3h14c1.7,0,3-1.3,3-3S20.7,9,19,9z M18,13.6
     c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S18.8,13.6,18,13.6z M19,16H5c-1.7,0-3,1.3-3,3s1.3,3,3,3h14c1.7,0,3-1.3,3-3S20.7,16,19,16z M18,20.6c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S18.8,20.6,18,20.6z\"/>
 </svg>

@@ -49,7 +49,6 @@
         <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
         <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}  <br>statut : {{projet.statut.nom}}
         <br>Auteur : <a href="{{ path('profilDe', {'username': projet.idUtilisateur.username}) }}">{{projet.idUtilisateur.username}}</a></p>
-
       </div>
   {% endfor %}
 
