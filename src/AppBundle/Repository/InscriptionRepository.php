@@ -47,6 +47,15 @@ class InscriptionRepository extends EntityRepository
   * Retourne la liste des participants inscrit à ce projet
   *
   **/
+  public function getSiUserInscrit($usr)
+  {
+    $query = $this->createQueryBuilder('ins')
+    ->where('ins.idUtilisateur =:usr')
+    ->setParameter('usr', $usr)
+    ->getQuery();
+    return $query->getSingleResult();
+  }
+
   public function getUserInscrit($usr)
   {
     $query = $this->createQueryBuilder('ins')
@@ -55,6 +64,8 @@ class InscriptionRepository extends EntityRepository
     ->getQuery();
     return $query->getResult();
   }
+
+
   /**
   *
   * Retourne la liste des participants inscrit à ce projet

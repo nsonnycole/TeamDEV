@@ -18,7 +18,7 @@
   <div class="col-lg-12">
     <div class="col-lg-10 col-sm-offset-1">
       <div align="center">
-      <a class="btn btn-primary " href="{{path('fos_user_profile_edit')}}" >Modifier mon profil</a>
+      <a class="btn btn-primary " href="{{path('editProfil')}}" >Modifier mon profil</a>
       <a class="btn btn-primary" href="{{path('mesProjets')}}">Mes projets</a>
       <a class="btn btn-primary" href="{{path('mesParticipations')}}">Mes participations</a>
       <a href="{{path('mesCompetences')}}" class="btn btn-primary">Mes compétences</a>
@@ -33,7 +33,7 @@
     <div class="col-lg-12 ">
       <h3 align="center">Mes informations personnelles</h3>
       <hr>
-      <div class="col-sm-6 col-sm-offset-4">
+      <div class="col-sm-6">
       <p> Nom : {{ user.nom }}</p>
       <p> Prénom : {{ user.prenom }}</p>
       <p> Date de naissance : {{ user.dateNaiss|date("d/m/Y") }}</p>
@@ -42,9 +42,11 @@
       <p> Pseudo : {{ user.username }}</p>
       <p> {{ 'profile.show.email'|trans }} : {{ user.email }}</p>
 
+      </div>
+      <div class="col-sm-6">
+      <p> <img src="{{asset('img/avatar/'~user.avatar.url)}}"></p>
 
       </div>
-
 
   </div>
 </div>

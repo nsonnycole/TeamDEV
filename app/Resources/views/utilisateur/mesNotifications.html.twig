@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<div class="container" style="display:inline">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{path('fos_user_profile_show')}}"><img  width="50px;"src="{{asset('img/avatar/'~app.user.avatar.url)}}"></a>
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
+<!-- MAIN IMAGE SECTION -->
+<div id="portwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Mes notifications </h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- /container -->
+</div><!-- /portrwrap -->
+<br>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{path('homepage')}}">Accueil</a></li>
+  <li class="breadcrumb-item"><a href="{{path('fos_user_profile_show')}}">Mon profil</a></li>
+  <li class="breadcrumb-item active">Mes Notifications</li>
+  <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
+
+</ol>
+<div class="page-header col-md-8 col-sm-offset-2">
+    <h4>Notifications</h4>
+</div>
+<div class="notifications col-md-8 col-sm-offset-2">
+    <ul class="notification-list">
+      {% for notification in notifications %}
+        <li>
+            <div class="media">
+                <div class="media-body">
+                    <p class="media-heading"><a href="{{ path('profilDe', {'username': notification.expediteur.username}) }}"><img src="{{asset('img/avatar/'~ notification.expediteur.avatar.url)}}" class="avatar rounded" alt="..."></a> <b><a href="{{ path('profilDe', {'username': notification.expediteur.username}) }}">{{notification.expediteur.username}}</a></b> {{notification.message}}
+                    <a href="{{ path('deleteNotification', {'id': notification.id}) }}" class="btn btn-danger btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></a></p>
+                </div>
+            </div>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
+{% else %}
+{{ render(path('fos_user_security_login')) }}
+{% endif %}
+{% endblock%}

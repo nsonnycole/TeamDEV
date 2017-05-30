@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Inscription;
+use AppBundle\Entity\Notification;
 use AppBundle\Form\Type\InscriptionType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -52,6 +53,14 @@ class InscriptionController extends Controller
          $em->persist($inscription);
          $em->flush();
 
+         // Création d'une notification
+         $notification = new Notification();
+         $notification->setMessage("souhaite participer à votre projet");
+         $notification->setExpediteur($usr);
+         $notification->setDestinataire($projet->getIdUtilisateur());
+         $em->persist($notification);
+         $em->flush();
+
          $session->getFlashBag()->add('success', 'Votre demande à bien été pris en compte !');
          return $this->redirect('/projets');
        }
@@ -73,15 +82,23 @@ class InscriptionController extends Controller
       $session = new Session();
       $em = $this->getDoctrine()->getManager();
       $usr = $this->get('security.token_storage')->getToken()->getUser();
-      $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
-      $dejaInscrit = $em->getRepository('AppBundle:Inscription')->getUserInscrit($usr->getId());
+      $projet = $em->getRepository('AppBundle:Projet')->getById($id);
+      $dejaInscrit = $em->getRepository('AppBundle:Inscription')->getSiUserInscrit($usr);
 
       if($dejaInscrit){
-        $em->remove($inscription);
+        $em->remove($dejaInscrit);
         $em->flush();
 
         $session->getFlashBag()->add('success', 'Vous ne faites plus partie de ce projet');
         return $this->redirect('/projets');
+
+        // Création d'une notification
+        $notification = new Notification();
+        $notification->setMessage("ne fait plus partie de votre projet");
+        $notification->setExpediteur($usr);
+        $notification->setDestinataire($inscription->getIdProjet()->getIdUtilisateur());
+        $em->persist($notification);
+        $em->flush();
 
       }else{
         $session->getFlashBag()->add('warning', 'Vous êtes pas inscrit à ce projet!');
@@ -97,7 +114,7 @@ class InscriptionController extends Controller
       {
         $session = new Session();
         $em = $this->getDoctrine()->getManager();
-
+        $usr = $this->get('security.token_storage')->getToken()->getUser();
         $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
         $projet = $inscription->getIdProjet();
 
@@ -105,6 +122,15 @@ class InscriptionController extends Controller
           $em->persist($inscription);
           $projet->setNbParticipants($projet->getNbParticipants()+1);
           $em->flush();
+
+          // Création d'une notification
+          $notification = new Notification();
+          $notification->setMessage("a accepté(e) votre demande");
+          $notification->setExpediteur($usr);
+          $notification->setDestinataire($inscription->getIdUtilisateur());
+          $em->persist($notification);
+          $em->flush();
+
 
           $session->getFlashBag()->add('success', 'Inscription accepté');
           return $this->redirect('/mesProjets');
@@ -119,7 +145,7 @@ class InscriptionController extends Controller
       {
         $session = new Session();
         $em = $this->getDoctrine()->getManager();
-
+        $usr = $this->get('security.token_storage')->getToken()->getUser();
         $inscription= $em->getRepository('AppBundle:Inscription')->getById($id);
         $projet = $inscription->getIdProjet();
 
@@ -127,6 +153,14 @@ class InscriptionController extends Controller
           $inscription->setStatut("Refuser");
           $em->remove($inscription);
           $projet->setNbParticipants($projet->getNbParticipants()-1);
+          $em->flush();
+
+          // Création d'une notification
+          $notification = new Notification();
+          $notification->setMessage("a refusé(e) votre demande");
+          $notification->setExpediteur($usr);
+          $notification->setDestinataire($inscription->getIdUtilisateur());
+          $em->persist($notification);
           $em->flush();
 
           $session->getFlashBag()->add('success', 'Inscription refusé');

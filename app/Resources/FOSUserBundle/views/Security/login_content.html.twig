@@ -1,7 +1,8 @@
 {% trans_default_domain 'FOSUserBundle' %}
 <!-- MAIN IMAGE SECTION -->
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-<h3 align="center"> Vous êtes déja connecté </h3>
+<h3 align="center"> Vous êtes déja connecté <br>
+<a class="btn btn-primary" href="{{path('homepage')}}">Accueil</a></h3>
 {% else %}
 <div id="portwrap">
   <div class="container">

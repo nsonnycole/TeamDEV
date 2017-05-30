@@ -42,6 +42,13 @@ class User extends BaseUser
 
     /**
      *
+     * @ORM\Column(type="text")
+     *
+     */
+    protected $presentation;
+
+    /**
+     *
      * @ORM\Column(type="text",nullable = true)
      *
      */
@@ -69,7 +76,15 @@ class User extends BaseUser
     * @ORM\JoinColumn(name = "messages", onDelete = "cascade")
     */
     protected  $messages;
-    
+
+    /**
+    * @var avatar de l'user.
+    *
+    * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Avatar")
+    * @ORM\JoinColumn(name = "avatar")
+    */
+    protected $avatar;
+
     public function __construct()
     {
         parent::__construct();
@@ -255,5 +270,54 @@ class User extends BaseUser
     public function getMessages()
     {
         return $this->messages;
+    }
+
+
+    /**
+     * Set avatar
+     *
+     * @param \AppBundle\Entity\Avatar $avatar
+     *
+     * @return User
+     */
+    public function setAvatar(\AppBundle\Entity\Avatar $avatar = null)
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get avatar
+     *
+     * @return \AppBundle\Entity\Avatar
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * Set presentation
+     *
+     * @param string $presentation
+     *
+     * @return User
+     */
+    public function setPresentation($presentation)
+    {
+        $this->presentation = $presentation;
+
+        return $this;
+    }
+
+    /**
+     * Get presentation
+     *
+     * @return string
+     */
+    public function getPresentation()
+    {
+        return $this->presentation;
     }
 }

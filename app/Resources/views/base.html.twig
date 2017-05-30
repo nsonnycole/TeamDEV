@@ -42,15 +42,28 @@
     			<h1 class="logo"><a href="{{path('homepage')}}">TeamDEV</a></h1>
     			<i class="fa fa-arrow-right menu-close"></i>
     			<a href="{{path('homepage')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Accueil</a>
-    			<a href="{{path('projets')}}"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Projets</a>
-    			<a href="{{path('fos_user_profile_show')}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil</a>
-          <a href="{{path('indexAdmin')}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Administration</a>
-    			<a href="{{path('homepage')}}"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Connexion</a>
-    			<a href="{{path('logout')}}"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Deconnexion</a>
-    			<a href="#"><i class="fa fa-facebook"></i></a>
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        	<a href="{{path('projets')}}"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Projets</a>
+          <hr>
+          <a href="{{path('fos_user_profile_show')}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mon profil</a>
+          <!-- <a href="{{path('indexAdmin')}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Administration</a> -->
+    			<a href="{{path('mesNotifications')}}"> <span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Mes notifications</a>
+          <a href="{{path('mesMessages')}}"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Mes messages</a>
+          <a href="{{path('mesProjets')}}"> <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Mes projets</a>
+          {% else %}
+          <a href="{{path('fos_user_security_login')}}"> <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Connexion</a>
+          {% endif %}
+          <hr>
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+          <a href="{{path('communaute')}}"> Communauté</a>
+          {% endif %}
+          <a href="#"><i class="fa fa-facebook"></i></a>
     			<a href="#"><i class="fa fa-twitter"></i></a>
     			<a href="#"><i class="fa fa-dribbble"></i></a>
     			<a href="#"><i class="fa fa-envelope"></i></a>
+
+
+
     		</div>
 
     		<!-- Menu button -->
@@ -76,7 +89,7 @@
         <script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
 
         <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-        <script src="{{asset('js/functions.js')}}"></script>
+        <!-- <script src="{{asset('js/functions.js')}}"></script> -->
 
         <!-- <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/French.json"></script> -->
         <!-- <script>

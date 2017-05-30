@@ -4,6 +4,7 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{path('fos_user_profile_show')}}"><img  width="50px;"src="{{asset('img/avatar/'~app.user.avatar.url)}}"></a>
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
         <a href="{{ path('fos_user_security_logout') }}">
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -31,7 +32,7 @@
   <div class="container">
     <div class="row mt">
       <div class="col-lg-8">
-        <h2>Un moyen facile de montez en compétences!</h2>
+        <h2>Un moyen facile de monter en compétences!</h2>
         <p>découvrez les projets créer par les autres membres, participer y, ou créer votre propre projet.</p>
       </div>
       <div class="col-lg-4">

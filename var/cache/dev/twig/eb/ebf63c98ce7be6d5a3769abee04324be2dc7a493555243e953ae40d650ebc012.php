@@ -15,11 +15,11 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_34c1d7cce5bfd7ab66d0bd74d063c9b1a05d3a5db745d3c69c9e81d4b5a0a1ac = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_34c1d7cce5bfd7ab66d0bd74d063c9b1a05d3a5db745d3c69c9e81d4b5a0a1ac->enter($__internal_34c1d7cce5bfd7ab66d0bd74d063c9b1a05d3a5db745d3c69c9e81d4b5a0a1ac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
+        $__internal_fc7445c91224e28ea7a23b257da055379a82cdcba57ed30782d6a10381d48b9b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_fc7445c91224e28ea7a23b257da055379a82cdcba57ed30782d6a10381d48b9b->enter($__internal_fc7445c91224e28ea7a23b257da055379a82cdcba57ed30782d6a10381d48b9b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
 
-        $__internal_1ef1806325b7a3656b1cca936ed1b956436159e58bd1b016038d17e86c3c5bf9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1ef1806325b7a3656b1cca936ed1b956436159e58bd1b016038d17e86c3c5bf9->enter($__internal_1ef1806325b7a3656b1cca936ed1b956436159e58bd1b016038d17e86c3c5bf9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
+        $__internal_67edee0b19acb1d3086811bfb74095c68df5f66f2b241357fdb562884477c8ec = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_67edee0b19acb1d3086811bfb74095c68df5f66f2b241357fdb562884477c8ec->enter($__internal_67edee0b19acb1d3086811bfb74095c68df5f66f2b241357fdb562884477c8ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/show_content.html.twig"));
 
         // line 2
         echo "<!-- MAIN IMAGE SECTION -->
@@ -46,7 +46,7 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
       <div align=\"center\">
       <a class=\"btn btn-primary \" href=\"";
         // line 21
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_profile_edit");
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("editProfil");
         echo "\" >Modifier mon profil</a>
       <a class=\"btn btn-primary\" href=\"";
         // line 22
@@ -77,7 +77,7 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
     <div class=\"col-lg-12 \">
       <h3 align=\"center\">Mes informations personnelles</h3>
       <hr>
-      <div class=\"col-sm-6 col-sm-offset-4\">
+      <div class=\"col-sm-6\">
       <p> Nom : ";
         // line 37
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nom", array()), "html", null, true);
@@ -106,18 +106,23 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array()), "html", null, true);
         echo "</p>
 
+      </div>
+      <div class=\"col-sm-6\">
+      <p> <img src=\"";
+        // line 47
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("img/avatar/" . $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "avatar", array()), "url", array()))), "html", null, true);
+        echo "\"></p>
 
       </div>
-
 
   </div>
 </div>
 ";
         
-        $__internal_34c1d7cce5bfd7ab66d0bd74d063c9b1a05d3a5db745d3c69c9e81d4b5a0a1ac->leave($__internal_34c1d7cce5bfd7ab66d0bd74d063c9b1a05d3a5db745d3c69c9e81d4b5a0a1ac_prof);
+        $__internal_fc7445c91224e28ea7a23b257da055379a82cdcba57ed30782d6a10381d48b9b->leave($__internal_fc7445c91224e28ea7a23b257da055379a82cdcba57ed30782d6a10381d48b9b_prof);
 
         
-        $__internal_1ef1806325b7a3656b1cca936ed1b956436159e58bd1b016038d17e86c3c5bf9->leave($__internal_1ef1806325b7a3656b1cca936ed1b956436159e58bd1b016038d17e86c3c5bf9_prof);
+        $__internal_67edee0b19acb1d3086811bfb74095c68df5f66f2b241357fdb562884477c8ec->leave($__internal_67edee0b19acb1d3086811bfb74095c68df5f66f2b241357fdb562884477c8ec_prof);
 
     }
 
@@ -133,7 +138,7 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
 
     public function getDebugInfo()
     {
-        return array (  104 => 43,  100 => 42,  95 => 40,  91 => 39,  87 => 38,  83 => 37,  69 => 26,  65 => 25,  61 => 24,  57 => 23,  53 => 22,  49 => 21,  39 => 14,  25 => 2,);
+        return array (  113 => 47,  104 => 43,  100 => 42,  95 => 40,  91 => 39,  87 => 38,  83 => 37,  69 => 26,  65 => 25,  61 => 24,  57 => 23,  53 => 22,  49 => 21,  39 => 14,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -166,7 +171,7 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
   <div class=\"col-lg-12\">
     <div class=\"col-lg-10 col-sm-offset-1\">
       <div align=\"center\">
-      <a class=\"btn btn-primary \" href=\"{{path('fos_user_profile_edit')}}\" >Modifier mon profil</a>
+      <a class=\"btn btn-primary \" href=\"{{path('editProfil')}}\" >Modifier mon profil</a>
       <a class=\"btn btn-primary\" href=\"{{path('mesProjets')}}\">Mes projets</a>
       <a class=\"btn btn-primary\" href=\"{{path('mesParticipations')}}\">Mes participations</a>
       <a href=\"{{path('mesCompetences')}}\" class=\"btn btn-primary\">Mes compétences</a>
@@ -181,7 +186,7 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
     <div class=\"col-lg-12 \">
       <h3 align=\"center\">Mes informations personnelles</h3>
       <hr>
-      <div class=\"col-sm-6 col-sm-offset-4\">
+      <div class=\"col-sm-6\">
       <p> Nom : {{ user.nom }}</p>
       <p> Prénom : {{ user.prenom }}</p>
       <p> Date de naissance : {{ user.dateNaiss|date(\"d/m/Y\") }}</p>
@@ -190,9 +195,11 @@ class __TwigTemplate_9bd46ac6f6ba5cf53f2878b72e7a6fee8637c427eac5e9a70e3dbec3d22
       <p> Pseudo : {{ user.username }}</p>
       <p> {{ 'profile.show.email'|trans }} : {{ user.email }}</p>
 
+      </div>
+      <div class=\"col-sm-6\">
+      <p> <img src=\"{{asset('img/avatar/'~user.avatar.url)}}\"></p>
 
       </div>
-
 
   </div>
 </div>

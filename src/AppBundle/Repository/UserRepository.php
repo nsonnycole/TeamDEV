@@ -24,6 +24,18 @@ class UserRepository extends EntityRepository
     ->getQuery();
     return $query -> getSingleResult();
   }
+  /**
+  *
+  * Retourne tous les utilisateurs
+  *
+  **/
+  public function getAll()
+  {
+    $query = $this->createQueryBuilder('u')
+    ->getQuery();
+    return $query -> getResult();
+  }
+
 
   /**
   *

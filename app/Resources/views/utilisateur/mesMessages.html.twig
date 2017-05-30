@@ -4,6 +4,7 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{path('fos_user_profile_show')}}"><img  width="50px;"src="{{asset('img/avatar/'~app.user.avatar.url)}}"></a>
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
         <a href="{{ path('fos_user_security_logout') }}">
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -37,10 +38,10 @@
 <hr>
 <table class="table" id="myTable">
   <thead>
-    <td>Nom du projet</td>
+    <td>Objet</td>
     <td>Message </td>
-    <td>Expéditeur </td>
-    <td>Statut </td>
+    <td> Statut</td>
+    <td> Expéditeur</td>
     <td>Action</td>
   </thead>
   <tbody>

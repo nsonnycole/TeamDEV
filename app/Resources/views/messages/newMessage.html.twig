@@ -4,6 +4,7 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{path('fos_user_profile_show')}}"><img  width="50px;"src="{{asset('img/avatar/'~app.user.avatar.url)}}"></a>
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
         <a href="{{ path('fos_user_security_logout') }}">
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -29,8 +30,13 @@
   <li class="breadcrumb-item active">Nouveau message</li>
   <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info pull-right"><span class="glyphicon glyphicon-repeat"></span> Retour</a>
 </ol>
+{% if app.user and app.user.username == destinataire.username %}
+<h3 align="center">Attention! Vous ne pouvez pas vous envoyez un message  <br><br>
+  <a class="btn btn-primary"href="{{path('homepage')}}">Accueil</a></h3>
+{% else %}
 <div class="container">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <p><b>Message pour {{ destinataire.username}}</b></p>
       {{ form_start(form) }}
       {{ form_row(form) }}
       {{ form_widget(form.save) }}
@@ -38,6 +44,7 @@
       {{ form_end(form) }}
     </div>
 </div>
+{% endif %}
 {% else %}
 {{ render(path('fos_user_security_login')) }}
 {% endif %}

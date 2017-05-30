@@ -57,6 +57,8 @@ class ProjetType extends AbstractType
                             'choice_label' => 'nom',
                             'label' => 'Statut du projet',
                             'placeholder'=> 'Selectionnez le statut du projet',
+                            'expanded' => true,
+                            'multiple' => false,
     ))
 
       ->add('idTypeProjet', EntityType::class, array(

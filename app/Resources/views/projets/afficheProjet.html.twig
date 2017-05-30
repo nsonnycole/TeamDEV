@@ -4,6 +4,7 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="container" style="display:inline">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{path('fos_user_profile_show')}}"><img  width="50px;"src="{{asset('img/avatar/'~app.user.avatar.url)}}"></a>
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
         <a href="{{ path('fos_user_security_logout') }}">
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -73,10 +74,20 @@
       <h5><b>URL : </b><br><br><a href="{{detailProjet.url}}">{{detailProjet.url}}</a></h5>
 
       {% if app.user and app.user.username != detailProjet.idUtilisateur.username %}
-      <p><br><a  class="btn btn-green"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
+      {% for participe in participants %}
+        {% if app.user and app.user.username == participe.idUtilisateur.username %}
+          {% if participe.statut is not null %}
+            <p><br><a  class="btn btn-danger"href="{{ path('desincProjet', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Se désincrire</a></p>
+            {% else %}
+          <p><br><a  class="btn btn-green"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
+        {% endif %}
+
       {% endif %}
 
+      {% endfor %}
+  <p><br><a  class="btn btn-green"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
 
+      {% endif %}
     <h3>Participants</h3>
     <hr>
     <table class="table" id="myTable">

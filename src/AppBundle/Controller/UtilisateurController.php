@@ -6,7 +6,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Projet;
+use AppBundle\Entity\Notification;
 use AppBundle\Form\Type\ProjetType;
+use AppBundle\Form\Type\RegistrationType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -134,5 +136,91 @@ class UtilisateurController extends Controller
       'participations' => $participations,
     ));
   }
+
+  /**
+   * @Route("/mesNotifications", name="mesNotifications")
+   */
+  public function mesNotificationsAction(Request $request)
+  {
+
+    $em = $this->getDoctrine()->getManager();
+    $usr = $this->get('security.token_storage')->getToken()->getUser();
+    $usr->getId();
+    $notifications = $em->getRepository('AppBundle:Notification')->getNotificationUser($usr);
+  //  $participe = $em->getRepository('AppBundle:Inscription')->getUserInscritprojet($usr, $projets);
+     // replace this example code with whatever you need
+     return $this->render('utilisateur/mesNotifications.html.twig', array(
+       'notifications' => $notifications,
+    //   'participe' => $participe
+     ));
+  }
+
+  /**
+   * @Route("/deleteNotification/{id}", name="deleteNotification")
+   */
+  public function deleteNotificationAction(Request $request, $id)
+  {
+
+      //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+      $session = new Session();
+      $em = $this->getDoctrine()->getManager();
+      $competence = $em->getRepository('AppBundle:Notification')->getById($id);
+      $em->remove($competence);
+      $em->flush();
+
+        $session->getFlashBag()->add('success', 'la notification à bien été supprimé !');
+        return $this->redirect('/mesNotifications');
+
+
+  }
+
+  /**
+   * @Route("/communaute", name="communaute")
+   */
+  public function communauteAction(Request $request)
+  {
+
+    $em = $this->getDoctrine()->getManager();
+    $membres = $em->getRepository('AppBundle:User')->getAll();
+     // replace this example code with whatever you need
+     return $this->render('utilisateur/communaute.html.twig', array(
+       'membres' => $membres,
+    //   'participe' => $participe
+     ));
+  }
+
+  /**
+   * @Route("/editProfil", name="editProfil")
+   */
+  public function editProfilAction(Request $request)
+  {
+
+    $em = $this->getDoctrine()->getManager();
+    $usr = $this->get('security.token_storage')->getToken()->getUser();
+    $userID = $em->getRepository('AppBundle:User')->getById($usr->getId());
+
+    $form = $this->createForm(RegistrationType::class, $userID);
+    $form->handleRequest($request);
+
+    if($form->isSubmitted()){
+      $em->persist($userID);
+      $em->flush();
+
+      $session->getFlashBag()->add('success', 'le projet à bien été ajoutée !');
+      return $this->redirect('/projets');
+    }
+
+
+     return $this->render('utilisateur/editProfil.html.twig', array(
+       'usr' => $usr,
+       'form'=> $form->createView(),
+
+     ));
+  }
+
+
+
+
+
 
 }

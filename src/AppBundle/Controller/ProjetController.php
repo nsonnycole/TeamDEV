@@ -38,7 +38,7 @@ class ProjetController extends Controller
       $projet = $em->getRepository('AppBundle:Projet')->getById($id);
       $usr = $this->get('security.token_storage')->getToken()->getUser();
       $participants = $em->getRepository('AppBundle:Inscription')->getparticipantProjet($projet);
-
+    
 
        // replace this example code with whatever you need
        return $this->render('projets/afficheProjet.html.twig', array(

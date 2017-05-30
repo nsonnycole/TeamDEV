@@ -263,6 +263,26 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // mesNotifications
+        if ($pathinfo === '/mesNotifications') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesNotificationsAction',  '_route' => 'mesNotifications',);
+        }
+
+        // deleteNotification
+        if (0 === strpos($pathinfo, '/deleteNotification') && preg_match('#^/deleteNotification/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'deleteNotification')), array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::deleteNotificationAction',));
+        }
+
+        // communaute
+        if ($pathinfo === '/communaute') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::communauteAction',  '_route' => 'communaute',);
+        }
+
+        // editProfil
+        if ($pathinfo === '/editProfil') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::editProfilAction',  '_route' => 'editProfil',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login

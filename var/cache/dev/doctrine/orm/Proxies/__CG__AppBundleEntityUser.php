@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'messages', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'presentation', 'adresse', 'dateNaiss', 'trophee', 'messages', 'avatar', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
         }
 
-        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'adresse', 'dateNaiss', 'trophee', 'messages', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'presentation', 'adresse', 'dateNaiss', 'trophee', 'messages', 'avatar', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
     }
 
     /**
@@ -336,6 +336,50 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMessages', []);
 
         return parent::getMessages();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setAvatar(\AppBundle\Entity\Avatar $avatar = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAvatar', [$avatar]);
+
+        return parent::setAvatar($avatar);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAvatar()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAvatar', []);
+
+        return parent::getAvatar();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPresentation($presentation)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPresentation', [$presentation]);
+
+        return parent::setPresentation($presentation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPresentation()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPresentation', []);
+
+        return parent::getPresentation();
     }
 
     /**

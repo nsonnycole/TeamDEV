@@ -53,8 +53,17 @@ class Message
   /**
   * @var Date date de reception du message
   *
-  * @ORM\Column(name = "date", type = "date", nullable = true)
+  * @ORM\Column(name = "date", type = "datetime", nullable = true)
   */
+
+  /**
+  * @var ancien message.
+  *
+  * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Message")
+  * @ORM\JoinColumn(name = "ancienMessage", onDelete = "cascade")
+  */
+  protected  $ancienMessage;
+
   protected  $date;
     /**
      * Get id
@@ -208,5 +217,29 @@ class Message
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set ancienMessage
+     *
+     * @param \AppBundle\Entity\Message $ancienMessage
+     *
+     * @return Message
+     */
+    public function setAncienMessage(\AppBundle\Entity\Message $ancienMessage = null)
+    {
+        $this->ancienMessage = $ancienMessage;
+
+        return $this;
+    }
+
+    /**
+     * Get ancienMessage
+     *
+     * @return \AppBundle\Entity\Message
+     */
+    public function getAncienMessage()
+    {
+        return $this->ancienMessage;
     }
 }
