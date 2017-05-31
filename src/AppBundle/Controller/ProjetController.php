@@ -38,7 +38,7 @@ class ProjetController extends Controller
       $projet = $em->getRepository('AppBundle:Projet')->getById($id);
       $usr = $this->get('security.token_storage')->getToken()->getUser();
       $participants = $em->getRepository('AppBundle:Inscription')->getparticipantProjet($projet);
-    
+
 
        // replace this example code with whatever you need
        return $this->render('projets/afficheProjet.html.twig', array(
@@ -66,6 +66,9 @@ class ProjetController extends Controller
       if($form->isSubmitted()){
         $projet->setIdUtilisateur($usr);
         $projet->setNbPlaces(0);
+        $projet->setImageFile($projet->getImageName());
+        $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+        $path = $helper->asset($projet, 'imageName');
         $em->persist($projet);
         $em->flush();
 

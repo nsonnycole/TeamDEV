@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 /**
 * Type de formulaire pour les projets.
 */
@@ -61,7 +62,7 @@ class ProjetType extends AbstractType
                             'multiple' => false,
     ))
 
-      ->add('idTypeProjet', EntityType::class, array(
+    ->add('idTypeProjet', EntityType::class, array(
                             'class' => 'AppBundle:TypeProjet',
                             'choice_label' => 'nom',
                             'label' => 'Type de projet',
@@ -72,6 +73,11 @@ class ProjetType extends AbstractType
                             ),
 
     ))
+
+    ->add('imageName', FileType::class, array(
+                      'label' => 'Fichier',
+    ))
+
 
       ->add('url', TextType::class, array(
                               'label' => 'URL du projet',

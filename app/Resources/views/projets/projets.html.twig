@@ -70,7 +70,6 @@
 		</div>
 	</div>
   <div class="container">
-  <div class="row mt">
   {% for projet in projets %}
       <div class="col-lg-4 projet">
         <a href="{{ path('showProjet', {'id': projet.id}) }}">
@@ -84,7 +83,6 @@
 
       </div>
   {% endfor %}
-  </div><!-- row -->
 </div>
 <br><br>
 {#

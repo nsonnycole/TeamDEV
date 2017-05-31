@@ -48,6 +48,8 @@
     <td>Action </td>
   </thead>
   <tbody>
+
+ 
 {% for mesParticipation in participation %}
   <tr>
     <td><a href="{{ path('showProjet', {'id': mesParticipation.idProjet.id}) }}">{{mesParticipation.idProjet.nomProjet}}</a></td>

@@ -3021,14 +3021,14 @@ unset($this->privates[$id]);
 public function has($id)
 {
 for ($i = 2;;) {
+if (isset($this->privates[$id])) {
+@trigger_error(sprintf('Checking for the existence of the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
+}
 if ('service_container'=== $id
 || isset($this->aliases[$id])
 || isset($this->services[$id])
 ) {
 return true;
-}
-if (isset($this->privates[$id])) {
-@trigger_error(sprintf('Checking for the existence of the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
 }
 if (isset($this->methodMap[$id])) {
 return true;
@@ -3047,6 +3047,9 @@ return false;
 public function get($id, $invalidBehavior = self::EXCEPTION_ON_INVALID_REFERENCE)
 {
 for ($i = 2;;) {
+if (isset($this->privates[$id])) {
+@trigger_error(sprintf('Requesting the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
+}
 if ('service_container'=== $id) {
 return $this;
 }
@@ -3081,9 +3084,6 @@ $alternatives[] = $knownId;
 throw new ServiceNotFoundException($id, null, null, $alternatives);
 }
 return;
-}
-if (isset($this->privates[$id])) {
-@trigger_error(sprintf('Requesting the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
 }
 $this->loading[$id] = true;
 try {

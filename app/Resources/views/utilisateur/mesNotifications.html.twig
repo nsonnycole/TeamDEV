@@ -34,8 +34,15 @@
 <div class="page-header col-md-8 col-sm-offset-2">
     <h4>Notifications</h4>
 </div>
+
+
+
 <div class="notifications col-md-8 col-sm-offset-2">
+{% if notifications == null %}
+<h3>Vous n'avez pas de notification.</h3>
+{% endif %}
     <ul class="notification-list">
+
       {% for notification in notifications %}
         <li>
             <div class="media">

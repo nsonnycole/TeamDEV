@@ -3,6 +3,8 @@ namespace AppBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
 * @ORM\Entity(repositoryClass = "AppBundle\Repository\ProjetRepository")
@@ -120,47 +122,7 @@ class Projet
   * @ORM\Column(name = "url",type="string", length=255, nullable=true)
   */
   public $url;
-  /**
-  * @ORM\Column(type="string", length=255, nullable=true)
-  */
-  public $pictureName;
 
-  /**
-  * @Assert\File(maxSize="1024k")
-  */
-  public $file;
-
-  public function getWebPath()
-  {
-    return null === $this->pictureName ? null : $this->getUploadDir().'/'.$this->pictureName;
-  }
-
-  protected function getUploadRootDir()
-  {
-    // le chemin absolu du répertoire dans lequel sauvegarder les photos
-    return __DIR__.'/../../../../web/'.$this->getUploadDir();
-  }
-
-  protected function getUploadDir()
-  {
-    // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
-    return 'uploads/pictures';
-  }
-
-  public function uploadProfilePicture()
-  {
-    // Nous utilisons le nom de fichier original, donc il est dans la pratique
-    // nécessaire de le nettoyer pour éviter les problèmes de sécurité
-
-    // move copie le fichier présent chez le client dans le répertoire indiqué.
-    $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
-
-    // On sauvegarde le nom de fichier
-    $this->pictureName = $this->file->getClientOriginalName();
-
-    // La propriété file ne servira plus
-    $this->file = null;
-  }
 
   /**
   * @var technologies du projet.
@@ -169,6 +131,7 @@ class Projet
   * @ORM\JoinColumn(name = "technologies",onDelete = "cascade")
   */
   protected  $technologies;
+
 
 
   /**
@@ -397,29 +360,6 @@ class Projet
     return $this->url;
   }
 
-  /**
-  * Set pictureName
-  *
-  * @param string $pictureName
-  *
-  * @return Projet
-  */
-  public function setPictureName($pictureName)
-  {
-    $this->pictureName = $pictureName;
-
-    return $this;
-  }
-
-  /**
-  * Get pictureName
-  *
-  * @return string
-  */
-  public function getPictureName()
-  {
-    return $this->pictureName;
-  }
 
   /**
   * Set statut
@@ -493,85 +433,97 @@ class Projet
     return $this->idTypeProjet;
   }
 
-    /**
-     * Set technologies
-     *
-     * @param \AppBundle\Entity\Technologie $technologies
-     *
-     * @return Projet
-     */
-    public function setTechnologies(\AppBundle\Entity\Technologie $technologies = null)
-    {
-        $this->technologies = $technologies;
+  /**
+  * Set technologies
+  *
+  * @param \AppBundle\Entity\Technologie $technologies
+  *
+  * @return Projet
+  */
+  public function setTechnologies(\AppBundle\Entity\Technologie $technologies = null)
+  {
+    $this->technologies = $technologies;
 
-        return $this;
-    }
+    return $this;
+  }
 
-    /**
-     * Get technologies
-     *
-     * @return \AppBundle\Entity\Technologie
-     */
-    public function getTechnologies()
-    {
-        return $this->technologies;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idTypeProjet = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+  /**
+  * Get technologies
+  *
+  * @return \AppBundle\Entity\Technologie
+  */
+  public function getTechnologies()
+  {
+    return $this->technologies;
+  }
+  /**
+  * Constructor
+  */
+  public function __construct()
+  {
+    $this->idTypeProjet = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
 
-    /**
-     * Add idTypeProjet
-     *
-     * @param \AppBundle\Entity\TypeProjet $idTypeProjet
-     *
-     * @return Projet
-     */
-    public function addIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet)
-    {
-        $this->idTypeProjet[] = $idTypeProjet;
+  }
 
-        return $this;
-    }
+  /**
+  * Add idTypeProjet
+  *
+  * @param \AppBundle\Entity\TypeProjet $idTypeProjet
+  *
+  * @return Projet
+  */
+  public function addIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet)
+  {
+    $this->idTypeProjet[] = $idTypeProjet;
 
-    /**
-     * Remove idTypeProjet
-     *
-     * @param \AppBundle\Entity\TypeProjet $idTypeProjet
-     */
-    public function removeIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet)
-    {
-        $this->idTypeProjet->removeElement($idTypeProjet);
-    }
+    return $this;
+  }
 
-    /**
-     * Add technology
-     *
-     * @param \AppBundle\Entity\Technologie $technology
-     *
-     * @return Projet
-     */
-    public function addTechnology(\AppBundle\Entity\Technologie $technology)
-    {
-        $this->technologies[] = $technology;
+  /**
+  * Remove idTypeProjet
+  *
+  * @param \AppBundle\Entity\TypeProjet $idTypeProjet
+  */
+  public function removeIdTypeProjet(\AppBundle\Entity\TypeProjet $idTypeProjet)
+  {
+    $this->idTypeProjet->removeElement($idTypeProjet);
+  }
 
-        return $this;
-    }
+  /**
+  * Add technology
+  *
+  * @param \AppBundle\Entity\Technologie $technology
+  *
+  * @return Projet
+  */
+  public function addTechnology(\AppBundle\Entity\Technologie $technology)
+  {
+    $this->technologies[] = $technology;
 
-    /**
-     * Remove technology
-     *
-     * @param \AppBundle\Entity\Technologie $technology
-     */
-    public function removeTechnology(\AppBundle\Entity\Technologie $technology)
-    {
-        $this->technologies->removeElement($technology);
-    }
+    return $this;
+  }
 
+  /**
+  * Remove technology
+  *
+  * @param \AppBundle\Entity\Technologie $technology
+  */
+  public function removeTechnology(\AppBundle\Entity\Technologie $technology)
+  {
+    $this->technologies->removeElement($technology);
+  }
+
+
+  //
+  // public function setImageFile(File $image = null)
+  // {
+  //     $this->imageFile = $image;
+  //
+  //     if ($image) {
+  //         // if 'updatedAt' is not defined in your entity, use another property
+  //         $this->updatedAt = new \DateTime('now');
+  //     }
+  // }
 
 }
