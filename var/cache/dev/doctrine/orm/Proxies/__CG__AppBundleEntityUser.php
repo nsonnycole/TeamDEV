@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'presentation', 'adresse', 'dateNaiss', 'trophee', 'messages', 'avatar', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+            return ['__isInitialized__', 'id', 'nom', 'prenom', 'presentation', 'adresse', 'dateNaiss', 'trophee', 'messages', 'avatar', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
         }
 
-        return ['__isInitialized__', 'id', 'idTypeProfil', 'nom', 'prenom', 'presentation', 'adresse', 'dateNaiss', 'trophee', 'messages', 'avatar', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+        return ['__isInitialized__', 'id', 'nom', 'prenom', 'presentation', 'adresse', 'dateNaiss', 'trophee', 'messages', 'avatar', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
     }
 
     /**
@@ -173,28 +173,6 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     }
 
     
-    /**
-     * {@inheritDoc}
-     */
-    public function setIdTypeProfil(\AppBundle\Entity\TypeProfil $idTypeProfil = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdTypeProfil', [$idTypeProfil]);
-
-        return parent::setIdTypeProfil($idTypeProfil);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdTypeProfil()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdTypeProfil', []);
-
-        return parent::getIdTypeProfil();
-    }
-
     /**
      * {@inheritDoc}
      */

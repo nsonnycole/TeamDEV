@@ -11,8 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use AppBundle\Form\Type\ImageFormType;
 /**
 * Type de formulaire pour les projets.
 */
@@ -74,9 +76,11 @@ class ProjetType extends AbstractType
 
     ))
 
-    ->add('imageName', FileType::class, array(
-                      'label' => 'Fichier',
-    ))
+       ->add('file', FileType::class, array(
+           'label' => 'Image',
+           'required'   => false,
+           'data_class' => null,
+       ))
 
 
       ->add('url', TextType::class, array(
@@ -104,6 +108,23 @@ class ProjetType extends AbstractType
                               'attr' => array(
                               'class' => 'btn btn-success pull-left'
         )));
+      }
+
+      public function prePersist($image)
+      {
+          $this->manageFileUpload($image);
+      }
+
+      public function preUpdate($image)
+      {
+          $this->manageFileUpload($image);
+      }
+
+      private function manageFileUpload($image)
+      {
+          if ($image->getFile()) {
+              $image->refreshUpdated();
+          }
       }
 
     /**

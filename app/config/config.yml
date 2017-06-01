@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    app.path.projet_images: /img/projet
 
 framework:
     #esi: ~
@@ -81,14 +82,71 @@ fos_user:
         address: "test@mail.fr"
         sender_name: "test"
 
-vich_uploader:
-    db_driver: orm # or mongodb or propel or phpcr
 
-    mappings:
-        product_image:
-            uri_prefix:         /img/project
-            upload_destination: '%kernel.root_dir%/../web/img/project'
+easy_admin:
 
-            inject_on_load:     false
-            delete_on_update:   true
-            delete_on_remove:   true
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
+    entities:
+      Projet:
+            class: AppBundle\Entity\Projet
+            label: 'Les projets'
+            list:
+                title: 'Liste des projets'
+            disabled_actions: ['new','edit']
+
+
+      Avatar:
+            class: AppBundle\Entity\Avatar
+            label: 'Les avatars'
+            list:
+                title: 'Liste des avatars'
+      User:
+            class: AppBundle\Entity\User
+            label: 'Les utilisateurs'
+            list:
+                title: 'Liste des utilisateurs'
+
+      Technologie:
+            class: AppBundle\Entity\Technologie
+            label: 'Les technologies'
+            list:
+                title: 'Liste des technologies'
+
+      Inscription:
+            class: AppBundle\Entity\Inscription
+            label: 'Les inscriptions'
+            list:
+                title: 'Liste des inscriptions aux projets'
+
+      Competence:
+            class: AppBundle\Entity\Competence
+            label: 'Les compétences'
+            list:
+                title: 'Liste des compétences'
+      Statut:
+            class: AppBundle\Entity\Statut
+            label: 'Les statuts'
+            list:
+                title: 'Liste des statuts pour un projet'
+      TypeProjet:
+            class: AppBundle\Entity\TypeProjet
+            label: 'Les types de projets'
+            list:
+                title: 'Liste des types de projets'
+
+
+
+    design:
+        brand_color: '#16a085'
+        brand_color: '#16a085'
+        brand_color: 'hsl(0, 100%, 50%);'
+        assets:
+            css:
+                # HTTP protocol-relative URL
+                #- '/css/main.css'
+            favicon:
+                path: '/img/favicon.png'
+                mime_type: 'image/png'

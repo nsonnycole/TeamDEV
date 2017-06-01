@@ -103,7 +103,7 @@ class UtilisateurController extends Controller
        'user' => $usr,
        'nbProjets' => $nbProjets,
        'nbParticipations' => $nbParticipations,
-       'competences' => $competences
+       'competences' => $competences,
      ));
   }
 
@@ -215,6 +215,23 @@ class UtilisateurController extends Controller
        'usr' => $usr,
        'form'=> $form->createView(),
 
+     ));
+  }
+
+  /**
+   * @Route("/mesReseaux", name="mesReseaux")
+   */
+  public function mesReseauxAction(Request $request)
+  {
+
+    $em = $this->getDoctrine()->getManager();
+    $usr = $this->get('security.token_storage')->getToken()->getUser();
+    $usr->getId();
+    $reseaux = $em->getRepository('AppBundle:Reseaux')->getReseauUser($usr);
+
+     return $this->render('utilisateur/mesReseaux.html.twig', array(
+       'reseaux' => $reseaux,
+    //   'participe' => $participe
      ));
   }
 

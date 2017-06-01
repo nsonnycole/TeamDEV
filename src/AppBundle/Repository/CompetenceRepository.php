@@ -11,8 +11,6 @@ use AppBundle\Entity\Competence;
 */
 class CompetenceRepository extends EntityRepository
 {
-
-
   /**
   *
   * Retourne la liste des inscriptions

@@ -36,6 +36,7 @@ class NotificationRepository extends EntityRepository
   {
     $query = $this->createQueryBuilder('notif')
     ->where('notif.destinataire=:userID')
+    ->orderBy('notif.id', 'DESC')
     ->setParameter('userID', $userID)
     ->getQuery();
     return $query->getResult();

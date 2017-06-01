@@ -18,15 +18,6 @@ class User extends BaseUser
     protected $id;
 
     /**
-    * @var Type de profil normal ou admin.
-    *
-    * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\TypeProfil")
-    * @ORM\JoinColumn(name = "idTypeProfil", onDelete = "cascade")
-    */
-    protected  $idTypeProfil;
-
-
-    /**
      *
      * @ORM\Column(type="string")
      *
@@ -77,6 +68,9 @@ class User extends BaseUser
     */
     protected  $messages;
 
+
+
+
     /**
     * @var avatar de l'user.
     *
@@ -89,30 +83,6 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
-    }
-
-    /**
-     * Set idTypeProfil
-     *
-     * @param \AppBundle\Entity\TypeProfil $idTypeProfil
-     *
-     * @return User
-     */
-    public function setIdTypeProfil(\AppBundle\Entity\TypeProfil $idTypeProfil = null)
-    {
-        $this->idTypeProfil = $idTypeProfil;
-
-        return $this;
-    }
-
-    /**
-     * Get idTypeProfil
-     *
-     * @return \AppBundle\Entity\TypeProfil
-     */
-    public function getIdTypeProfil()
-    {
-        return $this->idTypeProfil;
     }
 
 

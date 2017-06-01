@@ -34,8 +34,16 @@
 
 <div class="container">
 <div class="row col-sm-10 col-sm-offset-1">
+
+{% if projets == null %}
+<h3>Vous n'avez pas de projets.</h3>
+<p class="pull-right"><br><a href="{{path('newProjet')}}" class="btn btn-primary">Nouveau</a></p>
+{% else %}
+
 <h3>Listes de mes projets</h3>
+<p class="pull-right"><br><a href="{{path('newProjet')}}" class="btn btn-primary pull-right">Nouveau</a></p>
 <hr>
+
 <table class="table" id="myTable">
   <thead>
     <td>Nom du projet</td>
@@ -51,14 +59,22 @@
     <td>{{projet.statut.nom }}</td>
     <td>
       {#<a href="{{ path('desincProjet', {'id': participe.id}) }}" class="btn btn-danger">Se désinscrire</a>#}
+      {% if projet.statut.nom == "Fermé" %}
+      <a href="{{ path('tropheeProjet', {'id': projet.id}) }}" class="btn btn-info"><i class="fa fa-trophy"></i></a>
+      <a href="{{ path('deleteProjet', {'id': projet.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+      {% else %}
       <a href="{{ path('editProjet', {'id': projet.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="{{ path('deleteProjet', {'id': projet.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
+
+
+
     </td>
   </tr>
 {% endfor %}
 </tbody>
 </table>
-
+{% endif %}
 </div><!-- row -->
 </div>
 {% else %}

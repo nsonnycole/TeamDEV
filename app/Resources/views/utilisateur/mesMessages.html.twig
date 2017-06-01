@@ -34,6 +34,10 @@
 
 <div class="container">
 <div class="row col-sm-10 col-sm-offset-1">
+
+{% if messages == null %}
+<h3>Vous n'avez pas de messages.</h3>
+{% else %}
 <h3>Listes de mes messages</h3>
 <hr>
 <table class="table" id="myTable">
@@ -59,7 +63,7 @@
 {% endfor %}
 </tbody>
 </table>
-
+{% endif %}
 </div><!-- row -->
 </div>
 {% else %}

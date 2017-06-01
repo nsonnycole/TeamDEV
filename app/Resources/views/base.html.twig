@@ -46,7 +46,7 @@
         	<a href="{{path('projets')}}"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Projets</a>
           <hr>
           <a href="{{path('fos_user_profile_show')}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mon profil</a>
-          <!-- <a href="{{path('indexAdmin')}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Administration</a> -->
+          <!-- <a href="{{path('admin')}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Administration</a> -->
     			<a href="{{path('mesNotifications')}}"> <span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Mes notifications</a>
           <a href="{{path('mesMessages')}}"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Mes messages</a>
           <a href="{{path('mesProjets')}}"> <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Mes projets</a>
@@ -154,6 +154,13 @@
        jQuery(document).ready(function(){
            $('.chosen-select').chosen();
        });
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+      {% block documentReady %}{% endblock documentReady %}
+  });
 </script>
 
         {% endblock %}

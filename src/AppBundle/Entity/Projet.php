@@ -4,7 +4,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+const SERVER_PATH_TO_IMAGE_FOLDER = '/web/img/project';
 
 /**
 * @ORM\Entity(repositoryClass = "AppBundle\Repository\ProjetRepository")
@@ -99,7 +100,7 @@ class Projet
   * @var statut du projet.
   *
   * @ORM\ManyToOne(targetEntity = "AppBundle\Entity\Statut")
-  * @ORM\JoinColumn(name = "statut")
+  * @ORM\JoinColumn(name="statut",)
   */
   protected  $statut;
 
@@ -132,6 +133,73 @@ class Projet
   */
   protected  $technologies;
 
+
+  /**
+  * @ORM\Column(name = "file",type="text", nullable=true)
+  */
+  private $file;
+
+  /**
+  * Sets file.
+  *
+  * @param UploadedFile $file
+  */
+  public function setFile(UploadedFile $file = null)
+  {
+    $this->file = $file;
+  }
+
+  /**
+  * Get file.
+  *
+  * @return UploadedFile
+  */
+  public function getFile()
+  {
+    return $this->file;
+  }
+
+  /**
+  * Manages the copying of the file to the relevant place on the server
+  */
+  public function upload()
+  {
+    // the file property can be empty if the field is not required
+    if (null === $this->getFile()) {
+      return;
+    }
+
+    // we use the original file name here but you should
+    // sanitize it at least to avoid any security issues
+
+    // move takes the target directory and target filename as params
+    $this->getFile()->move(
+      self::SERVER_PATH_TO_IMAGE_FOLDER,
+      $this->getFile()->getClientOriginalName()
+    );
+
+    // set the path property to the filename where you've saved the file
+    $this->filename = $this->getFile()->getClientOriginalName();
+
+    // clean up the file property as you won't need it anymore
+    $this->setFile(null);
+  }
+
+  /**
+  * Lifecycle callback to upload the file to the server
+  */
+  public function lifecycleFileUpload()
+  {
+    $this->upload();
+  }
+
+  /**
+  * Updates the hash value to force the preUpdate and postUpdate events to fire
+  */
+  public function refreshUpdated()
+  {
+    $this->setUpdated(new \DateTime());
+  }
 
 
   /**
@@ -514,16 +582,5 @@ class Projet
     $this->technologies->removeElement($technology);
   }
 
-
-  //
-  // public function setImageFile(File $image = null)
-  // {
-  //     $this->imageFile = $image;
-  //
-  //     if ($image) {
-  //         // if 'updatedAt' is not defined in your entity, use another property
-  //         $this->updatedAt = new \DateTime('now');
-  //     }
-  // }
 
 }

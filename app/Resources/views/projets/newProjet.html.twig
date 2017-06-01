@@ -37,7 +37,7 @@
 
 <div class="container">
 <br/>
-<div class="panel panel-default">
+<div class="panel">
 
 			<div class="panel-heading"><h4>Nouveau projet</h4>
       <button  type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModal">
@@ -45,7 +45,7 @@
       </button>
       </div>
 			<div class="panel-body">
-					<div class="panel panel-default">
+					<div class="panel ">
 						<div class="panel-body">
             {{ form_start(form) }}
             <div class="col-md-6">
@@ -54,6 +54,7 @@
               {{ form_row(form.contenu) }}
               {{ form_row(form.url) }}
               {{ form_row(form.statut) }}
+
 
             </div>
             <div class="col-md-6">
@@ -72,7 +73,7 @@
             <a onclick="return(confirm('Attention vous êtes sur le point d'annuler votre action'));" href="{{path('projets')}}" class="btn btn-warning pull-right"/>
            Annuler </a>
            {{ form_row(form.save) }}
-          {{ form_end(form) }}
+
 				<div class="clearfix"></div>
             </div>
 </div>
@@ -82,25 +83,27 @@
 	<div class="row">
 
 
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                  </div>
-                  <div class="modal-body">
-
-                  </div>
-                  <div class="modal-footer">
-
-                  </div>
-                </div>
-              </div>
-            </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">Ajout/Modification d'un fichier</h4>
+        </div>
+        <div class="modal-body">
+        {{ form_row(form.file) }}
+          
+        </div>
+        <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-warning pull-right"/> Enregistrer </button>
+        </div>
+      </div>
+    </div>
+  </div>
 	</div>
 </div>
+  {{ form_end(form) }}
 {% else %}
 {{ render(path('fos_user_security_login')) }}
 {% endif %}

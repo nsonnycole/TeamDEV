@@ -55,7 +55,9 @@ class Message
   *
   * @ORM\Column(name = "date", type = "datetime", nullable = true)
   */
+  protected  $date;
 
+  
   /**
   * @var ancien message.
   *
@@ -64,7 +66,8 @@ class Message
   */
   protected  $ancienMessage;
 
-  protected  $date;
+
+
     /**
      * Get id
      *

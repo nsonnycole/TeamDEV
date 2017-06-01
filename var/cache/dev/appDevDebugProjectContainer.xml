@@ -17,7 +17,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
-      <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
+      <parameter key="EasyAdminBundle">JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -69,10 +69,10 @@
         <parameter key="path">/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle</parameter>
         <parameter key="namespace">FOS\UserBundle</parameter>
       </parameter>
-      <parameter key="VichUploaderBundle" type="collection">
+      <parameter key="EasyAdminBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle</parameter>
-        <parameter key="namespace">Vich\UploaderBundle</parameter>
+        <parameter key="path">/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle</parameter>
+        <parameter key="namespace">JavierEguiluz\Bundle\EasyAdminBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -108,6 +108,7 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="locale">fr</parameter>
+    <parameter key="app.path.projet_images">/img/projet</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
@@ -388,26 +389,118 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
-    <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
-    <parameter key="vich_uploader.mappings" type="collection">
-      <parameter key="product_image" type="collection">
-        <parameter key="uri_prefix">/img/project</parameter>
-        <parameter key="upload_destination">/Applications/MAMP/htdocs/TeamDEV/app/../web/img/project</parameter>
-        <parameter key="inject_on_load">false</parameter>
-        <parameter key="delete_on_update">true</parameter>
-        <parameter key="delete_on_remove">true</parameter>
-        <parameter key="namer" type="collection">
-          <parameter key="service">null</parameter>
-          <parameter key="options">null</parameter>
+    <parameter key="easyadmin.config" type="collection">
+      <parameter key="formats" type="collection">
+        <parameter key="date">d/m/Y</parameter>
+        <parameter key="time">H:i</parameter>
+        <parameter key="datetime">d/m/Y H:i:s</parameter>
+      </parameter>
+      <parameter key="entities" type="collection">
+        <parameter key="Projet" type="collection">
+          <parameter key="class">AppBundle\Entity\Projet</parameter>
+          <parameter key="label">Les projets</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des projets</parameter>
+          </parameter>
+          <parameter key="disabled_actions" type="collection">
+            <parameter>new</parameter>
+            <parameter>edit</parameter>
+          </parameter>
+          <parameter key="name">Projet</parameter>
         </parameter>
-        <parameter key="directory_namer" type="collection">
-          <parameter key="service">null</parameter>
-          <parameter key="options">null</parameter>
+        <parameter key="Avatar" type="collection">
+          <parameter key="class">AppBundle\Entity\Avatar</parameter>
+          <parameter key="label">Les avatars</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des avatars</parameter>
+          </parameter>
+          <parameter key="name">Avatar</parameter>
         </parameter>
-        <parameter key="db_driver">orm</parameter>
+        <parameter key="User" type="collection">
+          <parameter key="class">AppBundle\Entity\User</parameter>
+          <parameter key="label">Les utilisateurs</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des utilisateurs</parameter>
+          </parameter>
+          <parameter key="name">User</parameter>
+        </parameter>
+        <parameter key="Technologie" type="collection">
+          <parameter key="class">AppBundle\Entity\Technologie</parameter>
+          <parameter key="label">Les technologies</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des technologies</parameter>
+          </parameter>
+          <parameter key="name">Technologie</parameter>
+        </parameter>
+        <parameter key="Inscription" type="collection">
+          <parameter key="class">AppBundle\Entity\Inscription</parameter>
+          <parameter key="label">Les inscriptions</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des inscriptions aux projets</parameter>
+          </parameter>
+          <parameter key="name">Inscription</parameter>
+        </parameter>
+        <parameter key="Competence" type="collection">
+          <parameter key="class">AppBundle\Entity\Competence</parameter>
+          <parameter key="label">Les compétences</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des compétences</parameter>
+          </parameter>
+          <parameter key="name">Competence</parameter>
+        </parameter>
+        <parameter key="Statut" type="collection">
+          <parameter key="class">AppBundle\Entity\Statut</parameter>
+          <parameter key="label">Les statuts</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des statuts pour un projet</parameter>
+          </parameter>
+          <parameter key="name">Statut</parameter>
+        </parameter>
+        <parameter key="TypeProjet" type="collection">
+          <parameter key="class">AppBundle\Entity\TypeProjet</parameter>
+          <parameter key="label">Les types de projets</parameter>
+          <parameter key="list" type="collection">
+            <parameter key="title">Liste des types de projets</parameter>
+          </parameter>
+          <parameter key="name">TypeProjet</parameter>
+        </parameter>
+      </parameter>
+      <parameter key="design" type="collection">
+        <parameter key="brand_color">#16a085</parameter>
+        <parameter key="assets" type="collection">
+          <parameter key="css" type="collection"/>
+          <parameter key="favicon" type="collection">
+            <parameter key="path">/img/favicon.png</parameter>
+            <parameter key="mime_type">image/png</parameter>
+          </parameter>
+          <parameter key="js" type="collection"/>
+        </parameter>
+        <parameter key="theme">default</parameter>
+        <parameter key="color_scheme">dark</parameter>
+        <parameter key="form_theme" type="collection">
+          <parameter>@EasyAdmin/form/bootstrap_3_horizontal_layout.html.twig</parameter>
+        </parameter>
+        <parameter key="menu" type="collection"/>
+      </parameter>
+      <parameter key="site_name">EasyAdmin</parameter>
+      <parameter key="disabled_actions" type="collection"/>
+      <parameter key="translation_domain">messages</parameter>
+      <parameter key="list" type="collection">
+        <parameter key="actions" type="collection"/>
+        <parameter key="max_results">15</parameter>
+      </parameter>
+      <parameter key="edit" type="collection">
+        <parameter key="actions" type="collection"/>
+      </parameter>
+      <parameter key="new" type="collection">
+        <parameter key="actions" type="collection"/>
+      </parameter>
+      <parameter key="show" type="collection">
+        <parameter key="actions" type="collection"/>
+        <parameter key="max_results">10</parameter>
       </parameter>
     </parameter>
-    <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
+    <parameter key="easyadmin.cache.dir">/Applications/MAMP/htdocs/TeamDEV/var/cache/dev/easy_admin</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -471,6 +564,10 @@
       <parameter key="data_collector.dump" type="collection">
         <parameter>dump</parameter>
         <parameter>@Debug/Profiler/dump.html.twig</parameter>
+      </parameter>
+      <parameter key="easyadmin.data_collector" type="collection">
+        <parameter>easyadmin</parameter>
+        <parameter>@EasyAdmin/data_collector/easyadmin.html.twig</parameter>
       </parameter>
       <parameter key="data_collector.config" type="collection">
         <parameter>config</parameter>
@@ -545,7 +642,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>u12cj+LJPY</argument>
                 <argument>0</argument>
-                <argument>7C1L0KUGXwu-uz6O8qGpG4</argument>
+                <argument>GGhWeFoOEfCDCaZeBhTWlX</argument>
                 <argument>/Applications/MAMP/htdocs/TeamDEV/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -598,6 +695,12 @@
           <service class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer" public="false">
             <tag name="kernel.cache_warmer"/>
             <argument type="service" id="doctrine"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Cache\ConfigWarmer" public="false">
+            <tag name="kernel.cache_warmer" priority="-2048"/>
+            <argument type="service" id="easyadmin.config.manager"/>
           </service>
         </argument>
       </argument>
@@ -728,7 +831,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>KzhFeJRWol</argument>
       <argument>0</argument>
-      <argument>7C1L0KUGXwu-uz6O8qGpG4</argument>
+      <argument>GGhWeFoOEfCDCaZeBhTWlX</argument>
       <argument>/Applications/MAMP/htdocs/TeamDEV/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -738,7 +841,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>+TI+OZAfc+</argument>
       <argument>0</argument>
-      <argument>7C1L0KUGXwu-uz6O8qGpG4</argument>
+      <argument>GGhWeFoOEfCDCaZeBhTWlX</argument>
       <argument>/Applications/MAMP/htdocs/TeamDEV/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -813,7 +916,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ar.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.ar.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.ar.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.ar.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.ar.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.ar.xlf</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.az.xlf</argument>
@@ -828,6 +932,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.bg.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.bg.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.bg.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.bg.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.bg.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf</argument>
@@ -837,6 +943,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ca.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.ca.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.ca.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.ca.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.ca.xlf</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cs.xlf</argument>
@@ -846,6 +954,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.cs.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.cs.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.cs.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.cs.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.cs.xlf</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf</argument>
@@ -867,7 +977,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.de.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.de.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.de.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.de.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.de.xlf</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf</argument>
@@ -886,7 +997,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.en.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.en.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.en.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.en.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.en.xlf</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf</argument>
@@ -896,7 +1008,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.es.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.es.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.es.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.es.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.es.xlf</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf</argument>
@@ -911,6 +1024,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eu.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.eu.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.eu.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.eu.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.eu.xlf</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fa.xlf</argument>
@@ -928,6 +1043,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fi.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.fi.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.fi.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.fi.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.fi.xlf</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf</argument>
@@ -937,7 +1054,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.fr.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.fr.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.fr.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.fr.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
@@ -970,7 +1088,6 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hu.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.hu.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.hu.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.hu.yml</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hy.xlf</argument>
@@ -993,7 +1110,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.it.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.it.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.it.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.it.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.it.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.it.xlf</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
@@ -1041,6 +1159,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nl.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.nl.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.nl.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.nl.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.nl.xlf</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nn.xlf</argument>
@@ -1058,7 +1178,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pl.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.pl.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.pl.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.pl.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.pl.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.pl.xlf</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf</argument>
@@ -1067,7 +1188,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.pt.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.pt.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.pt.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.pt.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf</argument>
@@ -1086,6 +1208,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ro.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.ro.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.ro.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.ro.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.ro.xlf</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf</argument>
@@ -1095,7 +1219,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.ru.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.ru.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.ru.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.ru.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.ru.xlf</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
@@ -1114,7 +1239,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sl.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.sl.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.sl.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.sl.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.sl.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf</argument>
@@ -1141,6 +1267,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sv.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.sv.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.sv.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.sv.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.sv.xlf</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.th.xlf</argument>
@@ -1157,7 +1285,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.tr.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.tr.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.tr.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.tr.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.tr.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.tr.xlf</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
@@ -1166,7 +1295,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.uk.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.uk.yml</argument>
-            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.uk.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.uk.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.uk.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.vi.xlf</argument>
@@ -1184,6 +1314,8 @@
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.zh_CN.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/FOSUserBundle.zh_CN.yml</argument>
             <argument>/Applications/MAMP/htdocs/TeamDEV/app/Resources/FOSUserBundle/translations/validators.zh_CN.yml</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/EasyAdminBundle.zh_CN.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/translations/messages.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
             <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_TW.xlf</argument>
@@ -1449,8 +1581,11 @@
               <argument key="FOS\UserBundle\Form\Type\RegistrationFormType">fos_user.registration.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
-              <argument key="Vich\UploaderBundle\Form\Type\VichFileType">vich_uploader.form.type.file</argument>
-              <argument key="Vich\UploaderBundle\Form\Type\VichImageType">vich_uploader.form.type.image</argument>
+              <argument key="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminFormType">easyadmin.form.type</argument>
+              <argument key="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType">easyadmin.form.type.autocomplete</argument>
+              <argument key="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminDividerType">easyadmin.form.type.divider</argument>
+              <argument key="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminSectionType">easyadmin.form.type.section</argument>
+              <argument key="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminGroupType">easyadmin.form.type.group</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1459,6 +1594,7 @@
                 <argument>form.type_extension.upload.validator</argument>
                 <argument>form.type_extension.csrf</argument>
                 <argument>form.type_extension.form.data_collector</argument>
+                <argument>easyadmin.form.type.extension</argument>
               </argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\RepeatedType" type="collection">
                 <argument>form.type_extension.repeated.validator</argument>
@@ -1836,6 +1972,14 @@
       </call>
       <call method="add">
         <argument type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\DataCollector\EasyAdminDataCollector" public="false">
+            <tag name="data_collector" template="@EasyAdmin/data_collector/easyadmin.html.twig" id="easyadmin"/>
+            <argument type="service" id="easyadmin.config.manager"/>
+          </service>
+        </argument>
+      </call>
+      <call method="add">
+        <argument type="service">
           <service class="Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector" public="false">
             <tag name="data_collector" template="@WebProfiler/Collector/config.html.twig" id="config" priority="-255"/>
             <call method="setKernel">
@@ -1907,6 +2051,22 @@
         <argument type="collection">
           <argument>data_collector.router</argument>
           <argument>onKernelController</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.controller</argument>
+        <argument type="collection">
+          <argument>easyadmin.listener.controller</argument>
+          <argument>onKernelController</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>easy_admin.post_initialize</argument>
+        <argument type="collection">
+          <argument>easyadmin.listener.request_post_initialize</argument>
+          <argument>initializeRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -2196,7 +2356,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>592ef6bd3f89d4.31480433</argument>
+            <argument>59301eac2b2983.74673966</argument>
           </service>
         </argument>
       </argument>
@@ -2490,7 +2650,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>592ef6bd3f89d4.31480433</argument>
+            <argument>59301eac2b2983.74673966</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2752,9 +2912,12 @@
       </call>
       <call method="addExtension">
         <argument type="service">
-          <service class="Vich\UploaderBundle\Twig\Extension\UploaderExtension" public="false">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension" public="false">
             <tag name="twig.extension"/>
-            <argument type="service" id="vich_uploader.templating.helper.uploader_helper"/>
+            <argument type="service" id="easyadmin.config.manager"/>
+            <argument type="service" id="property_accessor"/>
+            <argument>true</argument>
+            <argument type="service" id="security.logout_url_generator" on-invalid="null"/>
           </service>
         </argument>
       </call>
@@ -2963,49 +3126,10 @@
           <argument type="service" id="service_container"/>
           <call method="addEventSubscriber">
             <argument type="service">
-              <service class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
-                <tag name="doctrine.event_subscriber" priority="50"/>
-                <argument>product_image</argument>
-                <argument type="service">
-                  <service class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
-                </argument>
-                <argument type="service" id="vich_uploader.metadata_reader"/>
-                <argument type="service" id="vich_uploader.upload_handler"/>
-              </service>
-            </argument>
-          </call>
-          <call method="addEventSubscriber">
-            <argument type="service">
               <service class="FOS\UserBundle\Doctrine\UserListener" public="false">
                 <tag name="doctrine.event_subscriber"/>
                 <argument type="service" id="fos_user.util.password_updater"/>
                 <argument type="service" id="fos_user.util.canonical_fields_updater"/>
-              </service>
-            </argument>
-          </call>
-          <call method="addEventSubscriber">
-            <argument type="service">
-              <service class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
-                <tag name="doctrine.event_subscriber" priority="0"/>
-                <argument>product_image</argument>
-                <argument type="service">
-                  <service class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
-                </argument>
-                <argument type="service" id="vich_uploader.metadata_reader"/>
-                <argument type="service" id="vich_uploader.upload_handler"/>
-              </service>
-            </argument>
-          </call>
-          <call method="addEventSubscriber">
-            <argument type="service">
-              <service class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
-                <tag name="doctrine.event_subscriber" priority="0"/>
-                <argument>product_image</argument>
-                <argument type="service">
-                  <service class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
-                </argument>
-                <argument type="service" id="vich_uploader.metadata_reader"/>
-                <argument type="service" id="vich_uploader.upload_handler"/>
               </service>
             </argument>
           </call>
@@ -3303,107 +3427,99 @@
       <argument type="service" id="router"/>
       <argument>86400</argument>
     </service>
-    <service id="vich_uploader.templating.helper.uploader_helper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper">
-      <tag name="templating.helper" alias="vich_uploader"/>
-      <argument type="service" id="vich_uploader.storage"/>
+    <service id="easyadmin.cache.manager" class="JavierEguiluz\Bundle\EasyAdminBundle\Cache\CacheManager">
+      <argument>/Applications/MAMP/htdocs/TeamDEV/var/cache/dev/easy_admin</argument>
     </service>
-    <service id="vich_uploader.metadata_reader" class="Vich\UploaderBundle\Metadata\MetadataReader" public="false">
+    <service id="easyadmin.config.manager" class="JavierEguiluz\Bundle\EasyAdminBundle\Configuration\ConfigManager">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="easyadmin.query_builder" class="JavierEguiluz\Bundle\EasyAdminBundle\Search\QueryBuilder">
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="easyadmin.autocomplete" class="JavierEguiluz\Bundle\EasyAdminBundle\Search\Autocomplete">
+      <argument type="service" id="easyadmin.config.manager"/>
       <argument type="service">
-        <service class="Metadata\MetadataFactory" public="false">
-          <argument type="service">
-            <service class="Vich\UploaderBundle\Metadata\Driver\ChainDriver" public="false">
-              <argument type="collection">
-                <argument type="service">
-                  <service class="Vich\UploaderBundle\Metadata\Driver\AnnotationDriver" public="false">
-                    <argument type="service" id="annotation_reader"/>
-                  </service>
-                </argument>
-                <argument type="service">
-                  <service class="Vich\UploaderBundle\Metadata\Driver\YamlDriver" public="false">
-                    <argument type="service">
-                      <service class="Vich\UploaderBundle\Metadata\Driver\FileLocator" public="false">
-                        <argument type="collection"/>
-                      </service>
-                    </argument>
-                  </service>
-                </argument>
-                <argument type="service">
-                  <service class="Vich\UploaderBundle\Metadata\Driver\XmlDriver" public="false">
-                    <argument type="service">
-                      <service class="Vich\UploaderBundle\Metadata\Driver\FileLocator" public="false">
-                        <argument type="collection"/>
-                      </service>
-                    </argument>
-                  </service>
-                </argument>
-              </argument>
-            </service>
-          </argument>
-          <argument>Metadata\ClassHierarchyMetadata</argument>
-          <argument>true</argument>
-          <call method="setCache">
+        <service class="JavierEguiluz\Bundle\EasyAdminBundle\Search\Finder" public="false">
+          <argument type="service" id="easyadmin.query_builder"/>
+          <argument type="service" id="easyadmin.paginator"/>
+        </service>
+      </argument>
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="easyadmin.paginator" class="JavierEguiluz\Bundle\EasyAdminBundle\Search\Paginator"/>
+    <service id="easyadmin.listener.controller" class="JavierEguiluz\Bundle\EasyAdminBundle\EventListener\ControllerListener">
+      <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="service" id="debug.controller_resolver"/>
+    </service>
+    <service id="easyadmin.listener.request_post_initialize" class="JavierEguiluz\Bundle\EasyAdminBundle\EventListener\RequestPostInitializeListener">
+      <tag name="kernel.event_listener" event="easy_admin.post_initialize" method="initializeRequest"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
+    </service>
+    <service id="easyadmin.form.type" class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminFormType">
+      <tag name="form.type"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="collection">
+        <argument key="4" type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\Configurator\AutocompleteTypeConfigurator" public="false">
+            <tag name="easyadmin.form.type.configurator" priority="30"/>
+          </service>
+        </argument>
+        <argument key="3" type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\Configurator\CollectionTypeConfigurator" public="false">
+            <tag name="easyadmin.form.type.configurator" priority="20"/>
+          </service>
+        </argument>
+        <argument key="2" type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\Configurator\CheckboxTypeConfigurator" public="false">
+            <tag name="easyadmin.form.type.configurator" priority="10"/>
+          </service>
+        </argument>
+        <argument key="1" type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\Configurator\RequiredOptionConfigurator" public="false">
+            <tag name="easyadmin.form.type.configurator" priority="-10"/>
             <argument type="service">
-              <service class="Metadata\Cache\FileCache" public="false">
-                <argument>/Applications/MAMP/htdocs/TeamDEV/var/cache/dev/vich_uploader</argument>
+              <service class="Symfony\Component\Form\FormTypeGuesserChain" public="false">
+                <argument type="collection">
+                  <argument type="service" id="form.type_guesser.validator"/>
+                  <argument type="service" id="form.type_guesser.doctrine"/>
+                </argument>
               </service>
             </argument>
-          </call>
-        </service>
-      </argument>
-    </service>
-    <service id="vich_uploader.property_mapping_factory" class="Vich\UploaderBundle\Mapping\PropertyMappingFactory" public="false">
-      <argument type="service" id="service_container"/>
-      <argument type="service" id="vich_uploader.metadata_reader"/>
-      <argument type="collection">
-        <argument key="product_image" type="collection">
-          <argument key="uri_prefix">/img/project</argument>
-          <argument key="upload_destination">/Applications/MAMP/htdocs/TeamDEV/app/../web/img/project</argument>
-          <argument key="inject_on_load">false</argument>
-          <argument key="delete_on_update">true</argument>
-          <argument key="delete_on_remove">true</argument>
-          <argument key="namer" type="collection">
-            <argument key="service">null</argument>
-            <argument key="options">null</argument>
-          </argument>
-          <argument key="directory_namer" type="collection">
-            <argument key="service">null</argument>
-            <argument key="options">null</argument>
-          </argument>
-          <argument key="db_driver">orm</argument>
+          </service>
+        </argument>
+        <argument key="0" type="service">
+          <service class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\Configurator\EntityTypeConfigurator" public="false">
+            <tag name="easyadmin.form.type.configurator" priority="-20"/>
+            <argument type="service">
+              <service class="Symfony\Component\Form\FormTypeGuesserChain" public="false">
+                <argument type="collection">
+                  <argument type="service" id="form.type_guesser.validator"/>
+                  <argument type="service" id="form.type_guesser.doctrine"/>
+                </argument>
+              </service>
+            </argument>
+          </service>
         </argument>
       </argument>
-      <argument>_name</argument>
     </service>
-    <service id="vich_uploader.namer_uniqid" class="Vich\UploaderBundle\Naming\UniqidNamer"/>
-    <service id="vich_uploader.namer_property" class="Vich\UploaderBundle\Naming\PropertyNamer"/>
-    <service id="vich_uploader.namer_origname" class="Vich\UploaderBundle\Naming\OrignameNamer"/>
-    <service id="vich_uploader.namer_hash" class="Vich\UploaderBundle\Naming\HashNamer"/>
-    <service id="vich_uploader.directory_namer_subdir" class="Vich\UploaderBundle\Naming\SubdirDirectoryNamer"/>
-    <service id="vich_uploader.form.type.file" class="Vich\UploaderBundle\Form\Type\VichFileType">
-      <tag name="form.type" alias="vich_file"/>
-      <argument type="service" id="vich_uploader.storage"/>
-      <argument type="service" id="vich_uploader.upload_handler"/>
-      <argument type="service" id="translator"/>
+    <service id="easyadmin.form.type.autocomplete" class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType">
+      <tag name="form.type" alias="easyadmin_autocomplete"/>
+      <argument type="service" id="easyadmin.config.manager"/>
     </service>
-    <service id="vich_uploader.form.type.image" class="Vich\UploaderBundle\Form\Type\VichImageType">
-      <tag name="form.type" alias="vich_image"/>
-      <argument type="service" id="vich_uploader.storage"/>
-      <argument type="service" id="vich_uploader.upload_handler"/>
-      <argument type="service" id="translator"/>
+    <service id="easyadmin.form.type.divider" class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminDividerType">
+      <tag name="form.type" alias="easyadmin_divider"/>
     </service>
-    <service id="vich_uploader.download_handler" class="Vich\UploaderBundle\Handler\DownloadHandler">
-      <argument type="service" id="vich_uploader.property_mapping_factory"/>
-      <argument type="service" id="vich_uploader.storage"/>
+    <service id="easyadmin.form.type.section" class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminSectionType">
+      <tag name="form.type" alias="easyadmin_section"/>
     </service>
-    <service id="vich_uploader.upload_handler" class="Vich\UploaderBundle\Handler\UploadHandler">
-      <argument type="service" id="vich_uploader.property_mapping_factory"/>
-      <argument type="service" id="vich_uploader.storage"/>
-      <argument type="service">
-        <service class="Vich\UploaderBundle\Injector\FileInjector" public="false">
-          <argument type="service" id="vich_uploader.storage"/>
-        </service>
-      </argument>
-      <argument type="service" id="debug.event_dispatcher"/>
+    <service id="easyadmin.form.type.group" class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Type\EasyAdminGroupType">
+      <tag name="form.type" alias="easyadmin_group"/>
+    </service>
+    <service id="easyadmin.form.type.extension" class="JavierEguiluz\Bundle\EasyAdminBundle\Form\Extension\EasyAdminExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3495,6 +3611,10 @@
         <argument key="data_collector.dump" type="collection">
           <argument>dump</argument>
           <argument>@Debug/Profiler/dump.html.twig</argument>
+        </argument>
+        <argument key="easyadmin.data_collector" type="collection">
+          <argument>easyadmin</argument>
+          <argument>@EasyAdmin/data_collector/easyadmin.html.twig</argument>
         </argument>
         <argument key="data_collector.config" type="collection">
           <argument>config</argument>
@@ -3841,9 +3961,6 @@
       </argument>
       <argument>AppBundle\Entity\User</argument>
     </service>
-    <service id="vich_uploader.storage" class="Vich\UploaderBundle\Storage\FileSystemStorage">
-      <argument type="service" id="vich_uploader.property_mapping_factory"/>
-    </service>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="service" id="templating.locator"/>
@@ -3878,8 +3995,8 @@
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
-        <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/vich/uploader-bundle/Resources/views</argument>
-        <argument>VichUploader</argument>
+        <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/javiereguiluz/easyadmin-bundle/Resources/views</argument>
+        <argument>EasyAdmin</argument>
       </call>
       <call method="addPath">
         <argument>/Applications/MAMP/htdocs/TeamDEV/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

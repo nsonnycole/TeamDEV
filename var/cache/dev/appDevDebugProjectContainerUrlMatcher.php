@@ -105,11 +105,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // indexAdmin
-        if ($pathinfo === '/indexAdmin') {
-            return array (  '_controller' => 'AppBundle\\Controller\\AdministrationController::indexAdminAction',  '_route' => 'indexAdmin',);
-        }
-
         // newCompetence
         if ($pathinfo === '/newCompetence') {
             return array (  '_controller' => 'AppBundle\\Controller\\CompetenceController::newCompetenceAction',  '_route' => 'newCompetence',);
@@ -214,6 +209,26 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'deleteProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::deleteProjetAction',));
             }
 
+            // tropheeProjet
+            if (0 === strpos($pathinfo, '/projets/tropheeProjet') && preg_match('#^/projets/tropheeProjet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tropheeProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::tropheeProjetAction',));
+            }
+
+            // recherche
+            if (0 === strpos($pathinfo, '/projets/recherche') && preg_match('#^/projets/recherche/(?P<texte>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'recherche')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::rechercheAction',));
+            }
+
+        }
+
+        // newReseaux
+        if ($pathinfo === '/newReseaux') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ReseauxController::newReseauxAction',  '_route' => 'newReseaux',);
+        }
+
+        // editReseaux
+        if (0 === strpos($pathinfo, '/editReseaux') && preg_match('#^/editReseaux/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'editReseaux')), array (  '_controller' => 'AppBundle\\Controller\\ReseauxController::editReseauxAction',));
         }
 
         if (0 === strpos($pathinfo, '/mes')) {
@@ -281,6 +296,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // editProfil
         if ($pathinfo === '/editProfil') {
             return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::editProfilAction',  '_route' => 'editProfil',);
+        }
+
+        // mesReseaux
+        if ($pathinfo === '/mesReseaux') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UtilisateurController::mesReseauxAction',  '_route' => 'mesReseaux',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {
@@ -468,6 +488,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // easyadmin
+            if (rtrim($pathinfo, '/') === '/admin') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'easyadmin');
+                }
+
+                return array (  '_controller' => 'JavierEguiluz\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'easyadmin',);
+            }
+
+            // admin
+            if (rtrim($pathinfo, '/') === '/admin') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'admin');
+                }
+
+                return array (  '_controller' => 'JavierEguiluz\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+            }
+
+        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

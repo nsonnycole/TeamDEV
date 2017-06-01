@@ -44,7 +44,7 @@
               </div>
                 <h2><a href="{{ path('profilDe', {'username': membre.username}) }}"> {{ membre.username }}</a> </h2>
                 <p>{{ membre.presentation| striptags | slice(0, 100) }} [...]  </p>
-                <a href="#" class="btn btn-primary"> Envoyez un message</a>
+                <a class="btn btn-primary"  id="newMessage" href="{{ path('newMessage', {'IdDestinataire': membre.id}) }}"  data-toggle="modal"><span class="glyphicon glyphicon-envelope"></span> Envoyez un message</a>
               </div>
             </div>
             {% endfor %}

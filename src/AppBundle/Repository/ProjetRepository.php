@@ -55,11 +55,26 @@ class ProjetRepository extends EntityRepository
     return $query->getResult();
   }
 
+
+
   /**
   *
   * Retourne la liste des technologies pour ce projet
   *
   **/
+
+  public function recherche($texte){
+    $query = $this->createQueryBuilder('p')
+          ->where('p.idUtilisateur.username LIKE \''.$texte.'\'')
+          ->or('p.titre LIKE \''.$texte.'\'')
+          ->or('p.description LIKE \''.$texte.'\'')
+          ->orderBy('p.id', 'DESC')
+          ->setParameter('texte', $texte)
+          ->getQuery();
+    return $query->getResult();
+  }
+
+
 
   public function getProjetTechno($id)
   {

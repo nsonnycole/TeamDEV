@@ -43,7 +43,9 @@
 <div class="container">
 {% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
 <p><br><a  href="{{ path('deleteProjet', {'id': detailProjet.id}) }}" class="btn btn-danger">Supprimer</a>
+{% if detailProjet.statut == "Ouvert"%}
 <a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
+{% endif %}
 {% endif %}
   <div class="row">
     <div class="col-lg-8 desc">
@@ -85,8 +87,11 @@
       {% endif %}
 
       {% endfor %}
-  <p><br><a  class="btn btn-green"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
-
+        {% if detailProjet.statut.nom == "Fermé" %}
+        <p><br><a  class="btn btn-danger disabled"href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Fermer</a></p>
+        {% else %}
+        <p><br><a  class="btn btn-primary" href="{{ path('newInsc', {'id': detailProjet.id}) }}" lass="btn btn-green pull-left">Participer !</a></p>
+        {% endif %}
       {% endif %}
     <h3>Participants</h3>
     <hr>
