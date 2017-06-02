@@ -31,9 +31,11 @@ class ProjetType extends AbstractType
     ))
     ->add('description', TextareaType::class, array(
                       'label' => 'Description',
+
     ))
     ->add('contenu', TextareaType::class, array(
                       'label' => 'Contenu',
+                      'attr' => array('class' => 'tinymce')
     ))
       ->add('dateDebut', DateType::class, array(
                             'label' => 'Début du projet',
@@ -76,10 +78,10 @@ class ProjetType extends AbstractType
 
     ))
 
-       ->add('file', FileType::class, array(
+       ->add('file', TextType::class, array(
            'label' => 'Image',
            'required'   => false,
-           'data_class' => null,
+           
        ))
 
 

@@ -43,7 +43,7 @@
 
 {% endfor %}
 <div class="panel ">
-
+{{ tinymce_init() }}
 			<div class="panel-heading">Modification {{projet.nomProjet}}
       <button type="button" class="btn btn-primary btn-sm pull-right imageProjet" data-toggle="modal" data-id="{{projet.id}}" data-target="#myModal">
         Ajouter/Modifier un fichier
@@ -94,7 +94,7 @@
                   </div>
                   <div class="modal-body">
                   {{ form_row(form.file) }}
-                    <img src="{{asset('img/project/'~projet.file)}}" width="100px;">
+                    <img src="{{projet.file}}" width="400px;">
                   </div>
                   <div class="modal-footer">
                   <button data-dismiss="modal" class="btn btn-warning pull-right"/> Enregistrer </button>

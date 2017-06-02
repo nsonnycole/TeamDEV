@@ -50,11 +50,11 @@ class Projet
   * @Assert\NotBlank(message="Le contenu ne peut être vide")
   * @Assert\Length(
   *      min = "20",
-  *      max = "255",
+  *      max = "15266",
   *      minMessage = "Votre contenu doit faire au moins {{ limit }} caractères",
   *      maxMessage = "Votre contenu ne peut pas être plus long que {{ limit }} caractères"
   * )
-  * @ORM\Column(name = "contenu", type = "string", nullable = false)
+  * @ORM\Column(name = "contenu", type = "text", nullable = false)
   */
   protected  $contenu;
   /**
@@ -70,7 +70,7 @@ class Projet
   /**
   * @var Date de fin du projet
   *
-  * @ORM\Column(name = "dateFin", type = "date", nullable = false)
+  * @ORM\Column(name = "dateFin", type = "date", nullable = true)
   * @Assert\Range(
   *      min = "first day of January",
   *      max = "first day of January next year"
@@ -139,16 +139,20 @@ class Projet
   */
   private $file;
 
+
   /**
-  * Sets file.
+  * Set file
   *
-  * @param UploadedFile $file
+  * @param string $file
+  *
+  * @return Projet
   */
-  public function setFile(UploadedFile $file = null)
+  public function setFile($file)
   {
     $this->file = $file;
-  }
 
+    return $this;
+  }
   /**
   * Get file.
   *
@@ -581,6 +585,7 @@ class Projet
   {
     $this->technologies->removeElement($technology);
   }
+
 
 
 }

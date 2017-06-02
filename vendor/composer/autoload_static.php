@@ -223,6 +223,10 @@ class ComposerStaticInit33ef2921938d3d0172d1f1fbf8da9fde
         ),
         'S' => 
         array (
+            'Stfalcon\\Bundle\\TinymceBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/stfalcon/tinymce-bundle',
+            ),
             'SensioLabs\\Security' => 
             array (
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',

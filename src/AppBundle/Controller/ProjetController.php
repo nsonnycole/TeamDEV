@@ -30,8 +30,8 @@ class ProjetController extends Controller
     if($form->isSubmitted()){
 
       $recherche = $form["texte"]->getData();
-      $projets = $em->getRepository('AppBundle:Projet')->recherche($recherche);
-
+      //$projets = $em->getRepository('AppBundle:Projet')->recherche($recherche);
+      $projets = $em->getRepository('AppBundle:Projet')->getAll();
       return $this->render('projets/projets.html.twig',array(
       'projets' => $projets,
       'recherche'=> $recherche,

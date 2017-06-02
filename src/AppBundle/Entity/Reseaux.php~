@@ -19,14 +19,7 @@ class Reseaux
     /**
      * @var String nom du type
      *
-     * @ORM\Column(name = "nom", type = "string", nullable = false)
-     */
-    private  $nom;
-
-    /**
-     * @var String nom du type
-     *
-     * @ORM\Column(name = "url", type = "string", nullable = true)
+     * @ORM\Column(name = "url", type = "string", nullable = false)
      */
     private  $url;
 
@@ -105,29 +98,6 @@ class Reseaux
         return $this->idUtilisateur;
     }
 
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Reseaux
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
     /**
      * Set idTypeReseau

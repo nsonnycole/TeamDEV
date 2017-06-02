@@ -23,6 +23,7 @@ class InscriptionType extends AbstractType
         $builder
             ->add('commentaire', TextareaType::class, array(
                 'label' => 'Message',
+                'attr' => array('class' => 'tinymce')
             ))
             ->add('save', SubmitType::class, array(
                                     'label' => 'Enregistrer',

@@ -26,6 +26,7 @@ class MessageType extends AbstractType
             ))
             ->add('message', TextareaType::class, array(
                 'label' => 'Message',
+                'attr' => array('class' => 'tinymce')
             ))
 
             ->add('save', SubmitType::class, array(

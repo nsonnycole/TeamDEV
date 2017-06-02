@@ -41,15 +41,16 @@
 
   {% for projet in projets %}
       <div class="col-lg-4 projet">
+        <center>
         <a href="{{ path('showProjet', {'id': projet.id}) }}">
-        <h4>{{projet.nomProjet}}</h4>
-        <img style="width: 350px;"src="{{asset("img/about-bg.jpg")}}" >
+        <h3>{{projet.nomProjet}}</h3>
+        <img src="{{projet.file}}" width="350px" height="300px">
         </a>
         <p>{{projet.description | striptags | slice(0, 40) }} [...]</p>
         <p class="infos">Début : {{projet.dateDebut|date('d/m/Y')}}  |  Places : {{projet.nbPlaces}}
         <br><b> statut : {{projet.statut.nom}}</b>
         <br>Auteur : <a href="{{ path('profilDe', {'username': projet.idUtilisateur.username}) }}">{{projet.idUtilisateur.username}}</a></p>
-
+          </center>
       </div>
   {% endfor %}
   </div><!-- row -->

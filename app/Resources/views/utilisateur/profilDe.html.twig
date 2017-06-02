@@ -34,7 +34,8 @@
 
       <h3 align="center">
         <img width="100px;"src="{{asset('img/avatar/'~user.avatar.url)}}">
-        Informations sur {{ user.username }}
+        Informations sur {{ user.username }}<br>
+         <center><p> {{ user.presentation }}</p></center>
 
       </h3>
       <hr>
@@ -46,14 +47,24 @@
 
       <p> Pseudo : {{ user.username }}</p>
       <p> Email : {{ user.email }}</p>
+
+
+
       <div class="col-md-12">
                   <ul class="social-network social-circle">
-                      <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                      <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                  {% for reseau in reseaux %}
+                    {% if reseau.idTypeReseau.nom == "LinkedIn" %}
+                        <li><a href="{{reseau.url}}" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    {% endif %}
+                    {% if reseau.idTypeReseau.nom == "Facebook" %}
+                        <li><a href="{{reseau.url}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    {% endif %}
+                    {% if reseau.idTypeReseau.nom == "Twitter" %}
+                        <li><a href="{{reseau.url}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    {% endif %}
+                  {% endfor %}
                   </ul>
+
       </div>
 
 

@@ -98,12 +98,14 @@ class UtilisateurController extends Controller
     $competences = $em->getRepository('AppBundle:Competence')->getCompetenceUser($userID);
     $nbProjets = $em->getRepository('AppBundle:Projet')->getNbProjetUser($userID);
     $nbParticipations = $em->getRepository('AppBundle:Inscription')->getNbParticipationUser($userID);
+    $reseaux = $em->getRepository('AppBundle:Reseaux')->getReseauUser($usr);
      // replace this example code with whatever you need
      return $this->render('utilisateur/profilDe.html.twig', array(
        'user' => $usr,
        'nbProjets' => $nbProjets,
        'nbParticipations' => $nbParticipations,
        'competences' => $competences,
+       'reseaux' => $reseaux,
      ));
   }
 

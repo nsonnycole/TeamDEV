@@ -47,8 +47,8 @@
   <tbody>
 {% for reseau in reseaux %}
   <tr>
-    <td>{{reseau.nom}}</td>
-    <td>{{reseau.pourcentage}}%</td>
+    <td>{{reseau.idTypeReseau.nom}}</td>
+    <td><a href="{{reseau.url}}">Lien</a></td>
    <td>
       <a href="{{ path('editReseaux', {'id': reseau.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
     </td>

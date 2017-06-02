@@ -43,7 +43,7 @@
 <div class="container">
 {% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
 <p><br><a  href="{{ path('deleteProjet', {'id': detailProjet.id}) }}" class="btn btn-danger">Supprimer</a>
-  {% if detailProjet.statut == "Fermé" %}
+  {% if detailProjet.statut != "Fermé" %}
   <a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
   {% endif %}
 {% endif %}
@@ -51,11 +51,11 @@
     <div class="col-lg-8 desc">
       <h3 style="font-weight:bold">{{detailProjet.nomProjet}}</h3>
       <br>
-        <img style="width:455px;" src="{{asset("img/about-bg.jpg")}}" >
+        <img src="{{detailProjet.file}}" width="640px;">
         <br>  <br>
-        <h4><b>Description: <br>{{detailProjet.description}}</b></h4>
+        <p><h4>Description</h4>{{detailProjet.description}}</p>
 
-        <p>{{detailProjet.contenu}}</p>
+        <p>{{detailProjet.contenu|raw}}</p>
 
         <h5><b>Type de projet : </b><br><br>{% for typeProjet in detailProjet.idTypeProjet %} {{typeProjet.getNom}}, {% endfor %}</h5>
         <h5><b>Technologie : </b><br><br>{% for techno in detailProjet.technologies %} {{techno.getNom}}, {% endfor %}</h5>
@@ -70,7 +70,6 @@
       <h5><b>Date de début  :</b> {{detailProjet.dateDebut|date('d/m/Y')}} </h5>
       <h5><b>Date de fin  :</b> {{detailProjet.dateFin|date('d/m/Y')}} </h5>
       <h5><b>Durée  :</b> {{detailProjet.duree}} </h5>
-      <h5><b>Auteur :</b> {{detailProjet.idUtilisateur.username}}</h5>
       <h5><b>Nombre de participants :</b> {{detailProjet.nbParticipants}} / {{detailProjet.nbPlaces}} </h5>
       <h5><b>Statut  :</b> {{detailProjet.statut.nom}} </h5>
       <h5><b>URL : </b><br><br><a href="{{detailProjet.url}}">{{detailProjet.url}}</a></h5>
