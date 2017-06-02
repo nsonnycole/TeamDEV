@@ -65,9 +65,9 @@ class ProjetRepository extends EntityRepository
 
   public function recherche($texte){
     $query = $this->createQueryBuilder('p')
-          ->where('p.idUtilisateur.username LIKE \''.$texte.'\'')
-          ->or('p.titre LIKE \''.$texte.'\'')
-          ->or('p.description LIKE \''.$texte.'\'')
+
+          ->Where('p.nomProjet LIKE \''.$texte.'\'')
+          ->orWhere('p.description LIKE \''.$texte.'\'')
           ->orderBy('p.id', 'DESC')
           ->setParameter('texte', $texte)
           ->getQuery();

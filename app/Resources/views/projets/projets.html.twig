@@ -43,29 +43,12 @@
 
 
   <div class="container">
-    <div id="searchbar">
-			<form method="post" role="search">
-				<div class="row">
-    				<div class="col-xs-8 col-xs-offset-2">
-					    <div class="input-group">
-			                <div class="input-group-btn search-panel">
-			                    <ul class="dropdown-menu" role="menu">
-			                      <li><a href="#Title">Nom</a></li>
-			                      <li><a href="#Author">Statut</a></li>
-			                      <li><a href="#SubjectAreas">Date de début</a></li>
-								  <li class="divider"></li>
-			  			  		  <li><a href="#all">Tout afficher</a></li>
-							  	</ul>
-			                </div>
-			                <input type="hidden" name="search_filter" value="all" id="search_filter">
-			                <input type="text" class="form-control" data-id="texte" id="searchbox" name="search_text" placeholder="Rerchercher..">
-			                <span class="input-group-btn">
-			                    <button class="btn btn-default" href="{{path('recherche', {'texte': 'yoo'})}}"><span class="glyphicon glyphicon-search"></span></button>
-			                </span>
-			            </div>
-    				</div>
-				</div>
-			</form>
+    <div id="searchbar" class="col-md-6 col-md-offset-3">
+      <form action="#" method="post">
+      {{ form_start(form) }}
+      {{ form_widget(form) }}
+
+      </form>
 		</div>
 	</div>
   <div class="container">

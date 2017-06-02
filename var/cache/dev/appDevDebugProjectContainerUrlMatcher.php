@@ -214,11 +214,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'tropheeProjet')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::tropheeProjetAction',));
             }
 
-            // recherche
-            if (0 === strpos($pathinfo, '/projets/recherche') && preg_match('#^/projets/recherche/(?P<texte>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'recherche')), array (  '_controller' => 'AppBundle\\Controller\\ProjetController::rechercheAction',));
-            }
-
         }
 
         // newReseaux

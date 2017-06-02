@@ -21,29 +21,29 @@ class __TwigTemplate_0bf4a012752d00b4dd92b30c3f90fb93044aa7e4a6aa8110476ba333eb0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_eb38f396b9bb79f2a66980a09e850f08cfe109f7c7adc3c0099d5a5f59f379c6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_eb38f396b9bb79f2a66980a09e850f08cfe109f7c7adc3c0099d5a5f59f379c6->enter($__internal_eb38f396b9bb79f2a66980a09e850f08cfe109f7c7adc3c0099d5a5f59f379c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
+        $__internal_5ba3fa4e2c27fe94a2704408f833ee21edddfb99cdc3d530403fc55fc532c59b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5ba3fa4e2c27fe94a2704408f833ee21edddfb99cdc3d530403fc55fc532c59b->enter($__internal_5ba3fa4e2c27fe94a2704408f833ee21edddfb99cdc3d530403fc55fc532c59b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
 
-        $__internal_c531814f9f97bddb2048dc53a9f673cc15ae89fd3a13b7b993c396a37e26f8c0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c531814f9f97bddb2048dc53a9f673cc15ae89fd3a13b7b993c396a37e26f8c0->enter($__internal_c531814f9f97bddb2048dc53a9f673cc15ae89fd3a13b7b993c396a37e26f8c0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
+        $__internal_cab80c9ce19f6e9a247da4aa702c15c5c2f07451102a48deec8122c0f3b9f693 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_cab80c9ce19f6e9a247da4aa702c15c5c2f07451102a48deec8122c0f3b9f693->enter($__internal_cab80c9ce19f6e9a247da4aa702c15c5c2f07451102a48deec8122c0f3b9f693_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/afficheProjet.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_eb38f396b9bb79f2a66980a09e850f08cfe109f7c7adc3c0099d5a5f59f379c6->leave($__internal_eb38f396b9bb79f2a66980a09e850f08cfe109f7c7adc3c0099d5a5f59f379c6_prof);
+        $__internal_5ba3fa4e2c27fe94a2704408f833ee21edddfb99cdc3d530403fc55fc532c59b->leave($__internal_5ba3fa4e2c27fe94a2704408f833ee21edddfb99cdc3d530403fc55fc532c59b_prof);
 
         
-        $__internal_c531814f9f97bddb2048dc53a9f673cc15ae89fd3a13b7b993c396a37e26f8c0->leave($__internal_c531814f9f97bddb2048dc53a9f673cc15ae89fd3a13b7b993c396a37e26f8c0_prof);
+        $__internal_cab80c9ce19f6e9a247da4aa702c15c5c2f07451102a48deec8122c0f3b9f693->leave($__internal_cab80c9ce19f6e9a247da4aa702c15c5c2f07451102a48deec8122c0f3b9f693_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5f6976db2ad463426d932fc8eb5fec3e437d0cba25d6addab28d4a6c84322761 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5f6976db2ad463426d932fc8eb5fec3e437d0cba25d6addab28d4a6c84322761->enter($__internal_5f6976db2ad463426d932fc8eb5fec3e437d0cba25d6addab28d4a6c84322761_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2e54071a9bb9090a53c26638198c28068a3295796f1eb1c7b649b6e2783f7be9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2e54071a9bb9090a53c26638198c28068a3295796f1eb1c7b649b6e2783f7be9->enter($__internal_2e54071a9bb9090a53c26638198c28068a3295796f1eb1c7b649b6e2783f7be9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_df7be0fd1c643e3df1abe820602a1587f9ad49e471d8e978941de93e39dfda21 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_df7be0fd1c643e3df1abe820602a1587f9ad49e471d8e978941de93e39dfda21->enter($__internal_df7be0fd1c643e3df1abe820602a1587f9ad49e471d8e978941de93e39dfda21_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6b573e12401f27b2dcaa70b9a66d20853d293dabdd40754801bd14334b0c1534 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6b573e12401f27b2dcaa70b9a66d20853d293dabdd40754801bd14334b0c1534->enter($__internal_6b573e12401f27b2dcaa70b9a66d20853d293dabdd40754801bd14334b0c1534_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
@@ -146,14 +146,14 @@ class __TwigTemplate_0bf4a012752d00b4dd92b30c3f90fb93044aa7e4a6aa8110476ba333eb0
                 echo "<p><br><a  href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("deleteProjet", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-danger\">Supprimer</a>
-";
+  ";
                 // line 46
-                if (($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "statut", array()) == "Ouvert")) {
+                if (($this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "statut", array()) == "Fermé")) {
                     // line 47
-                    echo "<a href=\"";
+                    echo "  <a href=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("editProjet", array("id" => $this->getAttribute((isset($context["detailProjet"]) ? $context["detailProjet"] : $this->getContext($context, "detailProjet")), "id", array()))), "html", null, true);
                     echo "\" class=\"btn btn-warning\">Modifier</a></p>
-";
+  ";
                 }
             }
             // line 50
@@ -395,10 +395,10 @@ class __TwigTemplate_0bf4a012752d00b4dd92b30c3f90fb93044aa7e4a6aa8110476ba333eb0
 ";
         }
         
-        $__internal_df7be0fd1c643e3df1abe820602a1587f9ad49e471d8e978941de93e39dfda21->leave($__internal_df7be0fd1c643e3df1abe820602a1587f9ad49e471d8e978941de93e39dfda21_prof);
+        $__internal_6b573e12401f27b2dcaa70b9a66d20853d293dabdd40754801bd14334b0c1534->leave($__internal_6b573e12401f27b2dcaa70b9a66d20853d293dabdd40754801bd14334b0c1534_prof);
 
         
-        $__internal_5f6976db2ad463426d932fc8eb5fec3e437d0cba25d6addab28d4a6c84322761->leave($__internal_5f6976db2ad463426d932fc8eb5fec3e437d0cba25d6addab28d4a6c84322761_prof);
+        $__internal_2e54071a9bb9090a53c26638198c28068a3295796f1eb1c7b649b6e2783f7be9->leave($__internal_2e54071a9bb9090a53c26638198c28068a3295796f1eb1c7b649b6e2783f7be9_prof);
 
     }
 
@@ -472,9 +472,9 @@ class __TwigTemplate_0bf4a012752d00b4dd92b30c3f90fb93044aa7e4a6aa8110476ba333eb0
 <div class=\"container\">
 {% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
 <p><br><a  href=\"{{ path('deleteProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-danger\">Supprimer</a>
-{% if detailProjet.statut == \"Ouvert\"%}
-<a href=\"{{ path('editProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-warning\">Modifier</a></p>
-{% endif %}
+  {% if detailProjet.statut == \"Fermé\" %}
+  <a href=\"{{ path('editProjet', {'id': detailProjet.id}) }}\" class=\"btn btn-warning\">Modifier</a></p>
+  {% endif %}
 {% endif %}
   <div class=\"row\">
     <div class=\"col-lg-8 desc\">

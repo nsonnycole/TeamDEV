@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Projet;
 use AppBundle\Entity\Notification;
 use AppBundle\Form\Type\ProjetType;
-
+use AppBundle\Form\Type\RechercheProjetType;
 use AppBundle\Form\Type\ProjetImageType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -24,9 +24,26 @@ class ProjetController extends Controller
   {
     $em = $this->getDoctrine()->getManager();
     $projets = $em->getRepository('AppBundle:Projet')->getAll();
+
+    $form = $this->createForm(RechercheProjetType::class);
+    $form->handleRequest($request);
+    if($form->isSubmitted()){
+
+      $recherche = $form["texte"]->getData();
+      $projets = $em->getRepository('AppBundle:Projet')->recherche($recherche);
+
+      return $this->render('projets/projets.html.twig',array(
+      'projets' => $projets,
+      'recherche'=> $recherche,
+      'form' => $form->createView(),
+    ));
+    }
+
     return $this->render('projets/projets.html.twig',array(
       'projets' => $projets,
+      'form' => $form->createView(),
     )
+
   );
 
 }
@@ -67,7 +84,6 @@ public function newProjetAction(Request $request)
   $usr = $this->get('security.token_storage')->getToken()->getUser();
   if($form->isSubmitted()){
     $projet->setIdUtilisateur($usr);
-    $projet->setNbPlaces(0);
     // $projet->setImageFile($projet->getImage());
     // $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
     // $path = $helper->asset($projet, 'image');
@@ -207,18 +223,4 @@ public function newProjetImageAction (Request $request,$idProjet){
 
     }
 
-
-    /**
-    * @Route("/projets/recherche/{texte}", name="recherche")
-    */
-    public function rechercheAction(Request $request, $texte)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $projets = $em->getRepository('AppBundle:Projet')->recherche($texte);
-        return $this->render('projets/projets.html.twig',array(
-          'projets' => $projets,
-        )
-      );
-
-    }
   }

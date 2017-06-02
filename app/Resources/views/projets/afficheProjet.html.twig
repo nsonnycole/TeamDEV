@@ -43,9 +43,9 @@
 <div class="container">
 {% if app.user and app.user.username == detailProjet.idUtilisateur.username %}
 <p><br><a  href="{{ path('deleteProjet', {'id': detailProjet.id}) }}" class="btn btn-danger">Supprimer</a>
-{% if detailProjet.statut == "Ouvert"%}
-<a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
-{% endif %}
+  {% if detailProjet.statut == "Fermé" %}
+  <a href="{{ path('editProjet', {'id': detailProjet.id}) }}" class="btn btn-warning">Modifier</a></p>
+  {% endif %}
 {% endif %}
   <div class="row">
     <div class="col-lg-8 desc">
