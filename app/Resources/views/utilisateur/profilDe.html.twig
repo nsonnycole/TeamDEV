@@ -12,6 +12,12 @@
     {% else %}
         <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
     {% endif %}
+    {% if notifications %}
+    <div class="alert alert-info fade in col-md-6">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>{{app.user.username}}!</strong> Vous avez de nouvelles <a href="mesNotifications">notifications</a>.
+    </div>
+    {% endif %}
 </div>
 <!-- MAIN IMAGE SECTION -->
 <div id="portwrap">

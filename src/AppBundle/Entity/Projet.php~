@@ -135,11 +135,24 @@ class Projet
 
 
   /**
-  * @ORM\Column(name = "file",type="text", nullable=true)
+  * @ORM\Column(name = "file",type="text", nullable=false)
   */
   private $file;
 
 
+  /**
+  * Set file
+  *
+  * @param string $file
+  *
+  * @return Projet
+  */
+  public function setFile($file)
+  {
+    $this->file = $file;
+
+    return $this;
+  }
   /**
   * Get file.
   *
@@ -572,6 +585,7 @@ class Projet
   {
     $this->technologies->removeElement($technology);
   }
+
 
 
 }

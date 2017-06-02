@@ -15,11 +15,11 @@ class __TwigTemplate_d20b30e53495af1ce41a8aebcd118c37811819c8a1df39737e411ff5190
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1e6dfe128215607e12a0a11d7354f1f0adc85715e35b39bfca2966083891998e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1e6dfe128215607e12a0a11d7354f1f0adc85715e35b39bfca2966083891998e->enter($__internal_1e6dfe128215607e12a0a11d7354f1f0adc85715e35b39bfca2966083891998e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login_content.html.twig"));
+        $__internal_60f5272ba5dac052a0304b5fa197c5620e7c9c406ca912998b723d611b8e30b0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_60f5272ba5dac052a0304b5fa197c5620e7c9c406ca912998b723d611b8e30b0->enter($__internal_60f5272ba5dac052a0304b5fa197c5620e7c9c406ca912998b723d611b8e30b0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login_content.html.twig"));
 
-        $__internal_fdadda464500067fdefc8b6fa9df0c91b2d1db68045d52df717db351a063630c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fdadda464500067fdefc8b6fa9df0c91b2d1db68045d52df717db351a063630c->enter($__internal_fdadda464500067fdefc8b6fa9df0c91b2d1db68045d52df717db351a063630c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login_content.html.twig"));
+        $__internal_536aeb770fca85e5a17804178398c318984e722900afd01f368f9b6e2a0a19e5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_536aeb770fca85e5a17804178398c318984e722900afd01f368f9b6e2a0a19e5->enter($__internal_536aeb770fca85e5a17804178398c318984e722900afd01f368f9b6e2a0a19e5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login_content.html.twig"));
 
         // line 2
         echo "<!-- MAIN IMAGE SECTION -->
@@ -49,8 +49,11 @@ class __TwigTemplate_d20b30e53495af1ce41a8aebcd118c37811819c8a1df39737e411ff5190
 <div class=\"container\">
       <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
           <div class=\"panel panel-info\" >
-
-                <div style=\"float:right; font-size: 80%; position: relative; top:-10px\"><a href=\"#\">Mot de passe oublier ?</a></div>
+            <center><img width=\"400px\" src=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/favicon.png"), "html", null, true);
+            echo "\"></center>
+                <div style=\"float:right; font-size: 80%; position: relative; top:-10px\"></div>
                   <div style=\"padding-top:30px\" class=\"panel-body\" >
 
                       <div style=\"display:none\" id=\"login-alert\" class=\"alert alert-danger col-sm-12\"></div>
@@ -119,10 +122,10 @@ class __TwigTemplate_d20b30e53495af1ce41a8aebcd118c37811819c8a1df39737e411ff5190
 ";
         }
         
-        $__internal_1e6dfe128215607e12a0a11d7354f1f0adc85715e35b39bfca2966083891998e->leave($__internal_1e6dfe128215607e12a0a11d7354f1f0adc85715e35b39bfca2966083891998e_prof);
+        $__internal_60f5272ba5dac052a0304b5fa197c5620e7c9c406ca912998b723d611b8e30b0->leave($__internal_60f5272ba5dac052a0304b5fa197c5620e7c9c406ca912998b723d611b8e30b0_prof);
 
         
-        $__internal_fdadda464500067fdefc8b6fa9df0c91b2d1db68045d52df717db351a063630c->leave($__internal_fdadda464500067fdefc8b6fa9df0c91b2d1db68045d52df717db351a063630c_prof);
+        $__internal_536aeb770fca85e5a17804178398c318984e722900afd01f368f9b6e2a0a19e5->leave($__internal_536aeb770fca85e5a17804178398c318984e722900afd01f368f9b6e2a0a19e5_prof);
 
     }
 
@@ -138,7 +141,7 @@ class __TwigTemplate_d20b30e53495af1ce41a8aebcd118c37811819c8a1df39737e411ff5190
 
     public function getDebugInfo()
     {
-        return array (  105 => 47,  96 => 41,  91 => 39,  84 => 35,  79 => 33,  75 => 32,  72 => 31,  66 => 29,  64 => 28,  60 => 27,  38 => 7,  33 => 5,  30 => 4,  28 => 3,  25 => 2,);
+        return array (  108 => 47,  99 => 41,  94 => 39,  87 => 35,  82 => 33,  78 => 32,  75 => 31,  69 => 29,  67 => 28,  63 => 27,  54 => 21,  38 => 7,  33 => 5,  30 => 4,  28 => 3,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -171,8 +174,8 @@ class __TwigTemplate_d20b30e53495af1ce41a8aebcd118c37811819c8a1df39737e411ff5190
 <div class=\"container\">
       <div id=\"loginbox\" style=\"margin-top:50px;\" class=\"mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2\">
           <div class=\"panel panel-info\" >
-
-                <div style=\"float:right; font-size: 80%; position: relative; top:-10px\"><a href=\"#\">Mot de passe oublier ?</a></div>
+            <center><img width=\"400px\" src=\"{{asset('img/favicon.png')}}\"></center>
+                <div style=\"float:right; font-size: 80%; position: relative; top:-10px\"></div>
                   <div style=\"padding-top:30px\" class=\"panel-body\" >
 
                       <div style=\"display:none\" id=\"login-alert\" class=\"alert alert-danger col-sm-12\"></div>

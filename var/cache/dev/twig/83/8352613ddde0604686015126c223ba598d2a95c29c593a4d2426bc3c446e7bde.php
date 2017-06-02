@@ -21,29 +21,29 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a40091658c105f1e5231ec520a8e221acf259c1d6a109a4d05ffd81ef243d118 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a40091658c105f1e5231ec520a8e221acf259c1d6a109a4d05ffd81ef243d118->enter($__internal_a40091658c105f1e5231ec520a8e221acf259c1d6a109a4d05ffd81ef243d118_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/newProjet.html.twig"));
+        $__internal_5b5c891815d33d749ff7d85543af0d8fb639548b35e285a43bf6cf59315c73d1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5b5c891815d33d749ff7d85543af0d8fb639548b35e285a43bf6cf59315c73d1->enter($__internal_5b5c891815d33d749ff7d85543af0d8fb639548b35e285a43bf6cf59315c73d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/newProjet.html.twig"));
 
-        $__internal_ae53b94d7cdbf838abd97c9f44a638c0128a9457a73903dc24b86217663b508d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ae53b94d7cdbf838abd97c9f44a638c0128a9457a73903dc24b86217663b508d->enter($__internal_ae53b94d7cdbf838abd97c9f44a638c0128a9457a73903dc24b86217663b508d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/newProjet.html.twig"));
+        $__internal_6770b4a6f1555342276df5bbb4bc079b18bebf46338af424b38d8a2b47ee59ad = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6770b4a6f1555342276df5bbb4bc079b18bebf46338af424b38d8a2b47ee59ad->enter($__internal_6770b4a6f1555342276df5bbb4bc079b18bebf46338af424b38d8a2b47ee59ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "projets/newProjet.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a40091658c105f1e5231ec520a8e221acf259c1d6a109a4d05ffd81ef243d118->leave($__internal_a40091658c105f1e5231ec520a8e221acf259c1d6a109a4d05ffd81ef243d118_prof);
+        $__internal_5b5c891815d33d749ff7d85543af0d8fb639548b35e285a43bf6cf59315c73d1->leave($__internal_5b5c891815d33d749ff7d85543af0d8fb639548b35e285a43bf6cf59315c73d1_prof);
 
         
-        $__internal_ae53b94d7cdbf838abd97c9f44a638c0128a9457a73903dc24b86217663b508d->leave($__internal_ae53b94d7cdbf838abd97c9f44a638c0128a9457a73903dc24b86217663b508d_prof);
+        $__internal_6770b4a6f1555342276df5bbb4bc079b18bebf46338af424b38d8a2b47ee59ad->leave($__internal_6770b4a6f1555342276df5bbb4bc079b18bebf46338af424b38d8a2b47ee59ad_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5ddb0f5bc6da6c18065eb34ffad9c5786bac1c490ebec90bc9fe2feb2d375f24 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5ddb0f5bc6da6c18065eb34ffad9c5786bac1c490ebec90bc9fe2feb2d375f24->enter($__internal_5ddb0f5bc6da6c18065eb34ffad9c5786bac1c490ebec90bc9fe2feb2d375f24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c82bb64547193ca9f752a9286cd9bc5b60b93606d37a0d6ef9a7b12cd63a63e4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c82bb64547193ca9f752a9286cd9bc5b60b93606d37a0d6ef9a7b12cd63a63e4->enter($__internal_c82bb64547193ca9f752a9286cd9bc5b60b93606d37a0d6ef9a7b12cd63a63e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_299d9df7ce8671c21b4ba1bb5d80c38efdd4b17929ee1bf05438c427f3b42ec0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_299d9df7ce8671c21b4ba1bb5d80c38efdd4b17929ee1bf05438c427f3b42ec0->enter($__internal_299d9df7ce8671c21b4ba1bb5d80c38efdd4b17929ee1bf05438c427f3b42ec0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_1b806058240678ba5999cdbb2bb21878d9ca66fe2d9f2adcffe159d8123e1409 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1b806058240678ba5999cdbb2bb21878d9ca66fe2d9f2adcffe159d8123e1409->enter($__internal_1b806058240678ba5999cdbb2bb21878d9ca66fe2d9f2adcffe159d8123e1409_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
@@ -120,38 +120,53 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
 <div class=\"container\">
 <br/>
 <div class=\"panel\">
-
+      <div class=\"alert alert-warning fade in\">
+      <strong>Attention!  L'ajout d'une image est obligatoire.</strong>
+      </div>
 \t\t\t<div class=\"panel-heading\"><h4>Nouveau projet</h4>
       <button  type=\"button\" class=\"btn btn-primary btn-sm pull-right\" data-toggle=\"modal\" data-target=\"#myModal\">
-        Ajouter/Modifier un fichier
+        Ajouter/Modifier l'image
       </button>
       </div>
 \t\t\t<div class=\"panel-body\">
 \t\t\t\t\t<div class=\"panel \">
 \t\t\t\t\t\t<div class=\"panel-body\">
             ";
-            // line 50
+            // line 52
             echo             $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
             echo "
-            <div class=\"col-md-6\">
+            ";
+            // line 53
+            if ( !$this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vars", array()), "valid", array())) {
+                // line 54
+                echo "            <div class=\"alert alert-error\">
+                ";
+                // line 55
+                echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
+                echo "
+            </div>
+            ";
+            }
+            // line 58
+            echo "            <div class=\"col-md-6\">
               ";
-            // line 52
+            // line 59
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nomProjet", array()), 'row');
             echo "
               ";
-            // line 53
+            // line 60
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "description", array()), 'row');
             echo "
               ";
-            // line 54
+            // line 61
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu", array()), 'row');
             echo "
               ";
-            // line 55
+            // line 62
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "url", array()), 'row');
             echo "
               ";
-            // line 56
+            // line 63
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "statut", array()), 'row');
             echo "
 
@@ -159,23 +174,23 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
             </div>
             <div class=\"col-md-6\">
               ";
-            // line 61
+            // line 68
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateDebut", array()), 'row');
             echo "
               ";
-            // line 62
+            // line 69
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateFin", array()), 'row');
             echo "
               ";
-            // line 63
+            // line 70
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nbPlaces", array()), 'row');
             echo "
               ";
-            // line 64
+            // line 71
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idTypeProjet", array()), 'row');
             echo "
               ";
-            // line 65
+            // line 72
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "technologies", array()), 'row');
             echo "
 
@@ -186,12 +201,12 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
 \t\t\t\t\t</div>
           <br>
             <a onclick=\"return(confirm('Attention vous êtes sur le point d'annuler votre action'));\" href=\"";
-            // line 73
+            // line 80
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("projets");
             echo "\" class=\"btn btn-warning pull-right\"/>
            Annuler </a>
            ";
-            // line 75
+            // line 82
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "save", array()), 'row');
             echo "
 
@@ -210,11 +225,11 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
       <div class=\"modal-content\">
         <div class=\"modal-header\">
           <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
-          <h4 class=\"modal-title\" id=\"myModalLabel\">Ajout/Modification d'un fichier</h4>
+          <h4 class=\"modal-title\" id=\"myModalLabel\">Ajout/Modification de l'image</h4>
         </div>
         <div class=\"modal-body\">
         ";
-            // line 95
+            // line 102
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "file", array()), 'row');
             echo "
 
@@ -228,21 +243,21 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
 \t</div>
 </div>
   ";
-            // line 106
+            // line 113
             echo             $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
             echo "
 ";
         } else {
-            // line 108
+            // line 115
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment($this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login"));
             echo "
 ";
         }
         
-        $__internal_299d9df7ce8671c21b4ba1bb5d80c38efdd4b17929ee1bf05438c427f3b42ec0->leave($__internal_299d9df7ce8671c21b4ba1bb5d80c38efdd4b17929ee1bf05438c427f3b42ec0_prof);
+        $__internal_1b806058240678ba5999cdbb2bb21878d9ca66fe2d9f2adcffe159d8123e1409->leave($__internal_1b806058240678ba5999cdbb2bb21878d9ca66fe2d9f2adcffe159d8123e1409_prof);
 
         
-        $__internal_5ddb0f5bc6da6c18065eb34ffad9c5786bac1c490ebec90bc9fe2feb2d375f24->leave($__internal_5ddb0f5bc6da6c18065eb34ffad9c5786bac1c490ebec90bc9fe2feb2d375f24_prof);
+        $__internal_c82bb64547193ca9f752a9286cd9bc5b60b93606d37a0d6ef9a7b12cd63a63e4->leave($__internal_c82bb64547193ca9f752a9286cd9bc5b60b93606d37a0d6ef9a7b12cd63a63e4_prof);
 
     }
 
@@ -258,7 +273,7 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
 
     public function getDebugInfo()
     {
-        return array (  237 => 108,  232 => 106,  218 => 95,  195 => 75,  190 => 73,  179 => 65,  175 => 64,  171 => 63,  167 => 62,  163 => 61,  155 => 56,  151 => 55,  147 => 54,  143 => 53,  139 => 52,  134 => 50,  118 => 37,  110 => 32,  105 => 30,  101 => 29,  85 => 15,  77 => 13,  71 => 10,  67 => 9,  63 => 8,  56 => 7,  54 => 6,  51 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  252 => 115,  247 => 113,  233 => 102,  210 => 82,  205 => 80,  194 => 72,  190 => 71,  186 => 70,  182 => 69,  178 => 68,  170 => 63,  166 => 62,  162 => 61,  158 => 60,  154 => 59,  151 => 58,  145 => 55,  142 => 54,  140 => 53,  136 => 52,  118 => 37,  110 => 32,  105 => 30,  101 => 29,  85 => 15,  77 => 13,  71 => 10,  67 => 9,  63 => 8,  56 => 7,  54 => 6,  51 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -311,16 +326,23 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
 <div class=\"container\">
 <br/>
 <div class=\"panel\">
-
+      <div class=\"alert alert-warning fade in\">
+      <strong>Attention!  L'ajout d'une image est obligatoire.</strong>
+      </div>
 \t\t\t<div class=\"panel-heading\"><h4>Nouveau projet</h4>
       <button  type=\"button\" class=\"btn btn-primary btn-sm pull-right\" data-toggle=\"modal\" data-target=\"#myModal\">
-        Ajouter/Modifier un fichier
+        Ajouter/Modifier l'image
       </button>
       </div>
 \t\t\t<div class=\"panel-body\">
 \t\t\t\t\t<div class=\"panel \">
 \t\t\t\t\t\t<div class=\"panel-body\">
             {{ form_start(form) }}
+            {% if not form.vars.valid %}
+            <div class=\"alert alert-error\">
+                {{ form_errors(form) }}
+            </div>
+            {% endif %}
             <div class=\"col-md-6\">
               {{ form_row(form.nomProjet) }}
               {{ form_row(form.description) }}
@@ -362,7 +384,7 @@ class __TwigTemplate_d3016e5475e3d2ffcb0b29dbd5dba389504cf10d0a9864956b41fc479ef
       <div class=\"modal-content\">
         <div class=\"modal-header\">
           <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
-          <h4 class=\"modal-title\" id=\"myModalLabel\">Ajout/Modification d'un fichier</h4>
+          <h4 class=\"modal-title\" id=\"myModalLabel\">Ajout/Modification de l'image</h4>
         </div>
         <div class=\"modal-body\">
         {{ form_row(form.file) }}

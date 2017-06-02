@@ -135,7 +135,7 @@ class Projet
 
 
   /**
-  * @ORM\Column(name = "file",type="text", nullable=true)
+  * @ORM\Column(name = "file",type="text", nullable=false)
   */
   private $file;
 

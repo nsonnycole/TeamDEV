@@ -12,6 +12,7 @@
         <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
     {% endif %}
 </div>
+
 <!-- MAIN IMAGE SECTION -->
 <div id="headerwrap">
   <div class="container">
@@ -44,7 +45,7 @@
     </div>
 
   {% for projet in projets %}
-      <div class="col-sm-8 projet" style="display:block">
+      <div class="col-sm-5 projet" style="display:block">
       <center>
         <a href="{{ path('showProjet', {'id': projet.id}) }}"><h3>{{projet.nomProjet}}</h3>
         <img src="{{projet.file}}" width="350px" height="300px"></a>

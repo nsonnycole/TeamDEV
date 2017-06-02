@@ -79,9 +79,9 @@ class ProjetType extends AbstractType
     ))
 
        ->add('file', TextType::class, array(
-           'label' => 'Image',
+           'label' => 'Image(Entrez l\' url de l\'image)',
            'required'   => false,
-           
+           'empty_data' => 'Entrez l\' url de l\'image',
        ))
 
 

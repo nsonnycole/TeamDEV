@@ -38,16 +38,23 @@
 <div class="container">
 <br/>
 <div class="panel">
-
+      <div class="alert alert-warning fade in">
+      <strong>Attention!  L'ajout d'une image est obligatoire.</strong>
+      </div>
 			<div class="panel-heading"><h4>Nouveau projet</h4>
       <button  type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModal">
-        Ajouter/Modifier un fichier
+        Ajouter/Modifier l'image
       </button>
       </div>
 			<div class="panel-body">
 					<div class="panel ">
 						<div class="panel-body">
             {{ form_start(form) }}
+            {% if not form.vars.valid %}
+            <div class="alert alert-error">
+                {{ form_errors(form) }}
+            </div>
+            {% endif %}
             <div class="col-md-6">
               {{ form_row(form.nomProjet) }}
               {{ form_row(form.description) }}
@@ -89,7 +96,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <h4 class="modal-title" id="myModalLabel">Ajout/Modification d'un fichier</h4>
+          <h4 class="modal-title" id="myModalLabel">Ajout/Modification de l'image</h4>
         </div>
         <div class="modal-body">
         {{ form_row(form.file) }}
